@@ -56,6 +56,7 @@
             <Spinner fx:id="spinnerBilete" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
-      <Button layoutX="1367.0" layoutY="229.0" mnemonicParsing="false" onAction="#handleFilterDescTickets" text="Cauta descrescator dupa bilete" />
+      <Button layoutX="1412.0" layoutY="229.0" mnemonicParsing="false" onAction="#handleFilterDescTickets" text="Cauta descrescator dupa bilete" />
+      <Button layoutX="1322.0" layoutY="229.0" mnemonicParsing="false" onAction="#refreshMeciuri" text="Reseteaza" />
    </children>
 </AnchorPane>

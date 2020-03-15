@@ -30,6 +30,13 @@ public class MasterService implements ObservableBilet, ObservableClient, Observa
         this.meciService = meciService;
     }
 
+    public Client findClientByCredentials(String usr, String psswd){
+        Client client = findOneClient(usr);
+        if (client != null && client.getPassword().equals(psswd))
+                return client;
+        return null;
+    }
+
 
     public Bilet findOneBilet(String id){
         return biletService.findOne(id);

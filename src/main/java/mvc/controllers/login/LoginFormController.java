@@ -45,10 +45,9 @@ public class LoginFormController {
 
         String userName = this.textFieldUserName.getText();
         String password = this.passwordFieldUserPassword.getText();
-        //Client loggedInStudent = this.masterService.findClientByCredentials(userName, password);
-        Client loggedInStudent = new Client("123"); //TODO: MUST CHANGE (THIS IS JUST FOR TESTING PURPOSES)
+        Client loggedInClient = this.masterService.findClientByCredentials(userName, password);
 
-        if(loggedInStudent != null){// check if account acces is granted
+        if(loggedInClient != null){// check if account acces is granted
 
             try {
                 // create a new stage for the popup dialog.
@@ -59,13 +58,13 @@ public class LoginFormController {
 
                 // Create the dialog Stage.
                 Stage dialogStage = new Stage();
-                dialogStage.setTitle("Log In Student");
+                dialogStage.setTitle("Log In Client");
                 dialogStage.initModality(Modality.WINDOW_MODAL);
                 Scene scene = new Scene(root);
                 dialogStage.setScene(scene);
 
                 AccountController studentAccountController = loader.getController();
-                studentAccountController.setService(masterService, dialogStage, loggedInStudent);
+                studentAccountController.setService(masterService, dialogStage, loggedInClient);
 
                 this.dialogStage.close();
                 dialogStage.show();

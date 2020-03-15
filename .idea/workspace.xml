@@ -248,7 +248,7 @@
       <workItem from="1583661395015" duration="8673000" />
       <workItem from="1584266999969" duration="2390000" />
       <workItem from="1584270079756" duration="450000" />
-      <workItem from="1584270576939" duration="18092000" />
+      <workItem from="1584270576939" duration="21700000" />
     </task>
     <servers />
   </component>
@@ -340,138 +340,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/repositories/EchipaDataBaseRepository.java</url>
           <line>113</line>
           <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mvc/controllers/login/LoginFormController.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mvc/controllers/login/LoginFormController.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mvc/controllers/login/LoginFormController.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mvc/controllers/login/LoginFormController.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mvc/controllers/login/LoginFormController.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mvc/controllers/login/LoginFormController.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mvc/controllers/AccountController.java</url>
-          <line>137</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mvc/controllers/AccountController.java</url>
-          <line>138</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mvc/controllers/login/LoginFormController.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mvc/controllers/login/LoginFormController.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mvc/controllers/login/LoginFormController.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mvc/controllers/login/LoginFormController.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mvc/controllers/login/LoginFormController.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mvc/controllers/login/LoginFormController.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mvc/controllers/login/LoginFormController.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mvc/controllers/login/LoginFormController.java</url>
-          <line>63</line>
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mvc/controllers/login/LoginFormController.java</url>
-          <line>64</line>
-          <option name="timeStamp" value="62" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mvc/controllers/login/LoginFormController.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="63" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mvc/controllers/login/LoginFormController.java</url>
-          <line>67</line>
-          <option name="timeStamp" value="64" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/mvc/controllers/login/LoginFormController.java</url>
-          <line>69</line>
-          <option name="timeStamp" value="65" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/mvc/controllers/login/LoginFormController.java</url>
-          <line>43</line>
-          <properties class="mvc.controllers.login.LoginFormController" method="handleLogIn">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/mvc/controllers/login/LoginFormController.java</url>
-          <line>35</line>
-          <properties class="mvc.controllers.login.LoginFormController" method="initialize">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/mvc/controllers/login/LoginFormController.java</url>
-          <line>38</line>
-          <properties class="mvc.controllers.login.LoginFormController" method="setService">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/mvc/controllers/AccountController.java</url>
-          <line>136</line>
-          <properties class="mvc.controllers.AccountController" method="updateMeci">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

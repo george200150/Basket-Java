@@ -44,11 +44,12 @@ public class BiletDataBaseRepository implements CrudRepository<String, Bilet> {
             ResultSet data = connection.createStatement().executeQuery("SELECT * FROM \"Bilete\"  WHERE id =" + "\'" + id + "\'");
             data.next();//TODO: sql injection prone
             //String id = data.getString(1);
-            Float pret = data.getFloat(2);
-            String idMeci = data.getString(3);
-            String idClient = data.getString(4);
+            String numeClient = data.getString(2);
+            float pret = data.getFloat(3);
+            String idMeci = data.getString(4);
+            String idClient = data.getString(5);
             Log.logger.info("successful query");
-            Bilet bilet = new Bilet(id, pret, idMeci, idClient);
+            Bilet bilet = new Bilet(id, numeClient, pret, idMeci, idClient);
             Log.logger.traceExit("successful exit", bilet);
             return bilet;
         } catch (SQLException ignored) {
@@ -66,10 +67,11 @@ public class BiletDataBaseRepository implements CrudRepository<String, Bilet> {
             ResultSet data = connection.createStatement().executeQuery("SELECT * FROM \"Bilete\"");
             while (data.next()) {
                 String id = data.getString(1);
-                Float pret = data.getFloat(2);
-                String idMeci = data.getString(3);
-                String idClient = data.getString(4);
-                Bilet bilet = new Bilet(id, pret, idMeci, idClient);
+                String numeClient = data.getString(2);
+                float pret = data.getFloat(3);
+                String idMeci = data.getString(4);
+                String idClient = data.getString(5);
+                Bilet bilet = new Bilet(id, numeClient, pret, idMeci, idClient);
                 lst.add(bilet);
             }
             Log.logger.info("successful query");
@@ -99,7 +101,7 @@ public class BiletDataBaseRepository implements CrudRepository<String, Bilet> {
         try {
             Log.logger.traceEntry("entry query");
             connection.createStatement().execute("INSERT INTO \"Bilete\" VALUES (" +
-                    entity.getId() + ",\'" + entity.getPret() + "\',\'" + entity.getIdMeci() + "\',\'" + entity.getIdClient() + "\')"
+                    entity.getId() + ",\'" + entity.getNumeClient() + "\',\'" + entity.getPret() + "\',\'" + entity.getIdMeci() + "\',\'" + entity.getIdClient() + "\')"
             );
 
         } catch (SQLException e) {
@@ -150,6 +152,7 @@ public class BiletDataBaseRepository implements CrudRepository<String, Bilet> {
                 Log.logger.traceEntry("entry query");
                 connection.createStatement().execute("UPDATE \"Bilete\" SET " +
                         "pret = \'" + entity.getPret() + "\'" +
+                        ",\"numeClient\" = \'" + entity.getNumeClient() + "\'" +
                         ",\"idMeci\" = \'" + entity.getIdMeci() + "\'" +
                         ",\"idClient\" = \'" + entity.getIdClient() + "\'" + "WHERE id =" + "\'" + entity.getId() + "\'"
                 );

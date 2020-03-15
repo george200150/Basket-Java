@@ -44,8 +44,9 @@ public class ClientDataBaseRepository implements CrudRepository<String, Client> 
             ResultSet data = connection.createStatement().executeQuery("SELECT * FROM \"Clienti\"  WHERE id =" + "\'" + id + "\'");
             data.next();
             String idd = data.getString(1); // daca nu putem obtine id-ul, nu exista clientul
+            String passwd = data.getString(2);
             Log.logger.info("successful query");
-            Client client = new Client(idd);
+            Client client = new Client(idd, passwd);
             Log.logger.traceExit("successful exit", client);
             return client;
         } catch (SQLException ignored) {
@@ -63,7 +64,8 @@ public class ClientDataBaseRepository implements CrudRepository<String, Client> 
             ResultSet data = connection.createStatement().executeQuery("SELECT * FROM \"Clienti\"");
             while (data.next()) {
                 String id = data.getString(1);
-                Client client = new Client(id);
+                String passwd = data.getString(2);
+                Client client = new Client(id, passwd);
                 lst.add(client);
             }
             Log.logger.info("successful query");
@@ -93,7 +95,7 @@ public class ClientDataBaseRepository implements CrudRepository<String, Client> 
         try {
             Log.logger.traceEntry("entry query");
             connection.createStatement().execute("INSERT INTO \"Clienti\" VALUES (" +
-                    entity.getId() + ")" // TODO: CHECK IF QUERY CORRECT !!!!!!!!!!!!!
+                    entity.getId() + ",\'" + entity.getPassword() + "\')"
             );
 
         } catch (SQLException e) {
@@ -140,16 +142,18 @@ public class ClientDataBaseRepository implements CrudRepository<String, Client> 
         if (findOne(entity.getId()) != null) {
             Client old = findOne(entity.getId());
             Log.logger.info("found data");
-//            try {
-//                Log.logger.traceEntry("entry query");
-//
-//                // TODO: cannot update anything yet
-//
-//                Log.logger.traceExit("successful query", null);
-//            } catch (SQLException e) {
-//                Log.logger.error("query error" + e.getMessage());
-//                e.printStackTrace();
-//            }
+            try {
+                Log.logger.traceEntry("entry query");
+
+                connection.createStatement().execute("UPDATE \"Clienti\" SET " +
+                        ",\"password\" = \'" + entity.getPassword() + "\'" + "WHERE id =" + "\'" + entity.getId() + "\'"
+                );
+
+                Log.logger.traceExit("successful query", null);
+            } catch (SQLException e) {
+                Log.logger.error("query error" + e.getMessage());
+                e.printStackTrace();
+            }
             Log.logger.traceExit("successful query", old);
             return old;
         }

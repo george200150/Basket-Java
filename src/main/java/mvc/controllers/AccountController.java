@@ -20,7 +20,6 @@ import utils.events.MeciChangeEvent;
 import utils.observers.MeciObserver;
 
 import java.io.IOException;
-import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -45,12 +44,12 @@ public class AccountController implements MeciObserver {
     @FXML
     TableColumn<MeciDTO, String> meciViewColumnTip;
     @FXML
-    TableColumn<MeciDTO, String> meciViewColumnBilete; //TODO: create DTO in order to show "SOLD OUT" message
+    TableColumn<MeciDTO, String> meciViewColumnBilete; //created DTO in order to show "SOLD OUT" message
     @FXML
     TableView<MeciDTO> tableViewMeciuri;
 
 
-    private Client loggedInClient;//LOGIN CREDENTIALS
+    private Client loggedInClient;//TODO: LOGIN CREDENTIALS
     private MasterService service;
     private ObservableList<MeciDTO> model = FXCollections.observableArrayList();
     private Stage dialogStage;
@@ -67,14 +66,12 @@ public class AccountController implements MeciObserver {
         this.textFieldNume.setText(loggedInClient.toString());
     }
 
-    private void initModel() {
+    private void initModel() { //TODO: automatically do not show "overdue" matches
 
         Iterable<Meci> meciuri = service.findAllMeci();
         List<Meci> meciList = StreamSupport
                 .stream(meciuri.spliterator(), false)
                 .collect(Collectors.toList());
-
-        // setStyle("-fx-text-fill: red")
 
         model.setAll(toDTO(meciList));
     }
@@ -123,6 +120,25 @@ public class AccountController implements MeciObserver {
 
     @FXML
     public void initialize() {
+        meciViewColumnBilete.setCellFactory(param -> new TableCell<MeciDTO, String>() {
+            @Override
+            protected void updateItem(String item, boolean empty) { // long live stack overflow
+                if (!empty) {
+                    int currentIndex = indexProperty()
+                            .getValue() < 0 ? 0
+                            : indexProperty().getValue();
+                    String clmStatus = param
+                            .getTableView().getItems()
+                            .get(currentIndex).getNumarBileteSauSoldOut();
+                    if (clmStatus.equals("SOLD OUT")) {
+                        setStyle("-fx-font-weight: bold");
+                        setStyle("-fx-text-fill: red");
+                        setText(clmStatus);
+                    }
+                }
+            }
+        });
+
         meciViewColumnHome.setCellValueFactory(new PropertyValueFactory<MeciDTO, String>("homeString"));
         meciViewColumnAway.setCellValueFactory(new PropertyValueFactory<MeciDTO, String>("awayString"));
         meciViewColumnData.setCellValueFactory(new PropertyValueFactory<MeciDTO, String>("date"));
@@ -162,11 +178,12 @@ public class AccountController implements MeciObserver {
                 for (int i = 0; i < numarVandute; i++) {
                     Bilet bilet = bileteList.get(i);
                     bilet.setIdClient(loggedInClient.getId()); //TODO: also set name, maybe     (considered that when a match is created, all the tickets are instantiated without a customer (id == null)
+                    bilet.setNumeClient(name);
                     service.updateBilet(bilet);
                 }// assigned all the tickets to the client
                 Meci meci = new Meci(id, home, away, date, tip, numarActualizat);
                 service.updateMeci(meci);
-                CustomAlert.showMessage(dialogStage, Alert.AlertType.CONFIRMATION, "Transaction Succeeded", "You have bought " + numarVandute + " tickets!");
+                CustomAlert.showMessage(dialogStage, Alert.AlertType.CONFIRMATION, "Tranzactie incheiata cu succes!", "Ati cumparat " + numarVandute + " bilete la meciul " + m.getId() + "!");
             }
             else {
                 //eat it
@@ -187,10 +204,15 @@ public class AccountController implements MeciObserver {
         List<Meci> meciList = StreamSupport
                 .stream(meciuri.spliterator(), false)
                 .filter(x-> x.getNumarBileteDisponibile() > 0)
-                .sorted(Comparator.comparingInt(Meci::getNumarBileteDisponibile))
+                .sorted((m1,m2)-> m2.getNumarBileteDisponibile() - m1.getNumarBileteDisponibile())
                 .collect(Collectors.toList());
 
+        // .sorted(Comparator.comparingInt(Meci::getNumarBileteDisponibile)) + reverse
         model.setAll(toDTO(meciList));
+    }
+
+    public void refreshMeciuri(ActionEvent actionEvent) {
+        initModel();
     }
 }
 

@@ -1,18 +1,35 @@
-import domain.*;
-import repositories.*;
-import validators.*;
-
-import java.time.Instant;
-import java.util.Date;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 public class Main {
     public static void main(String[] args) {
         MainApp.main(args);
     }
 }
+
+    /*
+    1. Login. Dupa autentificarea cu succes, o noua fereastra se deschide in care sunt afișate toate meciurile
+    (Echipa A vs Echipa B, Echipa B vs Echipa C, etc., Semifinala 1, Semifinala 2, Finala), pretul unui bilet si
+    numarul locurilor disponibile. (V)
+
+    2. Vanzare. Dupa autentificarea cu succes persoana de la casa poate vinde bilete la un anumit meci. Pentru
+    vanzarea unui bilet se introduce numele clientului si numarul de locuri dorite. Dupa efectuarea unei vanzari,
+    persoanele de la celelalte case vad lista actualizata a meciurilor si numarul locurilor disponibile. Daca la un
+    meci nu mai sunt locuri disponbile, mesajul "SOLD OUT" este afișat langa meci cu culoare roșie. (V)
+
+    3. Cautare. Persoana poate vizualiza meciurile pentru care mai sunt locuri disponibile, in ordine descrescatoare
+    dupa numarul locurilor disponibile. (V)
+
+    4. Logout. (V)
+
+    */
+
+
+
+
+
+
+
+
+
 
 /*
 public class Main {

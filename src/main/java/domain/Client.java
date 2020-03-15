@@ -2,8 +2,11 @@ package domain;
 
 public class Client extends Entity<String> {
 
-    public Client(String id) {
+    private String password;
+
+    public Client(String id, String password) {
         super.setId(id);
+        this.password = password;
     }
 
     public String getId() {
@@ -12,6 +15,14 @@ public class Client extends Entity<String> {
 
     public void setId(String id) {
         super.setId(id);
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override

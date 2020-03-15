@@ -1,18 +1,21 @@
 package domain;
 
 public class Bilet extends Entity<String> {
+    private String numeClient;
     private float pret;
     private String idMeci;
     private String idClient = null;
 
-    public Bilet(String id, float pret, String idMeci) {
+    public Bilet(String id, String numeClient, float pret, String idMeci) {
         super.setId(id);
+        this.numeClient = numeClient;
         this.pret = pret;
         this.idMeci = idMeci;
     }
 
-    public Bilet(String id, float pret, String idMeci, String idClient) {
+    public Bilet(String id, String numeClient, float pret, String idMeci, String idClient) {
         super.setId(id);
+        this.numeClient = numeClient;
         this.pret = pret;
         this.idMeci = idMeci;
         this.idClient = idClient;
@@ -24,6 +27,14 @@ public class Bilet extends Entity<String> {
 
     public void setId(String id) {
         super.setId(id);
+    }
+
+    public String getNumeClient() {
+        return numeClient;
+    }
+
+    public void setNumeClient(String numeClient) {
+        this.numeClient = numeClient;
     }
 
     public float getPret() {
