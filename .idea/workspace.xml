@@ -78,9 +78,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -93,7 +93,7 @@
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/build.gradle" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/utils/observers" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15299335" />
@@ -102,6 +102,10 @@
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\George\Documents\GitHub\Basket-Java\src\main\java\utils\observers" />
+      <recent name="C:\Users\George\Documents\GitHub\Basket-Java\src\main\java\utils" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\George\Desktop\FACULTATE A2S1\MAP\Seminarii\LAB1 MPP\src" />
       <recent name="C:\Users\George\Desktop\FACULTATE A2S1\MAP\Seminarii\LAB1 MPP\src\main\java" />
@@ -230,7 +234,7 @@
       <workItem from="1583661395015" duration="8673000" />
       <workItem from="1584266999969" duration="2390000" />
       <workItem from="1584270079756" duration="450000" />
-      <workItem from="1584270576939" duration="4175000" />
+      <workItem from="1584270576939" duration="7803000" />
     </task>
     <servers />
   </component>
@@ -254,72 +258,72 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/repositories/TeamDataBaseRepository.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/repositories/EchipaDataBaseRepository.java</url>
           <line>106</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/repositories/TeamDataBaseRepository.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/repositories/EchipaDataBaseRepository.java</url>
           <line>105</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/repositories/TeamDataBaseRepository.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/repositories/EchipaDataBaseRepository.java</url>
           <line>104</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/repositories/TeamDataBaseRepository.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/repositories/EchipaDataBaseRepository.java</url>
           <line>97</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/repositories/TeamDataBaseRepository.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/repositories/EchipaDataBaseRepository.java</url>
           <line>98</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/repositories/TeamDataBaseRepository.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/repositories/EchipaDataBaseRepository.java</url>
           <line>99</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/repositories/TeamDataBaseRepository.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/repositories/EchipaDataBaseRepository.java</url>
           <line>100</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/repositories/TeamDataBaseRepository.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/repositories/EchipaDataBaseRepository.java</url>
           <line>101</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/repositories/TeamDataBaseRepository.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/repositories/EchipaDataBaseRepository.java</url>
           <line>102</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/repositories/TeamDataBaseRepository.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/repositories/EchipaDataBaseRepository.java</url>
           <line>95</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/repositories/TeamDataBaseRepository.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/repositories/EchipaDataBaseRepository.java</url>
           <line>108</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/repositories/TeamDataBaseRepository.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/repositories/EchipaDataBaseRepository.java</url>
           <line>110</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/repositories/TeamDataBaseRepository.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/repositories/EchipaDataBaseRepository.java</url>
           <line>111</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/repositories/TeamDataBaseRepository.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/repositories/EchipaDataBaseRepository.java</url>
           <line>113</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
