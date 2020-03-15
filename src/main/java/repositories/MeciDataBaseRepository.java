@@ -191,7 +191,7 @@ public class MeciDataBaseRepository implements CrudRepository<String, Meci> {
                 connection.createStatement().execute("UPDATE \"Meciuri\" SET " +
                         "home = \'" + entity.getHome() + "\'" +
                         ",away = \'" + entity.getAway() + "\'" +
-                        ",dataCalendar = \'" + entity.getDate() + "\'" +
+                        ",\"dataCalendar\" = \'" + entity.getDate() + "\'" + // trebuie cu escape backslash unde e nevoie de case sensitivity
                         ",tip = \'" + entity.getTip().getNumVal() + "\'" +
                         ",\"numarBilete\" = \'" + entity.getNumarBileteDisponibile() + "\'" + "WHERE id =" + "\'" + entity.getId() + "\'"
                 );

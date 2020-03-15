@@ -150,7 +150,7 @@ public class BiletDataBaseRepository implements CrudRepository<String, Bilet> {
                 Log.logger.traceEntry("entry query");
                 connection.createStatement().execute("UPDATE \"Bilete\" SET " +
                         "pret = \'" + entity.getPret() + "\'" +
-                        ",idMeci = \'" + entity.getIdMeci() + "\'" +
+                        ",\"idMeci\" = \'" + entity.getIdMeci() + "\'" +
                         ",\"idClient\" = \'" + entity.getIdClient() + "\'" + "WHERE id =" + "\'" + entity.getId() + "\'"
                 );
                 Log.logger.traceExit("successful query", null);

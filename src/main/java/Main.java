@@ -10,6 +10,13 @@ import java.util.stream.StreamSupport;
 
 public class Main {
     public static void main(String[] args) {
+        MainApp.main(args);
+    }
+}
+
+/*
+public class Main {
+    public static void main(String[] args) {
         System.out.println("Hello World!");
 
         Validator<Bilet> biletValidator = BiletValidator.getInstance();
@@ -90,3 +97,4 @@ public class Main {
     //Enterprise Application Integration - pentru trimis obiecte prin socket
     //TREBUIE SA EXISTE ACELEEASI CLASE IN AMBELE LIMBAJE
 }
+*/

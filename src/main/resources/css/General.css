@@ -1,0 +1,87 @@
+.button {
+    -fx-text-fill: white;
+    -fx-font-family: "Helvetica";
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(#2c87e1, #003058);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+.label {
+
+    -fx-text-fill: #000b80;
+    -fx-effect: dropshadow( gaussian , rgba(25, 0, 214, 0.5), 0,0,0,1 );
+}
+.table-row-cell:selected {
+    -fx-background-color: #499ce1;
+
+}
+.table-row-cell:selected .text {
+    -fx-font-family: "Helvetica";
+    -fx-fill: #ffffff;
+}
+
+.text-field {
+    -fx-font-family: "Helvetica";
+    -fx-font-weight: bold;
+    -fx-background-color: #b7e0ff;
+    -fx-text-fill: #00013c;
+}
+
+.password-field {
+    -fx-font-family: "Helvetica";
+    -fx-font-weight: bold;
+    -fx-background-color: #b7e0ff;
+    -fx-text-fill: #00013c;
+}
+
+.table-row-cell {
+    -fx-background-color: #e2edff;
+}
+
+.table-view .column-header {
+    -fx-font-family: "Helvetica";
+    -fx-background-color: #000b80;
+}
+
+.table-view .label {
+    -fx-text-fill: white;
+}
+
+.table-view {
+    -fx-font-family: "Helvetica";
+    -fx-effect: dropshadow( gaussian , rgba(25, 0, 214, 0.5), 0,0,0,1 );
+    -fx-background-color: #e2edff;
+}
+
+.toggle-button{
+    -fx-text-fill: white;
+    -fx-font-family: "Helvetica";
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(#2c87e1, #003058);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.tab-pane
+{
+    -fx-background-color: linear-gradient(#dfd0ff, #8f99cb);
+}
+
+.tab-pane > .tab-header-area > .tab-header-background {
+    -fx-background-color: #d1beff;
+}
+
+.tab .tab-label {
+    -fx-text-fill: white;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab {
+    -fx-font-family: "Helvetica";
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-background-color: linear-gradient(#2c87e1, #003058);
+}
+
+.check-box {
+    -fx-font-family: "Helvetica";
+    -fx-font-weight: bold;
+    -fx-text-fill: #00199f;
+}
