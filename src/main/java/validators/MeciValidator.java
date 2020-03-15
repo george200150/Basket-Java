@@ -13,10 +13,10 @@ public class MeciValidator extends AbstractValidator<Meci>  {
         if(entity.getId().equals("")){
             exceptions += "Id-ul nu poate fi vid!\n";
         }
-        if(entity.getHome() == null){
+        if(entity.getHome().equals("")){
             exceptions += "Echipa 1 nu poate fi vida\n";
         }
-        if(entity.getAway() == null){
+        if(entity.getAway().equals("")){
             exceptions += "Echipa 2 nu poate fi vida\n";
         }
         if(entity.getTip() == null){

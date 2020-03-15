@@ -15,13 +15,13 @@ public class Main {
         Validator<Bilet> biletValidator = BiletValidator.getInstance();
         Validator<Client> clientValidator = ClientValidator.getInstance();
         Validator<Meci> meciValidator = MeciValidator.getInstance();
-        Validator<Team> teamValidator = TeamValidator.getInstance();
+        Validator<Echipa> teamValidator = EchipaValidator.getInstance();
 
 
         CrudRepository Brepo = new BiletDataBaseRepository(biletValidator);
         CrudRepository Crepo = new ClientDataBaseRepository(clientValidator);
         CrudRepository Mrepo = new MeciDataBaseRepository(meciValidator);
-        CrudRepository Trepo = new TeamDataBaseRepository(teamValidator);
+        CrudRepository Trepo = new EchipaDataBaseRepository(teamValidator);
 
 
         Bilet b1 = new Bilet("1", (float) 103.33, "1");
@@ -69,13 +69,13 @@ public class Main {
 
 
 
-        Team t1 = new Team("1", "ana");
+        Echipa t1 = new Echipa("1", "ana");
         Trepo.save(t1);
-        Iterable<Team> iterable = Trepo.findAll();
-        List<Team> teams = StreamSupport
+        Iterable<Echipa> iterable = Trepo.findAll();
+        List<Echipa> echipe = StreamSupport
                 .stream(iterable.spliterator(), false)
                 .collect(Collectors.toList());
-        for (Team t : teams) {
+        for (Echipa t : echipe) {
             System.out.println(t);
         };
         Trepo.delete("1");

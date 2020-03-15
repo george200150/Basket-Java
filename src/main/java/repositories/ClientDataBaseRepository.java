@@ -1,7 +1,6 @@
 package repositories;
 
 import domain.Client;
-import domain.Team;
 import loggers.Log;
 import validators.ValidationException;
 import validators.Validator;

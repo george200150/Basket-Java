@@ -16,7 +16,7 @@ public class Client extends Entity<String> {
 
     @Override
     public String toString() {
-        return "Team{" +
+        return "Client{" +
                 "id='" + super.getId() + '\'' +
                 '}';
     }

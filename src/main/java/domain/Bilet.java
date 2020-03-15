@@ -3,7 +3,7 @@ package domain;
 public class Bilet extends Entity<String> {
     private float pret;
     private String idMeci;
-    private String idClient;
+    private String idClient = null;
 
     public Bilet(String id, float pret, String idMeci) {
         super.setId(id);

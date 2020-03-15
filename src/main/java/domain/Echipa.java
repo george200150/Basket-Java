@@ -2,10 +2,10 @@ package domain;
 
 import java.util.Objects;
 
-public class Team extends Entity<String> {
+public class Echipa extends Entity<String> {
     private String nume;
 
-    public Team(String id, String nume) {
+    public Echipa(String id, String nume) {
         super.setId(id);
         this.nume = nume;
     }
@@ -30,10 +30,10 @@ public class Team extends Entity<String> {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Team)) return false;
-        Team team = (Team) o;
-        return Objects.equals(getId(), team.getId()) &&
-                Objects.equals(getNume(), team.getNume());
+        if (!(o instanceof Echipa)) return false;
+        Echipa echipa = (Echipa) o;
+        return Objects.equals(getId(), echipa.getId()) &&
+                Objects.equals(getNume(), echipa.getNume());
     }
 
     @Override
@@ -43,7 +43,7 @@ public class Team extends Entity<String> {
 
     @Override
     public String toString() {
-        return "Team{" +
+        return "Echipa{" +
                 "id='" + super.getId() + '\'' +
                 "nume='" + nume + '\'' +
                 '}';

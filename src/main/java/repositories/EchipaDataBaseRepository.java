@@ -1,7 +1,7 @@
 package repositories;
 
 
-import domain.Team;
+import domain.Echipa;
 import loggers.Log;
 import validators.ValidationException;
 import validators.Validator;
@@ -16,11 +16,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-public class TeamDataBaseRepository implements CrudRepository<String, Team> {
+public class EchipaDataBaseRepository implements CrudRepository<String, Echipa> {
     private Connection connection;
-    private Validator<Team> validator;
+    private Validator<Echipa> validator;
 
-    public TeamDataBaseRepository(Validator<Team> validator) {
+    public EchipaDataBaseRepository(Validator<Echipa> validator) {
         Properties serverProps=new Properties(); //TODO: this comes from the server
         try {
             serverProps.load(new FileReader("src/bd.config"));
@@ -43,7 +43,7 @@ public class TeamDataBaseRepository implements CrudRepository<String, Team> {
     }
 
     @Override
-    public Team findOne(String id) throws IllegalArgumentException {
+    public Echipa findOne(String id) throws IllegalArgumentException {
         Log.logger.traceEntry("entry find");
         if (id == null) {
             Log.logger.error("null id exception");
@@ -56,9 +56,9 @@ public class TeamDataBaseRepository implements CrudRepository<String, Team> {
             //String id = data.getString(1);
             String nume = data.getString(2);
             Log.logger.info("successful query");
-            Team team = new Team(id, nume);
-            Log.logger.traceExit("successful exit", team);
-            return team;
+            Echipa echipa = new Echipa(id, nume);
+            Log.logger.traceExit("successful exit", echipa);
+            return echipa;
         } catch (SQLException ignored) {
             Log.logger.error("query exception" + ignored.getMessage());
         }
@@ -66,17 +66,17 @@ public class TeamDataBaseRepository implements CrudRepository<String, Team> {
     }
 
     @Override
-    public Iterable<Team> findAll() {
+    public Iterable<Echipa> findAll() {
         Log.logger.traceEntry("entry findAll");
-        List<Team> lst = new ArrayList<>();
+        List<Echipa> lst = new ArrayList<>();
         try {
             Log.logger.traceEntry("entry query");
             ResultSet data = connection.createStatement().executeQuery("SELECT * FROM \"Echipe\"");
             while (data.next()) {
                 String id = data.getString(1);
                 String nume = data.getString(2);
-                Team team = new Team(id,nume);
-                lst.add(team);
+                Echipa echipa = new Echipa(id,nume);
+                lst.add(echipa);
             }
             Log.logger.info("successful query");
         } catch (SQLException ignored) {
@@ -89,7 +89,7 @@ public class TeamDataBaseRepository implements CrudRepository<String, Team> {
 
 
     @Override
-    public Team save(Team entity) throws ValidationException {
+    public Echipa save(Echipa entity) throws ValidationException {
         Log.logger.traceEntry("entry save");
         if (entity == null) {
             Log.logger.error("null id exception");
@@ -117,15 +117,15 @@ public class TeamDataBaseRepository implements CrudRepository<String, Team> {
     }
 
     @Override
-    public Team delete(String id) throws IllegalArgumentException {
+    public Echipa delete(String id) throws IllegalArgumentException {
         Log.logger.traceEntry("entry delete");
         if (id == null) {
             Log.logger.error("null id exception");
             throw new IllegalArgumentException("ID-ul nu poate fi NULL!");
         }
-        Team team = findOne(id);
+        Echipa echipa = findOne(id);
         Log.logger.info("found data");
-        if (team != null) {
+        if (echipa != null) {
             try {
                 Log.logger.traceEntry("entry query");
                 connection.createStatement()
@@ -136,12 +136,12 @@ public class TeamDataBaseRepository implements CrudRepository<String, Team> {
                 e.printStackTrace();
             }
         }
-        Log.logger.traceExit("successful query", team);
-        return team;
+        Log.logger.traceExit("successful query", echipa);
+        return echipa;
     }
 
     @Override
-    public Team update(Team entity) throws ValidationException {
+    public Echipa update(Echipa entity) throws ValidationException {
         Log.logger.traceEntry("entry update");
         if (entity == null){
             Log.logger.error("null entity exception");
@@ -150,7 +150,7 @@ public class TeamDataBaseRepository implements CrudRepository<String, Team> {
         validator.validate(entity);
         Log.logger.info("validated data");
         if (findOne(entity.getId()) != null) {
-            Team old = findOne(entity.getId());
+            Echipa old = findOne(entity.getId());
             Log.logger.info("found data");
             try {
                 Log.logger.traceEntry("entry query");
