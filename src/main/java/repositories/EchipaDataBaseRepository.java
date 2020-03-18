@@ -1,45 +1,25 @@
 package repositories;
 
-
 import domain.Echipa;
 import loggers.Log;
 import validators.ValidationException;
 import validators.Validator;
 
-import java.io.FileReader;
-import java.io.IOException;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Properties;
 
 public class EchipaDataBaseRepository implements CrudRepository<String, Echipa> {
     private Connection connection;
     private Validator<Echipa> validator;
 
     public EchipaDataBaseRepository(Validator<Echipa> validator) {
-        Properties serverProps=new Properties(); //TODO: this comes from the server
-        try {
-            serverProps.load(new FileReader("src/bd.config"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        } //TODO: this comes from the server
-        try {
-            Log.logger.traceEntry("entry constructor");
-            Class.forName(serverProps.getProperty("jdbc.postgres.driver"));
-            this.connection = DriverManager
-                    .getConnection(serverProps.getProperty("jdbc.postgres.server"), serverProps.getProperty("jdbc.postgres.user"), serverProps.getProperty("jdbc.postgres.password"));
-            Log.logger.info("successful connection");
-
-        } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
-            Log.logger.error("connection failure"  + e.getMessage());
-        }
+        Log.logger.traceEntry("entry constructor");
+        this.connection = JDBCInvariant.getConnection();
         this.validator = validator;
-        Log.logger.traceExit("successful exit", this.connection);
+        Log.logger.traceExit("successful constructor exit");
     }
 
     @Override

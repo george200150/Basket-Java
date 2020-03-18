@@ -64,10 +64,10 @@ public class Bilet extends Entity<String> {
     @Override
     public String toString() {
         return "Bilet{" +
-                "id='" + super.getId() + '\'' +
-                "pret=" + pret +
+                "numeClient='" + numeClient + '\'' +
+                ", pret=" + pret +
                 ", idMeci='" + idMeci + '\'' +
-                ", cumparator=" + idClient +
+                ", idClient='" + idClient + '\'' +
                 '}';
     }
 }

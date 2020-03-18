@@ -91,7 +91,8 @@ public class AccountController implements MeciObserver {
     }
 
     public void handleBackToLogInChoice(ActionEvent actionEvent) {
-
+        // TODO: ??? NOTIFY OTHER CUSTOMERS THAT CURRENT USER HAS LOGGED OUT ???
+        // TODO: use the clients repository for saving currently logged in clients ???
         try {
             // create a new stage for the popup dialog.
             FXMLLoader loader = new FXMLLoader();
@@ -122,18 +123,21 @@ public class AccountController implements MeciObserver {
     public void initialize() {
         meciViewColumnBilete.setCellFactory(param -> new TableCell<MeciDTO, String>() {
             @Override
-            protected void updateItem(String item, boolean empty) { // long live stack overflow
+            protected void updateItem(String item, boolean empty) { // long live stack overflow (when moving the column things happen...)
                 if (!empty) {
-                    int currentIndex = indexProperty()
-                            .getValue() < 0 ? 0
-                            : indexProperty().getValue();
-                    String clmStatus = param
+                    int currentIndex = indexProperty().getValue() < 0 ? 0 : indexProperty().getValue();
+                    String numarBilete = param
                             .getTableView().getItems()
                             .get(currentIndex).getNumarBileteSauSoldOut();
-                    if (clmStatus.equals("SOLD OUT")) {
+                    if (numarBilete.equals("SOLD OUT")) {
                         setStyle("-fx-font-weight: bold");
                         setStyle("-fx-text-fill: red");
-                        setText(clmStatus);
+                        setText(numarBilete);
+                    }
+                    else{
+                        setText(numarBilete);
+                        setStyle("-fx-font-weight: normal");
+                        setStyle("-fx-text-fill: black");
                     }
                 }
             }
@@ -192,8 +196,11 @@ public class AccountController implements MeciObserver {
     }
 
     public void handleLoadModelMeci(MouseEvent mouseEvent) {
+        MeciDTO item = this.tableViewMeciuri.getSelectionModel().getSelectedItem();
+        if (item == null)
+            return;
         int min = 0;
-        int max = this.tableViewMeciuri.getSelectionModel().getSelectedItem().getNumarBilete();
+        int max = item.getNumarBilete();
         int initialValue = 1;
         this.spinnerBilete.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(min, max));
         this.spinnerBilete.getValueFactory().setValue(initialValue);

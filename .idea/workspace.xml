@@ -83,6 +83,7 @@
         <option value="FxmlFile" />
         <option value="CSS File" />
         <option value="Class" />
+        <option value="spring-beans.schema" />
       </list>
     </option>
   </component>
@@ -95,7 +96,7 @@
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/views" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/FACULTATE A2S2/MPP/Curs3/Curs3/TaskSpringXML/TaskSpringXML/build.gradle" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -105,8 +106,12 @@
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\George\Documents\GitHub\Basket-Java\src\main\resources" />
+      <recent name="C:\Users\George\Documents\GitHub\Basket-Java" />
+      <recent name="C:\Users\George\Documents\GitHub\Basket-Java\src\main\resources\views\login" />
+      <recent name="C:\Users\George\Desktop\FACULTATE A2S1\MAP\Seminarii\LAB1 MPP\src" />
+      <recent name="C:\Users\George\Desktop\FACULTATE A2S1\MAP\Seminarii\LAB1 MPP\src\main\java" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="mvc.controllers" />
@@ -119,10 +124,8 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="mvc" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\George\Documents\GitHub\Basket-Java\src\main\resources\views\login" />
-      <recent name="C:\Users\George\Desktop\FACULTATE A2S1\MAP\Seminarii\LAB1 MPP\src" />
-      <recent name="C:\Users\George\Desktop\FACULTATE A2S1\MAP\Seminarii\LAB1 MPP\src\main\java" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -233,6 +236,9 @@
       </serviceView>
     </option>
   </component>
+  <component name="SpringBeansView">
+    <option name="beanDetailsProportion" value="0.3" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -248,7 +254,10 @@
       <workItem from="1583661395015" duration="8673000" />
       <workItem from="1584266999969" duration="2390000" />
       <workItem from="1584270079756" duration="450000" />
-      <workItem from="1584270576939" duration="21700000" />
+      <workItem from="1584270576939" duration="22648000" />
+      <workItem from="1584384609164" duration="4933000" />
+      <workItem from="1584458300854" duration="4734000" />
+      <workItem from="1584524377669" duration="4756000" />
     </task>
     <servers />
   </component>
@@ -267,81 +276,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/repositories/EchipaDataBaseRepository.java</url>
-          <line>106</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/repositories/EchipaDataBaseRepository.java</url>
-          <line>105</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/repositories/EchipaDataBaseRepository.java</url>
-          <line>104</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/repositories/EchipaDataBaseRepository.java</url>
-          <line>97</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/repositories/EchipaDataBaseRepository.java</url>
-          <line>98</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/repositories/EchipaDataBaseRepository.java</url>
-          <line>99</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/repositories/EchipaDataBaseRepository.java</url>
-          <line>100</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/repositories/EchipaDataBaseRepository.java</url>
-          <line>101</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/repositories/EchipaDataBaseRepository.java</url>
-          <line>102</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/repositories/EchipaDataBaseRepository.java</url>
-          <line>95</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/repositories/EchipaDataBaseRepository.java</url>
-          <line>108</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/repositories/EchipaDataBaseRepository.java</url>
-          <line>110</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/repositories/EchipaDataBaseRepository.java</url>
-          <line>111</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/repositories/EchipaDataBaseRepository.java</url>
-          <line>113</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

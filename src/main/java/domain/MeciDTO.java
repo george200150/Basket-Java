@@ -27,7 +27,7 @@ public class MeciDTO {
         if(numarBilete == 0)
             this.numarBileteSauSoldOut = "SOLD OUT";
         else
-            this.numarBileteSauSoldOut = numarBilete + "";
+            this.numarBileteSauSoldOut = Integer.toString(numarBilete);
     }
 
     public String getId() {

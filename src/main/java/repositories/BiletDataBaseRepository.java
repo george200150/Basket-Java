@@ -6,7 +6,6 @@ import validators.ValidationException;
 import validators.Validator;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -17,19 +16,10 @@ public class BiletDataBaseRepository implements CrudRepository<String, Bilet> {
     private Validator<Bilet> validator;
 
     public BiletDataBaseRepository(Validator<Bilet> validator) {
-        try {
-            Log.logger.traceEntry("entry constructor");
-            Class.forName("org.postgresql.Driver");
-            this.connection = DriverManager
-                    .getConnection("jdbc:postgresql://localhost:5432/MPP", "postgres", "admin");
-            Log.logger.info("successful connection");
-
-        } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
-            Log.logger.error("connection failure"  + e.getMessage());
-        }
+        Log.logger.traceEntry("entry constructor");
+        this.connection = JDBCInvariant.getConnection();
         this.validator = validator;
-        Log.logger.traceExit("successful exit", this.connection);
+        Log.logger.traceExit("successful constructor exit");
     }
 
     @Override

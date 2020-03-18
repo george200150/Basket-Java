@@ -76,7 +76,7 @@ public class LoginFormController {
         }
         else{
             CustomAlert.showMessage(null, Alert.AlertType.ERROR,"Log In","Nu ati introdus corect numele de utilizator sau parola!");
-        }
+        }// TODO: MUST DECIDE IF DATABASE IS REACHABLE !!!
     }
 
     public void handleUsrKeyPress(KeyEvent keyEvent) {
