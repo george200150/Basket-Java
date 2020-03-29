@@ -1,6 +1,5 @@
 package mvc.controllers;
 
-import domain.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -13,6 +12,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import model.domain.*;
 import mvc.CustomAlert;
 import mvc.controllers.login.LoginFormController;
 import services.MasterService;

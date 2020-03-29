@@ -1,9 +1,9 @@
 package repositories;
 
-import domain.Echipa;
-import loggers.Log;
-import validators.ValidationException;
-import validators.Validator;
+import model.domain.Echipa;
+import model.loggers.Log;
+import model.validators.ValidationException;
+import model.validators.Validator;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

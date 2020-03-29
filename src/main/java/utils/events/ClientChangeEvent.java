@@ -1,6 +1,6 @@
 package utils.events;
 
-import domain.Client;
+import model.domain.Client;
 
 public class ClientChangeEvent implements Event {
     private ChangeEventType type;

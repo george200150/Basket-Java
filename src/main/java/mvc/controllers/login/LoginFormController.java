@@ -1,7 +1,7 @@
 package mvc.controllers.login;
 
 
-import domain.Client;
+import model.domain.Client;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

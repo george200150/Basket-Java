@@ -1,8 +1,8 @@
 package services;
 
-import domain.Echipa;
+import model.domain.Echipa;
 import repositories.CrudRepository;
-import validators.ValidationException;
+import model.validators.ValidationException;
 
 public class EchipaService {
     private CrudRepository<String, Echipa> echipaRepository = null;

@@ -1,12 +1,12 @@
 package services;
 
-import domain.Bilet;
-import domain.Client;
-import domain.Echipa;
-import domain.Meci;
+import model.domain.Bilet;
+import model.domain.Client;
+import model.domain.Echipa;
+import model.domain.Meci;
 import utils.events.*;
 import utils.observers.*;
-import validators.ValidationException;
+import model.validators.ValidationException;
 
 import java.util.ArrayList;
 import java.util.List;

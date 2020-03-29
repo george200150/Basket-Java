@@ -1,6 +1,6 @@
 package utils.events;
 
-import domain.Echipa;
+import model.domain.Echipa;
 
 public class EchipaChangeEvent implements Event {
 

@@ -1,10 +1,10 @@
 package repositories;
 
-import domain.Meci;
-import domain.TipMeci;
-import loggers.Log;
-import validators.ValidationException;
-import validators.Validator;
+import model.domain.Meci;
+import model.domain.TipMeci;
+import model.loggers.Log;
+import model.validators.ValidationException;
+import model.validators.Validator;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

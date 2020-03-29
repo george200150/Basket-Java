@@ -1,7 +1,7 @@
 package repositories;
 
-import domain.Entity;
-import validators.ValidationException;
+import model.domain.Entity;
+import model.validators.ValidationException;
 
 /**
  * CRUD operations repository interface

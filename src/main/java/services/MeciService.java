@@ -1,8 +1,8 @@
 package services;
 
-import domain.Meci;
+import model.domain.Meci;
 import repositories.CrudRepository;
-import validators.ValidationException;
+import model.validators.ValidationException;
 
 public class MeciService {
     private CrudRepository<String, Meci> meciRepository = null;

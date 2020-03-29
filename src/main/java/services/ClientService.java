@@ -1,8 +1,8 @@
 package services;
 
-import domain.Client;
+import model.domain.Client;
 import repositories.CrudRepository;
-import validators.ValidationException;
+import model.validators.ValidationException;
 
 public class ClientService {
     private CrudRepository<String, Client> clientRepository = null;

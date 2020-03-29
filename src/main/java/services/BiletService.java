@@ -1,8 +1,8 @@
 package services;
 
-import domain.Bilet;
+import model.domain.Bilet;
 import repositories.CrudRepository;
-import validators.ValidationException;
+import model.validators.ValidationException;
 
 public class BiletService {
     private CrudRepository<String, Bilet> biletRepository = null;

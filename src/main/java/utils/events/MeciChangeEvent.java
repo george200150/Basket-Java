@@ -1,6 +1,6 @@
 package utils.events;
 
-import domain.Meci;
+import model.domain.Meci;
 
 public class MeciChangeEvent implements Event {
     private ChangeEventType type;

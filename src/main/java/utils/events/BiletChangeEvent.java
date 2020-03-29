@@ -1,6 +1,6 @@
 package utils.events;
 
-import domain.Bilet;
+import model.domain.Bilet;
 
 public class BiletChangeEvent implements Event {
     private ChangeEventType type;

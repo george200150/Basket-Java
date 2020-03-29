@@ -1,6 +1,6 @@
 package repositories;
 
-import loggers.Log;
+import model.loggers.Log;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
