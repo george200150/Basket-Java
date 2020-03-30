@@ -1,5 +1,6 @@
 package mvc;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -48,7 +49,7 @@ public class AccountController implements IObserver {
     TableView<Meci> tableViewMeciuri;
 
 
-    private Client loggedInClient;//TODO: LOGIN CREDENTIALS
+    private Client loggedInClient;
     private IServices server;
     private ObservableList<Meci> model = FXCollections.observableArrayList();
     private Stage dialogStage;
@@ -68,50 +69,54 @@ public class AccountController implements IObserver {
     }
 
     private void initModel() {
-        try {
-            Iterable<Meci> meciuri = Arrays.asList(server.findAllMeci()); //called from proxy
+        Runnable runnable = () -> {
+            try {
+                Iterable<Meci> meciuri = Arrays.asList(server.findAllMeci()); //called from proxy
 
-            List<Meci> meciList = StreamSupport
-                    .stream(meciuri.spliterator(), false)
-                    .collect(Collectors.toList());
+                List<Meci> meciList = StreamSupport
+                        .stream(meciuri.spliterator(), false)
+                        .collect(Collectors.toList());
 
-            model.setAll(meciList);
-        } catch (ServicesException e) {
-            e.printStackTrace();
-            CustomAlert.showErrorMessage(dialogStage,"FAILED TO INITIALIZE THE DATA");
-        }
-
+                model.setAll(meciList);
+            } catch (ServicesException e) {
+                e.printStackTrace();
+                CustomAlert.showErrorMessage(dialogStage, "FAILED TO INITIALIZE THE DATA");
+            }
+        };
+        Platform.runLater(runnable);
     }
 
 
     public void handleBackToLogInChoice(ActionEvent actionEvent) {
-        try {
-            // create a new stage for the popup dialog.
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/views/LoginForm.fxml"));
+        Runnable runnable = () -> {
+            try {
+                // create a new stage for the popup dialog.
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("/views/LoginForm.fxml"));
 
-            AnchorPane root = (AnchorPane) loader.load();
+                AnchorPane root = (AnchorPane) loader.load();
 
-            // Create the dialog Stage.
-            Stage dialogStage = new Stage();
-            dialogStage.setTitle("Log In");
-            dialogStage.initModality(Modality.WINDOW_MODAL);
-            Scene scene = new Scene(root);
-            dialogStage.setScene(scene);
+                // Create the dialog Stage.
+                Stage dialogStage = new Stage();
+                dialogStage.setTitle("Log In");
+                dialogStage.initModality(Modality.WINDOW_MODAL);
+                Scene scene = new Scene(root);
+                dialogStage.setScene(scene);
 
-            LoginFormController loginFormController = loader.getController();
-            loginFormController.setService(server, dialogStage);
+                LoginFormController loginFormController = loader.getController();
+                loginFormController.setService(server, dialogStage);
 
-            this.server.logout(loggedInClient, this);
-            this.dialogStage.close();
-            dialogStage.show();
+                this.server.logout(loggedInClient, this);
+                this.dialogStage.close();
+                dialogStage.show();
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ServicesException e) {
-            e.printStackTrace();
-        }
-
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (ServicesException e) {
+                e.printStackTrace();
+            }
+        };
+        Platform.runLater(runnable);
     }
 
 
@@ -147,36 +152,38 @@ public class AccountController implements IObserver {
         meciViewColumnBilete.setCellValueFactory(new PropertyValueFactory<Meci, Integer>("numarBileteDisponibile"));
 
         tableViewMeciuri.setItems(model);
-
     }
 
     public void handleBuyTickets(ActionEvent actionEvent) {
-        Meci m = this.tableViewMeciuri.getSelectionModel().getSelectedItem();
-        if (m == null) {
-            CustomAlert.showErrorMessage(dialogStage, "NU ATI SELECTAT UN MECI!");
-        } else {
-            String name = this.textFieldNume.getText(); //TODO: put parameter NAME in BILET
-            String id = m.getId();
-            String home = m.getHome();
-            String away = m.getAway();
-            Date date = m.getDate();
-            TipMeci tip = m.getTip();
-            int numarPrecedent = m.getNumarBileteDisponibile();
-            int numarVandute = (int) this.spinnerBilete.getValue();
-            int numarActualizat = numarPrecedent - numarVandute;
-            if (numarActualizat >= 0) { //remaining tickets number cannot be negative.
-                Meci meci = new Meci(id, home, away, date, tip, numarActualizat);
-                try {
-                    loggedInClient.setNume(name);
-                    server.ticketsSold(meci, loggedInClient); //TODO: TICKETS_SOLD !!!
-                } catch (ServicesException e) {
-                    e.printStackTrace();
-                }
-                CustomAlert.showMessage(dialogStage, Alert.AlertType.CONFIRMATION, "Tranzactie incheiata cu succes!", "Ati cumparat " + numarVandute + " bilete la meciul " + m.getId() + "!");
+        Runnable runnable = () -> {
+            Meci m = this.tableViewMeciuri.getSelectionModel().getSelectedItem();
+            if (m == null) {
+                CustomAlert.showErrorMessage(dialogStage, "NU ATI SELECTAT UN MECI!");
             } else {
-                //eat it
+                String name = this.textFieldNume.getText();
+                String id = m.getId();
+                String home = m.getHome();
+                String away = m.getAway();
+                Date date = m.getDate();
+                TipMeci tip = m.getTip();
+                int numarPrecedent = m.getNumarBileteDisponibile();
+                int numarVandute = (int) this.spinnerBilete.getValue();
+                int numarActualizat = numarPrecedent - numarVandute;
+                if (numarActualizat >= 0) { //remaining tickets number cannot be negative.
+                    Meci meci = new Meci(id, home, away, date, tip, numarActualizat);
+                    try {
+                        loggedInClient.setNume(name);
+                        server.ticketsSold(meci, loggedInClient); // TICKETS_SOLD !!!
+                    } catch (ServicesException e) {
+                        e.printStackTrace();
+                    }
+                    CustomAlert.showMessage(dialogStage, Alert.AlertType.CONFIRMATION, "Tranzactie incheiata cu succes!", "Ati cumparat " + numarVandute + " bilete la meciul " + m.getId() + "!");
+                } else {
+                    //eat it
+                }
             }
-        }
+        };
+        Platform.runLater(runnable);
     }
 
     public void handleLoadModelMeci(MouseEvent mouseEvent) {
@@ -191,6 +198,7 @@ public class AccountController implements IObserver {
     }
 
     public void handleFilterDescTickets(ActionEvent actionEvent) {
+        Runnable runnable = () -> {
             List<Meci> meciuri = null;
             try {
                 meciuri = Arrays.asList(server.findAllMeciWithTickets());
@@ -199,25 +207,32 @@ public class AccountController implements IObserver {
             }
 
             model.setAll(meciuri);
+        };
+        Platform.runLater(runnable);
     }
 
     public void refreshMeciuri(ActionEvent actionEvent) {
-        initModel();
+        Runnable runnable = () -> {
+            initModel();
+        };
+        Platform.runLater(runnable);
     }
 
     @Override
     public void notifyTicketsSold(Meci meci) throws ServicesException {
-        System.out.println("ACCOUNT_CONTROLLER: REQUEST TO REFRESH TABLE");
-        if (this.model.contains(meci)) {
-            this.model.remove(meci);
-            this.model.add(meci);
-            System.out.println("SUCCESSFULLY REFRESHED TABLE");
-        } else {
-            System.out.println("FAILED TO FIND MATCH !!! BAD BAD BAD BAD BAD BAD BAD BAD BAD");
-        }
-        initModel();
-
-        System.out.println("ACCOUNT_CONTROLLER: FINISHED TO REFRESH TABLE");
+        Runnable runnable = () -> {
+            System.out.println("ACCOUNT_CONTROLLER: REQUEST TO REFRESH TABLE");
+            for (Meci m : this.model) {
+                if (m.getId().equals(meci.getId())) {
+                    this.model.remove(m);
+                    this.model.add(meci);
+                    break;
+                }
+            }
+            tableViewMeciuri.setItems(model);
+            System.out.println("ACCOUNT_CONTROLLER: FINISHED TO REFRESH TABLE");
+        };
+        Platform.runLater(runnable);
     }
 }
 

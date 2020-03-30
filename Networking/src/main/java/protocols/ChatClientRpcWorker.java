@@ -40,19 +40,19 @@ public class ChatClientRpcWorker implements Runnable, IObserver {
     }
 
 
-    public void run() { //TODO: aici intra din proxy, de la sendRequest()
+    public void run() { // aici intra din proxy, de la sendRequest()
         while(connected){
             try {
+                logger.debug("E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();");
                 Object request=input.readObject();
+                logger.traceEntry("--- citire: {}", request);
                 logger.trace("PROXY SERVER: run RECEIVED REQUEST @"+ LocalDate.now());
-                Response response=handleRequest((Request)request); //TODO: de aici se duce in orice handle request, dupa tip (functile asincrone din server - ChatServerImpl)
+                Response response=handleRequest((Request)request); // de aici se duce in orice handle request, dupa tip (functile asincrone din server - ChatServerImpl)
                 if (response!=null){
                     sendResponse(response);
                     logger.trace("PROXY SERVER: run SENT RESPONSE @"+ LocalDate.now());
                 }
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (ClassNotFoundException e) {
+            } catch (IOException | ClassNotFoundException e) {
                 e.printStackTrace();
             }
             try {
@@ -166,7 +166,7 @@ public class ChatClientRpcWorker implements Runnable, IObserver {
             Meci meci = DTOUtils.getFromDTO(meciDTO);
             Client loggedInClient = DTOUtils.getFromDTO(client);
             try {
-                server.ticketsSold(meci, loggedInClient); // TODO: this is the response of the TICKETS_SOLD request
+                server.ticketsSold(meci, loggedInClient); // this is the response of the TICKETS_SOLD request
                 logger.trace("PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.ticketsSold @"+ LocalDate.now());
 
                 return new Response.Builder().type(ResponseType.TICKETS_SOLD).data(meciDTO).build();
@@ -184,7 +184,9 @@ public class ChatClientRpcWorker implements Runnable, IObserver {
 
     private void sendResponse(Response response) throws IOException{
         System.out.println("sending response "+response);
+        logger.debug("E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);");
         output.writeObject(response);
+        logger.traceEntry("--- scriere: {}",response);
         output.flush();
         logger.traceExit("PROXY SERVER: SUCCESSFUL sendResponse @"+ LocalDate.now(), response);
     }

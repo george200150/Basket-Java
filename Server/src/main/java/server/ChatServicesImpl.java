@@ -20,7 +20,7 @@ import java.util.stream.StreamSupport;
 
 public class ChatServicesImpl implements IServices {
     static final Logger logger = LogManager.getLogger(ChatServicesImpl.class);
-    private ClientDataBaseRepository userRepository; //TODO: not so generic...
+    private ClientDataBaseRepository userRepository; //TODO: not so generic anymore...
     private MeciDataBaseRepository meciRepository;
     private BiletDataBaseRepository biletRepository;
     private Map<String, IObserver> loggedClients;
@@ -50,7 +50,6 @@ public class ChatServicesImpl implements IServices {
                         System.out.println("Error notifying friend " + e);
                     }
                 });
-
         }
         executor.shutdown();
     }
@@ -129,7 +128,16 @@ public class ChatServicesImpl implements IServices {
             if (res == null)
                 throw new ServicesException("BILET NOT FOUNT IN DB TO BE UPDATED!");
         }
-        notifyTicketsBought(meci);
+        Runnable runnable = () -> {// hopefully not a deadlock (has enough time to finish)
+            try {
+                Thread.sleep(1000);
+                notifyTicketsBought(meci);
+            } catch (ServicesException | InterruptedException e) {
+                e.printStackTrace();
+            }
+        };
+        Thread thread = new Thread(runnable);
+        thread.start();
         logger.trace("FULL SERVER: ticketsSold SENT OBSERVER COMMAND TO notifyTicketsBought @"+ LocalDate.now());
     }
 

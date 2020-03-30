@@ -109,7 +109,6 @@ public class ChatServicesRpcProxy implements IServices {
             initializeConnection();
             this.isInitialized = true;
         }
-        initializeConnection(); //TODO: unfortunately, I HAD TO PUT THE CONNECTION INITIALIZATION IN HERE, AS THIS IS THE FIRST TIME WE USE THE SOCKETS (moybe fix this later...)
         Request req = new Request.Builder().type(RequestType.GET_MATCHES).build();
         sendRequest(req);
         logger.trace("PROXY CLIENT: findAllMeci SENT REQUEST @"+ LocalDate.now());
@@ -120,7 +119,7 @@ public class ChatServicesRpcProxy implements IServices {
             logger.traceExit("PROXY CLIENT: FAILED findAllMeci @"+ LocalDate.now());
             throw new ServicesException(err);
         }
-        MeciDTO[] meciDTOS = (MeciDTO[]) response.data(); //TODO: MECIDTOS == NULL !!! (cred ca am uitat sa le pun pe undeva... in response.data...)
+        MeciDTO[] meciDTOS = (MeciDTO[]) response.data();
         Meci[] meciuri = DTOUtils.getFromDTO(meciDTOS);
         logger.traceExit("PROXY CLIENT: SUCCESSFUL findAllMeci @"+ LocalDate.now());
         return meciuri;
@@ -171,7 +170,9 @@ public class ChatServicesRpcProxy implements IServices {
 
         logger.traceEntry("NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest @" + LocalDate.now(), request);
         try {
-            output.writeObject(request); //TODO: second time trying to login will result in NPE due to socket having been already closed.
+            logger.debug("E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);");
+            output.writeObject(request);
+            logger.traceEntry("--- scriere: {}",request);
             output.flush();
             logger.traceExit("NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest @" + LocalDate.now(), request);
         } catch (IOException e) {
@@ -185,7 +186,9 @@ public class ChatServicesRpcProxy implements IServices {
         Response response=null;
         logger.traceEntry("NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @" + LocalDate.now());
         try{
-            response=qresponses.take(); //TODO: qresponses size == 0... asta cand fac buy tickets request... (posibil sa trebuiasca sa fac cu executioner pool...)
+            logger.debug("E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();");
+            response=qresponses.take();
+            logger.traceEntry("--- citire: {}",response);
             logger.traceExit("NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse {} @" + LocalDate.now(), response);
         } catch (InterruptedException e) {
             logger.traceExit("NETWORKING FROM CLIENT PROXY TO SERVER: FAILED readResponse @"+ LocalDate.now());
@@ -226,7 +229,6 @@ public class ChatServicesRpcProxy implements IServices {
             Meci meci = DTOUtils.getFromDTO((MeciDTO) response.data());
             System.out.println("pe biletul care a fost cumparat a fost scris numele clientului. pentru meciul "+meci);
             try {
-                //TODO: THIS IS WHERE THE REAL OBSERVER SHOULD LIE, I GUESS...
                 client.notifyTicketsSold(meci);
             } catch (ServicesException e) {
                 e.printStackTrace();

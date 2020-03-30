@@ -1,578 +1,637 @@
-30 Mar 2020 22:32:53,800 TRACE repos.ClientDataBaseRepository 22 <init> - Enter entry constructor
-30 Mar 2020 22:32:53,804 TRACE repos.JDBCInvariant 27 getConnection - Enter entry constructor
-30 Mar 2020 22:32:53,894 INFO  repos.JDBCInvariant 31 getConnection - successful connection
-30 Mar 2020 22:32:53,896 TRACE repos.JDBCInvariant 37 getConnection - Exit: successful exit
-30 Mar 2020 22:32:53,897 TRACE repos.ClientDataBaseRepository 25 <init> - Exit with(successful constructor exit)
-30 Mar 2020 22:32:53,898 TRACE repos.MeciDataBaseRepository 21 <init> - Enter entry constructor
-30 Mar 2020 22:32:53,898 TRACE repos.JDBCInvariant 27 getConnection - Enter entry constructor
-30 Mar 2020 22:32:54,048 INFO  repos.JDBCInvariant 31 getConnection - successful connection
-30 Mar 2020 22:32:54,048 TRACE repos.JDBCInvariant 37 getConnection - Exit: successful exit
-30 Mar 2020 22:32:54,048 TRACE repos.MeciDataBaseRepository 24 <init> - Exit with(successful constructor exit)
-30 Mar 2020 22:32:54,049 TRACE repos.BiletDataBaseRepository 23 <init> - Enter entry constructor
-30 Mar 2020 22:32:54,050 TRACE repos.JDBCInvariant 27 getConnection - Enter entry constructor
-30 Mar 2020 22:32:54,109 INFO  repos.JDBCInvariant 31 getConnection - successful connection
-30 Mar 2020 22:32:54,109 TRACE repos.JDBCInvariant 37 getConnection - Exit: successful exit
-30 Mar 2020 22:32:54,109 TRACE repos.BiletDataBaseRepository 26 <init> - Exit with(successful constructor exit)
-30 Mar 2020 22:33:03,429 TRACE network.ChatServicesRpcProxy 42 <init> - CLIENT SIDE PROXY INIT @2020-03-30
-30 Mar 2020 22:33:07,364 TRACE network.ChatServicesRpcProxy 204 initializeConnection - Enter PROXY CLIENT: INITIALIZING initializeConnection @2020-03-30
-30 Mar 2020 22:33:07,376 TRACE network.ChatServicesRpcProxy 212 initializeConnection - Exit with(PROXY CLIENT: SUCCESSFUL initializeConnection @2020-03-30)
-30 Mar 2020 22:33:07,380 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest Request{type='GET_MATCHES', data='null'} @2020-03-30
-30 Mar 2020 22:33:07,380 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
-30 Mar 2020 22:33:07,381 TRACE network.ChatServicesRpcProxy 174 sendRequest - Enter --- scriere: Request{type='GET_MATCHES', data='null'}
-30 Mar 2020 22:33:07,384 TRACE protocols.ChatClientRpcWorker 35 <init> - Exit with(PROXY SERVER: SUCCESSFUL ChatClientRpcWorker @2020-03-30)
-30 Mar 2020 22:33:07,385 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
-30 Mar 2020 22:33:07,387 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest Request{type='GET_MATCHES', data='null'} @2020-03-30
-30 Mar 2020 22:33:07,388 TRACE network.ChatServicesRpcProxy 114 findAllMeci - PROXY CLIENT: findAllMeci SENT REQUEST @2020-03-30
-30 Mar 2020 22:33:07,388 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
-30 Mar 2020 22:33:07,389 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
-30 Mar 2020 22:33:07,395 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='GET_MATCHES', data='null'}
-30 Mar 2020 22:33:07,396 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
-30 Mar 2020 22:33:07,396 TRACE protocols.ChatClientRpcWorker 131 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.GET_MATCHES @2020-03-30
-30 Mar 2020 22:33:07,396 TRACE server.ChatServicesImpl 102 findAllMeci - FULL SERVER: findAllMeci RECEIVED COMMAND @2020-03-30
-30 Mar 2020 22:33:07,397 TRACE repos.MeciDataBaseRepository 70 findAll - Enter entry findAll
-30 Mar 2020 22:33:07,397 TRACE repos.MeciDataBaseRepository 73 findAll - Enter entry query
-30 Mar 2020 22:33:07,424 INFO  repos.MeciDataBaseRepository 99 findAll - successful query
-30 Mar 2020 22:33:07,424 TRACE repos.MeciDataBaseRepository 104 findAll - Exit: successful exit
-30 Mar 2020 22:33:07,425 TRACE server.ChatServicesImpl 110 findAllMeci - FULL SERVER: findAllMeci SENT RETURN TO SERVER PROXY @2020-03-30
-30 Mar 2020 22:33:07,426 TRACE protocols.ChatClientRpcWorker 136 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.findAllMeci @2020-03-30
-30 Mar 2020 22:33:07,426 DEBUG protocols.ChatClientRpcWorker 189 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
-30 Mar 2020 22:33:07,427 TRACE protocols.ChatClientRpcWorker 190 sendResponse - Enter --- scriere: Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@2ff3d377'}
-30 Mar 2020 22:33:07,435 TRACE protocols.ChatClientRpcWorker 193 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
-30 Mar 2020 22:33:07,435 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
-30 Mar 2020 22:33:07,439 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
-30 Mar 2020 22:33:07,441 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@4314b689'} @2020-03-30
-30 Mar 2020 22:33:07,442 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@4314b689'}
-30 Mar 2020 22:33:07,442 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@4314b689'} @2020-03-30
-30 Mar 2020 22:33:07,443 TRACE network.ChatServicesRpcProxy 116 findAllMeci - PROXY CLIENT: findAllMeci RECEIVED RESPONSE @2020-03-30
-30 Mar 2020 22:33:07,444 TRACE network.ChatServicesRpcProxy 124 findAllMeci - Exit with(PROXY CLIENT: SUCCESSFUL findAllMeci @2020-03-30)
-30 Mar 2020 22:33:07,445 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest Request{type='LOGIN', data='UserDTO[ion ion]'} @2020-03-30
-30 Mar 2020 22:33:07,446 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
-30 Mar 2020 22:33:07,446 TRACE network.ChatServicesRpcProxy 174 sendRequest - Enter --- scriere: Request{type='LOGIN', data='UserDTO[ion ion]'}
-30 Mar 2020 22:33:07,449 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest Request{type='LOGIN', data='UserDTO[ion ion]'} @2020-03-30
-30 Mar 2020 22:33:07,450 TRACE network.ChatServicesRpcProxy 54 login - PROXY CLIENT: login SENT REQUEST @2020-03-30
-30 Mar 2020 22:33:07,450 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
-30 Mar 2020 22:33:07,451 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
-30 Mar 2020 22:33:07,685 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
-30 Mar 2020 22:33:07,687 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='LOGIN', data='UserDTO[ion ion]'}
-30 Mar 2020 22:33:07,687 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
-30 Mar 2020 22:33:07,687 TRACE protocols.ChatClientRpcWorker 99 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.LOGIN @2020-03-30
-30 Mar 2020 22:33:07,687 TRACE server.ChatServicesImpl 59 login - FULL SERVER: login RECEIVED COMMAND @2020-03-30
-30 Mar 2020 22:33:07,688 TRACE repos.ClientDataBaseRepository 29 findClientByCredentials - Enter entry find
-30 Mar 2020 22:33:07,688 TRACE repos.ClientDataBaseRepository 35 findClientByCredentials - Enter entry query
-30 Mar 2020 22:33:07,691 INFO  repos.ClientDataBaseRepository 40 findClientByCredentials - successful query
-30 Mar 2020 22:33:07,691 TRACE repos.ClientDataBaseRepository 42 findClientByCredentials - Exit: successful exit
-30 Mar 2020 22:33:07,692 TRACE server.ChatServicesImpl 67 login - FULL SERVER: login SENT RETURN TO SERVER PROXY @2020-03-30
-30 Mar 2020 22:33:07,692 TRACE protocols.ChatClientRpcWorker 105 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.login @2020-03-30
-30 Mar 2020 22:33:07,693 DEBUG protocols.ChatClientRpcWorker 189 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
-30 Mar 2020 22:33:07,693 TRACE protocols.ChatClientRpcWorker 190 sendResponse - Enter --- scriere: Response{type='OK', data='null'}
-30 Mar 2020 22:33:07,694 TRACE protocols.ChatClientRpcWorker 193 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
-30 Mar 2020 22:33:07,694 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
-30 Mar 2020 22:33:07,694 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
-30 Mar 2020 22:33:07,694 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) Response{type='OK', data='null'} @2020-03-30
-30 Mar 2020 22:33:07,694 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='OK', data='null'}
-30 Mar 2020 22:33:07,695 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='OK', data='null'} @2020-03-30
-30 Mar 2020 22:33:07,695 TRACE network.ChatServicesRpcProxy 56 login - PROXY CLIENT: login RECEIVED RESPONSE @2020-03-30
-30 Mar 2020 22:33:07,695 TRACE network.ChatServicesRpcProxy 59 login - Exit with(PROXY CLIENT: SUCCESSFUL login @2020-03-30)
-30 Mar 2020 22:33:07,945 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
-30 Mar 2020 22:33:14,110 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest Request{type='TICKETS_SOLD', data='[Ljava.lang.Object;@33df8cfd'} @2020-03-30
-30 Mar 2020 22:33:14,110 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
-30 Mar 2020 22:33:14,111 TRACE network.ChatServicesRpcProxy 174 sendRequest - Enter --- scriere: Request{type='TICKETS_SOLD', data='[Ljava.lang.Object;@33df8cfd'}
-30 Mar 2020 22:33:14,113 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest Request{type='TICKETS_SOLD', data='[Ljava.lang.Object;@33df8cfd'} @2020-03-30
-30 Mar 2020 22:33:14,113 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='TICKETS_SOLD', data='[Ljava.lang.Object;@2a4dc6da'}
-30 Mar 2020 22:33:14,114 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
-30 Mar 2020 22:33:14,114 TRACE protocols.ChatClientRpcWorker 163 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.TICKETS_SOLD @2020-03-30
-30 Mar 2020 22:33:14,114 TRACE network.ChatServicesRpcProxy 138 ticketsSold - PROXY CLIENT: ticketsSold SENT REQUEST @2020-03-30 WARNING: THIS FUNCTION HAS NO RESPONSE!!!
-30 Mar 2020 22:33:14,114 TRACE server.ChatServicesImpl 117 ticketsSold - FULL SERVER: ticketsSold RECEIVED COMMAND @2020-03-30
-30 Mar 2020 22:33:14,114 TRACE repos.MeciDataBaseRepository 168 update - Enter entry update
-30 Mar 2020 22:33:14,115 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
-30 Mar 2020 22:33:14,115 INFO  repos.MeciDataBaseRepository 174 update - validated data
-30 Mar 2020 22:33:14,115 TRACE repos.MeciDataBaseRepository 29 findOne - Enter entry find
-30 Mar 2020 22:33:14,115 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
-30 Mar 2020 22:33:14,115 TRACE repos.MeciDataBaseRepository 35 findOne - Enter entry query
-30 Mar 2020 22:33:14,118 INFO  repos.MeciDataBaseRepository 58 findOne - successful query
-30 Mar 2020 22:33:14,119 TRACE repos.MeciDataBaseRepository 60 findOne - Exit: successful exit
-30 Mar 2020 22:33:14,119 TRACE repos.MeciDataBaseRepository 29 findOne - Enter entry find
-30 Mar 2020 22:33:14,119 TRACE repos.MeciDataBaseRepository 35 findOne - Enter entry query
-30 Mar 2020 22:33:14,120 INFO  repos.MeciDataBaseRepository 58 findOne - successful query
-30 Mar 2020 22:33:14,121 TRACE repos.MeciDataBaseRepository 60 findOne - Exit: successful exit
-30 Mar 2020 22:33:14,121 INFO  repos.MeciDataBaseRepository 177 update - found data
-30 Mar 2020 22:33:14,121 TRACE repos.MeciDataBaseRepository 179 update - Enter entry query
-30 Mar 2020 22:33:14,131 TRACE repos.MeciDataBaseRepository 187 update - Exit: successful query
-30 Mar 2020 22:33:14,131 TRACE repos.MeciDataBaseRepository 192 update - Exit: successful query
-30 Mar 2020 22:33:14,131 TRACE repos.BiletDataBaseRepository 57 findAll - Enter entry findAll
-30 Mar 2020 22:33:14,132 TRACE repos.BiletDataBaseRepository 60 findAll - Enter entry query
-30 Mar 2020 22:33:14,135 INFO  repos.BiletDataBaseRepository 71 findAll - successful query
-30 Mar 2020 22:33:14,135 TRACE repos.BiletDataBaseRepository 76 findAll - Exit: successful exit
-30 Mar 2020 22:33:14,136 TRACE repos.BiletDataBaseRepository 135 update - Enter entry update
-30 Mar 2020 22:33:14,136 INFO  repos.BiletDataBaseRepository 141 update - validated data
-30 Mar 2020 22:33:14,136 TRACE repos.BiletDataBaseRepository 31 findOne - Enter entry find
-30 Mar 2020 22:33:14,136 TRACE repos.BiletDataBaseRepository 37 findOne - Enter entry query
-30 Mar 2020 22:33:14,138 INFO  repos.BiletDataBaseRepository 45 findOne - successful query
-30 Mar 2020 22:33:14,138 TRACE repos.BiletDataBaseRepository 47 findOne - Exit: successful exit
-30 Mar 2020 22:33:14,138 TRACE repos.BiletDataBaseRepository 31 findOne - Enter entry find
-30 Mar 2020 22:33:14,138 TRACE repos.BiletDataBaseRepository 37 findOne - Enter entry query
-30 Mar 2020 22:33:14,139 INFO  repos.BiletDataBaseRepository 45 findOne - successful query
-30 Mar 2020 22:33:14,139 TRACE repos.BiletDataBaseRepository 47 findOne - Exit: successful exit
-30 Mar 2020 22:33:14,140 INFO  repos.BiletDataBaseRepository 144 update - found data
-30 Mar 2020 22:33:14,140 TRACE repos.BiletDataBaseRepository 146 update - Enter entry query
-30 Mar 2020 22:33:14,143 TRACE repos.BiletDataBaseRepository 153 update - Exit: successful query
-30 Mar 2020 22:33:14,143 TRACE repos.BiletDataBaseRepository 158 update - Exit: successful query
-30 Mar 2020 22:33:14,144 TRACE server.ChatServicesImpl 142 ticketsSold - FULL SERVER: ticketsSold SENT OBSERVER COMMAND TO notifyTicketsBought @2020-03-30
-30 Mar 2020 22:33:14,145 TRACE protocols.ChatClientRpcWorker 172 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.ticketsSold @2020-03-30
-30 Mar 2020 22:33:14,145 DEBUG protocols.ChatClientRpcWorker 189 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
-30 Mar 2020 22:33:14,145 TRACE protocols.ChatClientRpcWorker 190 sendResponse - Enter --- scriere: Response{type='TICKETS_SOLD', data='dto.MeciDTO@2eeee25d'}
-30 Mar 2020 22:33:14,146 TRACE protocols.ChatClientRpcWorker 193 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
-30 Mar 2020 22:33:14,146 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
-30 Mar 2020 22:33:14,146 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
-30 Mar 2020 22:33:14,147 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) Response{type='TICKETS_SOLD', data='dto.MeciDTO@174b8c39'} @2020-03-30
-30 Mar 2020 22:33:14,147 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='TICKETS_SOLD', data='dto.MeciDTO@174b8c39'}
-30 Mar 2020 22:33:14,148 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='TICKETS_SOLD', data='dto.MeciDTO@174b8c39'} @2020-03-30
-30 Mar 2020 22:33:14,148 TRACE network.ChatServicesRpcProxy 144 ticketsSold - Exit with(PROXY CLIENT: SUCCESSFUL ticketsSold @2020-03-30 WARNING: THIS FUNCTION HAS NO RESPONSE!!!)
-30 Mar 2020 22:33:14,397 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
-30 Mar 2020 22:33:15,144 TRACE repos.ClientDataBaseRepository 76 findAll - Enter entry findAll
-30 Mar 2020 22:33:15,144 TRACE repos.ClientDataBaseRepository 79 findAll - Enter entry query
-30 Mar 2020 22:33:15,146 INFO  repos.ClientDataBaseRepository 87 findAll - successful query
-30 Mar 2020 22:33:15,146 TRACE repos.ClientDataBaseRepository 92 findAll - Exit: successful exit
-30 Mar 2020 22:33:15,146 TRACE server.ChatServicesImpl 39 notifyTicketsBought - FULL SERVER: login RECEIVED !OBSERVER! COMMAND @2020-03-30
-30 Mar 2020 22:33:15,148 TRACE protocols.ChatClientRpcWorker 83 notifyTicketsSold - PROXY SERVER: ticketsSold BUILT RESPONSE @2020-03-30
-30 Mar 2020 22:33:15,149 DEBUG protocols.ChatClientRpcWorker 189 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
-30 Mar 2020 22:33:15,149 TRACE protocols.ChatClientRpcWorker 190 sendResponse - Enter --- scriere: Response{type='UPDATE_TICKETS_IN_CLIENT_MATCH', data='dto.MeciDTO@48a0f094'}
-30 Mar 2020 22:33:15,149 TRACE protocols.ChatClientRpcWorker 193 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
-30 Mar 2020 22:33:15,150 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
-30 Mar 2020 22:33:15,150 TRACE protocols.ChatClientRpcWorker 87 notifyTicketsSold - Exit: PROXY SERVER: ticketsSold SENT RESPONSE @2020-03-30
-30 Mar 2020 22:33:15,150 TRACE network.ChatServicesRpcProxy$ReaderThread 253 run - Enter PROXY CLIENT: TRACE isUpdate((Response)response) == true Response{type='UPDATE_TICKETS_IN_CLIENT_MATCH', data='dto.MeciDTO@f1a4c9'} @2020-03-30
-30 Mar 2020 22:33:23,924 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest Request{type='GET_MATCHES', data='null'} @2020-03-30
-30 Mar 2020 22:33:23,924 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
-30 Mar 2020 22:33:23,925 TRACE network.ChatServicesRpcProxy 174 sendRequest - Enter --- scriere: Request{type='GET_MATCHES', data='null'}
-30 Mar 2020 22:33:23,925 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest Request{type='GET_MATCHES', data='null'} @2020-03-30
-30 Mar 2020 22:33:23,925 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='GET_MATCHES', data='null'}
-30 Mar 2020 22:33:23,925 TRACE network.ChatServicesRpcProxy 114 findAllMeci - PROXY CLIENT: findAllMeci SENT REQUEST @2020-03-30
-30 Mar 2020 22:33:23,925 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
-30 Mar 2020 22:33:23,926 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
-30 Mar 2020 22:33:23,926 TRACE protocols.ChatClientRpcWorker 131 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.GET_MATCHES @2020-03-30
-30 Mar 2020 22:33:23,926 TRACE server.ChatServicesImpl 102 findAllMeci - FULL SERVER: findAllMeci RECEIVED COMMAND @2020-03-30
-30 Mar 2020 22:33:23,926 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
-30 Mar 2020 22:33:23,926 TRACE repos.MeciDataBaseRepository 70 findAll - Enter entry findAll
-30 Mar 2020 22:33:23,926 TRACE repos.MeciDataBaseRepository 73 findAll - Enter entry query
-30 Mar 2020 22:33:23,927 INFO  repos.MeciDataBaseRepository 99 findAll - successful query
-30 Mar 2020 22:33:23,928 TRACE repos.MeciDataBaseRepository 104 findAll - Exit: successful exit
-30 Mar 2020 22:33:23,928 TRACE server.ChatServicesImpl 110 findAllMeci - FULL SERVER: findAllMeci SENT RETURN TO SERVER PROXY @2020-03-30
-30 Mar 2020 22:33:23,928 TRACE protocols.ChatClientRpcWorker 136 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.findAllMeci @2020-03-30
-30 Mar 2020 22:33:23,928 DEBUG protocols.ChatClientRpcWorker 189 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
-30 Mar 2020 22:33:23,928 TRACE protocols.ChatClientRpcWorker 190 sendResponse - Enter --- scriere: Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@56dd733e'}
-30 Mar 2020 22:33:23,930 TRACE protocols.ChatClientRpcWorker 193 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
-30 Mar 2020 22:33:23,931 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
-30 Mar 2020 22:33:23,931 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
-30 Mar 2020 22:33:23,931 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@ff9d1b2'} @2020-03-30
-30 Mar 2020 22:33:23,932 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@ff9d1b2'}
-30 Mar 2020 22:33:23,932 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@ff9d1b2'} @2020-03-30
-30 Mar 2020 22:33:23,932 TRACE network.ChatServicesRpcProxy 116 findAllMeci - PROXY CLIENT: findAllMeci RECEIVED RESPONSE @2020-03-30
-30 Mar 2020 22:33:23,932 TRACE network.ChatServicesRpcProxy 124 findAllMeci - Exit with(PROXY CLIENT: SUCCESSFUL findAllMeci @2020-03-30)
-30 Mar 2020 22:33:24,181 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
-30 Mar 2020 22:33:25,095 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest Request{type='GET_MATCHES_W_TICKETS', data='null'} @2020-03-30
-30 Mar 2020 22:33:25,095 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
-30 Mar 2020 22:33:25,095 TRACE network.ChatServicesRpcProxy 174 sendRequest - Enter --- scriere: Request{type='GET_MATCHES_W_TICKETS', data='null'}
-30 Mar 2020 22:33:25,096 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest Request{type='GET_MATCHES_W_TICKETS', data='null'} @2020-03-30
-30 Mar 2020 22:33:25,096 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='GET_MATCHES_W_TICKETS', data='null'}
-30 Mar 2020 22:33:25,096 TRACE network.ChatServicesRpcProxy 92 findAllMeciWithTickets - PROXY CLIENT: findAllMeciWithTickets SENT REQUEST @2020-03-30
-30 Mar 2020 22:33:25,096 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
-30 Mar 2020 22:33:25,096 TRACE protocols.ChatClientRpcWorker 147 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.GET_MATCHES_W_TICKETS @2020-03-30
-30 Mar 2020 22:33:25,096 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
-30 Mar 2020 22:33:25,097 TRACE server.ChatServicesImpl 82 findAllMeciWithTickets - FULL SERVER: findAllMeciWithTickets RECEIVED COMMAND @2020-03-30
-30 Mar 2020 22:33:25,097 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
-30 Mar 2020 22:33:25,097 TRACE repos.MeciDataBaseRepository 70 findAll - Enter entry findAll
-30 Mar 2020 22:33:25,097 TRACE repos.MeciDataBaseRepository 73 findAll - Enter entry query
-30 Mar 2020 22:33:25,099 INFO  repos.MeciDataBaseRepository 99 findAll - successful query
-30 Mar 2020 22:33:25,099 TRACE repos.MeciDataBaseRepository 104 findAll - Exit: successful exit
-30 Mar 2020 22:33:25,101 TRACE server.ChatServicesImpl 96 findAllMeciWithTickets - FULL SERVER: findAllMeciWithTickets SENT RETURN TO SERVER PROXY @2020-03-30
-30 Mar 2020 22:33:25,102 TRACE protocols.ChatClientRpcWorker 152 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.findAllMeci @2020-03-30
-30 Mar 2020 22:33:25,102 DEBUG protocols.ChatClientRpcWorker 189 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
-30 Mar 2020 22:33:25,102 TRACE protocols.ChatClientRpcWorker 190 sendResponse - Enter --- scriere: Response{type='GET_MATCHES_W_TICKETS', data='[Ldto.MeciDTO;@14d4ed98'}
-30 Mar 2020 22:33:25,103 TRACE protocols.ChatClientRpcWorker 193 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
-30 Mar 2020 22:33:25,103 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
-30 Mar 2020 22:33:25,104 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
-30 Mar 2020 22:33:25,104 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) Response{type='GET_MATCHES_W_TICKETS', data='[Ldto.MeciDTO;@2a3fb68'} @2020-03-30
-30 Mar 2020 22:33:25,104 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='GET_MATCHES_W_TICKETS', data='[Ldto.MeciDTO;@2a3fb68'}
-30 Mar 2020 22:33:25,105 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='GET_MATCHES_W_TICKETS', data='[Ldto.MeciDTO;@2a3fb68'} @2020-03-30
-30 Mar 2020 22:33:25,105 TRACE network.ChatServicesRpcProxy 94 findAllMeciWithTickets - PROXY CLIENT: findAllMeciWithTickets RECEIVED RESPONSE @2020-03-30
-30 Mar 2020 22:33:25,106 TRACE network.ChatServicesRpcProxy 102 findAllMeciWithTickets - Exit with(PROXY CLIENT: SUCCESSFUL findAllMeciWithTickets @2020-03-30)
-30 Mar 2020 22:33:25,355 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
-30 Mar 2020 22:33:26,755 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest Request{type='LOGOUT', data='UserDTO[ion ion]'} @2020-03-30
-30 Mar 2020 22:33:26,755 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
-30 Mar 2020 22:33:26,756 TRACE network.ChatServicesRpcProxy 174 sendRequest - Enter --- scriere: Request{type='LOGOUT', data='UserDTO[ion ion]'}
-30 Mar 2020 22:33:26,756 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest Request{type='LOGOUT', data='UserDTO[ion ion]'} @2020-03-30
-30 Mar 2020 22:33:26,756 TRACE network.ChatServicesRpcProxy 75 logout - PROXY CLIENT: logout SENT REQUEST @2020-03-30
-30 Mar 2020 22:33:26,756 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='LOGOUT', data='UserDTO[ion ion]'}
-30 Mar 2020 22:33:26,756 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
-30 Mar 2020 22:33:26,756 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
-30 Mar 2020 22:33:26,756 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
-30 Mar 2020 22:33:26,757 TRACE protocols.ChatClientRpcWorker 114 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.LOGOUT @2020-03-30
-30 Mar 2020 22:33:26,757 TRACE server.ChatServicesImpl 73 logout - FULL SERVER: logout RECEIVED COMMAND @2020-03-30
-30 Mar 2020 22:33:26,757 TRACE server.ChatServicesImpl 77 logout - FULL SERVER: logout SENT RETURN TO SERVER PROXY @2020-03-30
-30 Mar 2020 22:33:26,757 TRACE protocols.ChatClientRpcWorker 121 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.logout @2020-03-30
-30 Mar 2020 22:33:26,758 DEBUG protocols.ChatClientRpcWorker 189 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
-30 Mar 2020 22:33:26,758 TRACE protocols.ChatClientRpcWorker 190 sendResponse - Enter --- scriere: Response{type='OK', data='null'}
-30 Mar 2020 22:33:26,758 TRACE protocols.ChatClientRpcWorker 193 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
-30 Mar 2020 22:33:26,758 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
-30 Mar 2020 22:33:26,758 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
-30 Mar 2020 22:33:26,758 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) Response{type='OK', data='null'} @2020-03-30
-30 Mar 2020 22:33:26,759 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='OK', data='null'}
-30 Mar 2020 22:33:26,759 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='OK', data='null'} @2020-03-30
-30 Mar 2020 22:33:26,759 TRACE network.ChatServicesRpcProxy 77 logout - PROXY CLIENT: logout RECEIVED RESPONSE @2020-03-30
-30 Mar 2020 22:33:26,760 TRACE network.ChatServicesRpcProxy 155 closeConnection - Exit with(PROXY CLIENT: SUCCESSFUL closeConnection @2020-03-30)
-30 Mar 2020 22:33:26,760 TRACE network.ChatServicesRpcProxy 80 logout - Exit with(PROXY CLIENT: SUCCESSFUL logout @2020-03-30)
-30 Mar 2020 22:33:26,760 TRACE network.ChatServicesRpcProxy$ReaderThread 264 run - Exit: PROXY CLIENT: FAILED run (because other end of socket disconnected from server) : IOException java.net.SocketException: Socket closed @2020-03-30
-30 Mar 2020 22:33:27,009 TRACE protocols.ChatClientRpcWorker 67 run - Exit with(PROXY SERVER: run : BEGIN SHUTDOWN @2020-03-30)
-30 Mar 2020 22:33:27,010 TRACE protocols.ChatClientRpcWorker 71 run - Exit with(PROXY SERVER: run : COMPLETED SHUTDOWN @2020-03-30)
-30 Mar 2020 22:35:47,575 TRACE network.ChatServicesRpcProxy 42 <init> - CLIENT SIDE PROXY INIT @2020-03-30
-30 Mar 2020 22:35:50,039 TRACE repos.ClientDataBaseRepository 22 <init> - Enter entry constructor
-30 Mar 2020 22:35:50,042 TRACE repos.JDBCInvariant 27 getConnection - Enter entry constructor
-30 Mar 2020 22:35:50,142 INFO  repos.JDBCInvariant 31 getConnection - successful connection
-30 Mar 2020 22:35:50,144 TRACE repos.JDBCInvariant 37 getConnection - Exit: successful exit
-30 Mar 2020 22:35:50,144 TRACE repos.ClientDataBaseRepository 25 <init> - Exit with(successful constructor exit)
-30 Mar 2020 22:35:50,146 TRACE repos.MeciDataBaseRepository 21 <init> - Enter entry constructor
-30 Mar 2020 22:35:50,146 TRACE repos.JDBCInvariant 27 getConnection - Enter entry constructor
-30 Mar 2020 22:35:50,195 INFO  repos.JDBCInvariant 31 getConnection - successful connection
-30 Mar 2020 22:35:50,195 TRACE repos.JDBCInvariant 37 getConnection - Exit: successful exit
-30 Mar 2020 22:35:50,195 TRACE repos.MeciDataBaseRepository 24 <init> - Exit with(successful constructor exit)
-30 Mar 2020 22:35:50,197 TRACE repos.BiletDataBaseRepository 23 <init> - Enter entry constructor
-30 Mar 2020 22:35:50,198 TRACE repos.JDBCInvariant 27 getConnection - Enter entry constructor
-30 Mar 2020 22:35:50,251 INFO  repos.JDBCInvariant 31 getConnection - successful connection
-30 Mar 2020 22:35:50,252 TRACE repos.JDBCInvariant 37 getConnection - Exit: successful exit
-30 Mar 2020 22:35:50,252 TRACE repos.BiletDataBaseRepository 26 <init> - Exit with(successful constructor exit)
-30 Mar 2020 22:35:53,580 TRACE network.ChatServicesRpcProxy 204 initializeConnection - Enter PROXY CLIENT: INITIALIZING initializeConnection @2020-03-30
-30 Mar 2020 22:35:53,592 TRACE network.ChatServicesRpcProxy 212 initializeConnection - Exit with(PROXY CLIENT: SUCCESSFUL initializeConnection @2020-03-30)
-30 Mar 2020 22:35:53,595 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest Request{type='GET_MATCHES', data='null'} @2020-03-30
-30 Mar 2020 22:35:53,596 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
-30 Mar 2020 22:35:53,596 TRACE network.ChatServicesRpcProxy 174 sendRequest - Enter --- scriere: Request{type='GET_MATCHES', data='null'}
-30 Mar 2020 22:35:53,599 TRACE protocols.ChatClientRpcWorker 35 <init> - Exit with(PROXY SERVER: SUCCESSFUL ChatClientRpcWorker @2020-03-30)
-30 Mar 2020 22:35:53,600 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
-30 Mar 2020 22:35:53,602 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest Request{type='GET_MATCHES', data='null'} @2020-03-30
-30 Mar 2020 22:35:53,602 TRACE network.ChatServicesRpcProxy 114 findAllMeci - PROXY CLIENT: findAllMeci SENT REQUEST @2020-03-30
-30 Mar 2020 22:35:53,603 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
-30 Mar 2020 22:35:53,603 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
-30 Mar 2020 22:35:53,609 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='GET_MATCHES', data='null'}
-30 Mar 2020 22:35:53,609 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
-30 Mar 2020 22:35:53,609 TRACE protocols.ChatClientRpcWorker 131 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.GET_MATCHES @2020-03-30
-30 Mar 2020 22:35:53,610 TRACE server.ChatServicesImpl 102 findAllMeci - FULL SERVER: findAllMeci RECEIVED COMMAND @2020-03-30
-30 Mar 2020 22:35:53,610 TRACE repos.MeciDataBaseRepository 70 findAll - Enter entry findAll
-30 Mar 2020 22:35:53,610 TRACE repos.MeciDataBaseRepository 73 findAll - Enter entry query
-30 Mar 2020 22:35:53,634 INFO  repos.MeciDataBaseRepository 99 findAll - successful query
-30 Mar 2020 22:35:53,634 TRACE repos.MeciDataBaseRepository 104 findAll - Exit: successful exit
-30 Mar 2020 22:35:53,634 TRACE server.ChatServicesImpl 110 findAllMeci - FULL SERVER: findAllMeci SENT RETURN TO SERVER PROXY @2020-03-30
-30 Mar 2020 22:35:53,636 TRACE protocols.ChatClientRpcWorker 136 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.findAllMeci @2020-03-30
-30 Mar 2020 22:35:53,636 DEBUG protocols.ChatClientRpcWorker 189 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
-30 Mar 2020 22:35:53,636 TRACE protocols.ChatClientRpcWorker 190 sendResponse - Enter --- scriere: Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@3715fae'}
-30 Mar 2020 22:35:53,644 TRACE protocols.ChatClientRpcWorker 193 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
-30 Mar 2020 22:35:53,644 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
-30 Mar 2020 22:35:53,648 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
-30 Mar 2020 22:35:53,649 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@109d530f'} @2020-03-30
-30 Mar 2020 22:35:53,650 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@109d530f'}
-30 Mar 2020 22:35:53,650 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@109d530f'} @2020-03-30
-30 Mar 2020 22:35:53,650 TRACE network.ChatServicesRpcProxy 116 findAllMeci - PROXY CLIENT: findAllMeci RECEIVED RESPONSE @2020-03-30
-30 Mar 2020 22:35:53,651 TRACE network.ChatServicesRpcProxy 124 findAllMeci - Exit with(PROXY CLIENT: SUCCESSFUL findAllMeci @2020-03-30)
-30 Mar 2020 22:35:53,653 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest Request{type='LOGIN', data='UserDTO[ion ion]'} @2020-03-30
-30 Mar 2020 22:35:53,653 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
-30 Mar 2020 22:35:53,653 TRACE network.ChatServicesRpcProxy 174 sendRequest - Enter --- scriere: Request{type='LOGIN', data='UserDTO[ion ion]'}
-30 Mar 2020 22:35:53,656 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest Request{type='LOGIN', data='UserDTO[ion ion]'} @2020-03-30
-30 Mar 2020 22:35:53,656 TRACE network.ChatServicesRpcProxy 54 login - PROXY CLIENT: login SENT REQUEST @2020-03-30
-30 Mar 2020 22:35:53,657 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
-30 Mar 2020 22:35:53,657 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
-30 Mar 2020 22:35:53,894 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
-30 Mar 2020 22:35:53,896 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='LOGIN', data='UserDTO[ion ion]'}
-30 Mar 2020 22:35:53,897 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
-30 Mar 2020 22:35:53,897 TRACE protocols.ChatClientRpcWorker 99 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.LOGIN @2020-03-30
-30 Mar 2020 22:35:53,898 TRACE server.ChatServicesImpl 59 login - FULL SERVER: login RECEIVED COMMAND @2020-03-30
-30 Mar 2020 22:35:53,898 TRACE repos.ClientDataBaseRepository 29 findClientByCredentials - Enter entry find
-30 Mar 2020 22:35:53,898 TRACE repos.ClientDataBaseRepository 35 findClientByCredentials - Enter entry query
-30 Mar 2020 22:35:53,901 INFO  repos.ClientDataBaseRepository 40 findClientByCredentials - successful query
-30 Mar 2020 22:35:53,901 TRACE repos.ClientDataBaseRepository 42 findClientByCredentials - Exit: successful exit
-30 Mar 2020 22:35:53,902 TRACE server.ChatServicesImpl 67 login - FULL SERVER: login SENT RETURN TO SERVER PROXY @2020-03-30
-30 Mar 2020 22:35:53,902 TRACE protocols.ChatClientRpcWorker 105 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.login @2020-03-30
-30 Mar 2020 22:35:53,902 DEBUG protocols.ChatClientRpcWorker 189 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
-30 Mar 2020 22:35:53,902 TRACE protocols.ChatClientRpcWorker 190 sendResponse - Enter --- scriere: Response{type='OK', data='null'}
-30 Mar 2020 22:35:53,903 TRACE protocols.ChatClientRpcWorker 193 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
-30 Mar 2020 22:35:53,903 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
-30 Mar 2020 22:35:53,903 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
-30 Mar 2020 22:35:53,903 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) Response{type='OK', data='null'} @2020-03-30
-30 Mar 2020 22:35:53,904 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='OK', data='null'}
-30 Mar 2020 22:35:53,904 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='OK', data='null'} @2020-03-30
-30 Mar 2020 22:35:53,905 TRACE network.ChatServicesRpcProxy 56 login - PROXY CLIENT: login RECEIVED RESPONSE @2020-03-30
-30 Mar 2020 22:35:53,905 TRACE network.ChatServicesRpcProxy 59 login - Exit with(PROXY CLIENT: SUCCESSFUL login @2020-03-30)
-30 Mar 2020 22:35:54,154 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
-30 Mar 2020 22:36:10,491 TRACE network.ChatServicesRpcProxy 42 <init> - CLIENT SIDE PROXY INIT @2020-03-30
-30 Mar 2020 22:36:16,053 TRACE network.ChatServicesRpcProxy 204 initializeConnection - Enter PROXY CLIENT: INITIALIZING initializeConnection @2020-03-30
-30 Mar 2020 22:36:16,061 TRACE protocols.ChatClientRpcWorker 35 <init> - Exit with(PROXY SERVER: SUCCESSFUL ChatClientRpcWorker @2020-03-30)
-30 Mar 2020 22:36:16,062 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
-30 Mar 2020 22:36:16,065 TRACE network.ChatServicesRpcProxy 212 initializeConnection - Exit with(PROXY CLIENT: SUCCESSFUL initializeConnection @2020-03-30)
-30 Mar 2020 22:36:16,070 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest Request{type='GET_MATCHES', data='null'} @2020-03-30
-30 Mar 2020 22:36:16,071 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
-30 Mar 2020 22:36:16,071 TRACE network.ChatServicesRpcProxy 174 sendRequest - Enter --- scriere: Request{type='GET_MATCHES', data='null'}
-30 Mar 2020 22:36:16,076 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='GET_MATCHES', data='null'}
-30 Mar 2020 22:36:16,077 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
-30 Mar 2020 22:36:16,077 TRACE protocols.ChatClientRpcWorker 131 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.GET_MATCHES @2020-03-30
-30 Mar 2020 22:36:16,077 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest Request{type='GET_MATCHES', data='null'} @2020-03-30
-30 Mar 2020 22:36:16,078 TRACE server.ChatServicesImpl 102 findAllMeci - FULL SERVER: findAllMeci RECEIVED COMMAND @2020-03-30
-30 Mar 2020 22:36:16,078 TRACE repos.MeciDataBaseRepository 70 findAll - Enter entry findAll
-30 Mar 2020 22:36:16,078 TRACE network.ChatServicesRpcProxy 114 findAllMeci - PROXY CLIENT: findAllMeci SENT REQUEST @2020-03-30
-30 Mar 2020 22:36:16,078 TRACE repos.MeciDataBaseRepository 73 findAll - Enter entry query
-30 Mar 2020 22:36:16,079 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
-30 Mar 2020 22:36:16,079 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
-30 Mar 2020 22:36:16,081 INFO  repos.MeciDataBaseRepository 99 findAll - successful query
-30 Mar 2020 22:36:16,081 TRACE repos.MeciDataBaseRepository 104 findAll - Exit: successful exit
-30 Mar 2020 22:36:16,081 TRACE server.ChatServicesImpl 110 findAllMeci - FULL SERVER: findAllMeci SENT RETURN TO SERVER PROXY @2020-03-30
-30 Mar 2020 22:36:16,082 TRACE protocols.ChatClientRpcWorker 136 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.findAllMeci @2020-03-30
-30 Mar 2020 22:36:16,082 DEBUG protocols.ChatClientRpcWorker 189 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
-30 Mar 2020 22:36:16,082 TRACE protocols.ChatClientRpcWorker 190 sendResponse - Enter --- scriere: Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@73bc42e9'}
-30 Mar 2020 22:36:16,086 TRACE protocols.ChatClientRpcWorker 193 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
-30 Mar 2020 22:36:16,087 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
-30 Mar 2020 22:36:16,095 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
-30 Mar 2020 22:36:16,097 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@7888607c'} @2020-03-30
-30 Mar 2020 22:36:16,097 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@7888607c'}
-30 Mar 2020 22:36:16,097 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@7888607c'} @2020-03-30
-30 Mar 2020 22:36:16,098 TRACE network.ChatServicesRpcProxy 116 findAllMeci - PROXY CLIENT: findAllMeci RECEIVED RESPONSE @2020-03-30
-30 Mar 2020 22:36:16,099 TRACE network.ChatServicesRpcProxy 124 findAllMeci - Exit with(PROXY CLIENT: SUCCESSFUL findAllMeci @2020-03-30)
-30 Mar 2020 22:36:16,100 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest Request{type='LOGIN', data='UserDTO[liviu rebreanu 1234]'} @2020-03-30
-30 Mar 2020 22:36:16,101 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
-30 Mar 2020 22:36:16,101 TRACE network.ChatServicesRpcProxy 174 sendRequest - Enter --- scriere: Request{type='LOGIN', data='UserDTO[liviu rebreanu 1234]'}
-30 Mar 2020 22:36:16,105 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest Request{type='LOGIN', data='UserDTO[liviu rebreanu 1234]'} @2020-03-30
-30 Mar 2020 22:36:16,105 TRACE network.ChatServicesRpcProxy 54 login - PROXY CLIENT: login SENT REQUEST @2020-03-30
-30 Mar 2020 22:36:16,106 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
-30 Mar 2020 22:36:16,106 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
-30 Mar 2020 22:36:16,337 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
-30 Mar 2020 22:36:16,337 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='LOGIN', data='UserDTO[liviu rebreanu 1234]'}
-30 Mar 2020 22:36:16,338 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
-30 Mar 2020 22:36:16,338 TRACE protocols.ChatClientRpcWorker 99 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.LOGIN @2020-03-30
-30 Mar 2020 22:36:16,338 TRACE server.ChatServicesImpl 59 login - FULL SERVER: login RECEIVED COMMAND @2020-03-30
-30 Mar 2020 22:36:16,338 TRACE repos.ClientDataBaseRepository 29 findClientByCredentials - Enter entry find
-30 Mar 2020 22:36:16,338 TRACE repos.ClientDataBaseRepository 35 findClientByCredentials - Enter entry query
-30 Mar 2020 22:36:16,339 INFO  repos.ClientDataBaseRepository 40 findClientByCredentials - successful query
-30 Mar 2020 22:36:16,340 TRACE repos.ClientDataBaseRepository 42 findClientByCredentials - Exit: successful exit
-30 Mar 2020 22:36:16,340 TRACE server.ChatServicesImpl 67 login - FULL SERVER: login SENT RETURN TO SERVER PROXY @2020-03-30
-30 Mar 2020 22:36:16,340 TRACE protocols.ChatClientRpcWorker 105 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.login @2020-03-30
-30 Mar 2020 22:36:16,340 DEBUG protocols.ChatClientRpcWorker 189 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
-30 Mar 2020 22:36:16,340 TRACE protocols.ChatClientRpcWorker 190 sendResponse - Enter --- scriere: Response{type='OK', data='null'}
-30 Mar 2020 22:36:16,341 TRACE protocols.ChatClientRpcWorker 193 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
-30 Mar 2020 22:36:16,341 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
-30 Mar 2020 22:36:16,341 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
-30 Mar 2020 22:36:16,341 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) Response{type='OK', data='null'} @2020-03-30
-30 Mar 2020 22:36:16,342 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='OK', data='null'}
-30 Mar 2020 22:36:16,342 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='OK', data='null'} @2020-03-30
-30 Mar 2020 22:36:16,343 TRACE network.ChatServicesRpcProxy 56 login - PROXY CLIENT: login RECEIVED RESPONSE @2020-03-30
-30 Mar 2020 22:36:16,343 TRACE network.ChatServicesRpcProxy 59 login - Exit with(PROXY CLIENT: SUCCESSFUL login @2020-03-30)
-30 Mar 2020 22:36:16,592 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
-30 Mar 2020 22:36:27,005 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest Request{type='TICKETS_SOLD', data='[Ljava.lang.Object;@33df8cfd'} @2020-03-30
-30 Mar 2020 22:36:27,006 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
-30 Mar 2020 22:36:27,007 TRACE network.ChatServicesRpcProxy 174 sendRequest - Enter --- scriere: Request{type='TICKETS_SOLD', data='[Ljava.lang.Object;@33df8cfd'}
-30 Mar 2020 22:36:27,009 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest Request{type='TICKETS_SOLD', data='[Ljava.lang.Object;@33df8cfd'} @2020-03-30
-30 Mar 2020 22:36:27,009 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='TICKETS_SOLD', data='[Ljava.lang.Object;@2f8f4dab'}
-30 Mar 2020 22:36:27,010 TRACE network.ChatServicesRpcProxy 138 ticketsSold - PROXY CLIENT: ticketsSold SENT REQUEST @2020-03-30 WARNING: THIS FUNCTION HAS NO RESPONSE!!!
-30 Mar 2020 22:36:27,010 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
-30 Mar 2020 22:36:27,010 TRACE protocols.ChatClientRpcWorker 163 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.TICKETS_SOLD @2020-03-30
-30 Mar 2020 22:36:27,010 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
-30 Mar 2020 22:36:27,010 TRACE server.ChatServicesImpl 117 ticketsSold - FULL SERVER: ticketsSold RECEIVED COMMAND @2020-03-30
-30 Mar 2020 22:36:27,010 TRACE repos.MeciDataBaseRepository 168 update - Enter entry update
-30 Mar 2020 22:36:27,010 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
-30 Mar 2020 22:36:27,011 INFO  repos.MeciDataBaseRepository 174 update - validated data
-30 Mar 2020 22:36:27,011 TRACE repos.MeciDataBaseRepository 29 findOne - Enter entry find
-30 Mar 2020 22:36:27,011 TRACE repos.MeciDataBaseRepository 35 findOne - Enter entry query
-30 Mar 2020 22:36:27,013 INFO  repos.MeciDataBaseRepository 58 findOne - successful query
-30 Mar 2020 22:36:27,013 TRACE repos.MeciDataBaseRepository 60 findOne - Exit: successful exit
-30 Mar 2020 22:36:27,013 TRACE repos.MeciDataBaseRepository 29 findOne - Enter entry find
-30 Mar 2020 22:36:27,013 TRACE repos.MeciDataBaseRepository 35 findOne - Enter entry query
-30 Mar 2020 22:36:27,014 INFO  repos.MeciDataBaseRepository 58 findOne - successful query
-30 Mar 2020 22:36:27,015 TRACE repos.MeciDataBaseRepository 60 findOne - Exit: successful exit
-30 Mar 2020 22:36:27,015 INFO  repos.MeciDataBaseRepository 177 update - found data
-30 Mar 2020 22:36:27,015 TRACE repos.MeciDataBaseRepository 179 update - Enter entry query
-30 Mar 2020 22:36:27,019 TRACE repos.MeciDataBaseRepository 187 update - Exit: successful query
-30 Mar 2020 22:36:27,019 TRACE repos.MeciDataBaseRepository 192 update - Exit: successful query
-30 Mar 2020 22:36:27,019 TRACE repos.BiletDataBaseRepository 57 findAll - Enter entry findAll
-30 Mar 2020 22:36:27,020 TRACE repos.BiletDataBaseRepository 60 findAll - Enter entry query
-30 Mar 2020 22:36:27,026 INFO  repos.BiletDataBaseRepository 71 findAll - successful query
-30 Mar 2020 22:36:27,027 TRACE repos.BiletDataBaseRepository 76 findAll - Exit: successful exit
-30 Mar 2020 22:36:27,028 TRACE repos.BiletDataBaseRepository 135 update - Enter entry update
-30 Mar 2020 22:36:27,029 INFO  repos.BiletDataBaseRepository 141 update - validated data
-30 Mar 2020 22:36:27,029 TRACE repos.BiletDataBaseRepository 31 findOne - Enter entry find
-30 Mar 2020 22:36:27,029 TRACE repos.BiletDataBaseRepository 37 findOne - Enter entry query
-30 Mar 2020 22:36:27,031 INFO  repos.BiletDataBaseRepository 45 findOne - successful query
-30 Mar 2020 22:36:27,031 TRACE repos.BiletDataBaseRepository 47 findOne - Exit: successful exit
-30 Mar 2020 22:36:27,031 TRACE repos.BiletDataBaseRepository 31 findOne - Enter entry find
-30 Mar 2020 22:36:27,031 TRACE repos.BiletDataBaseRepository 37 findOne - Enter entry query
-30 Mar 2020 22:36:27,032 INFO  repos.BiletDataBaseRepository 45 findOne - successful query
-30 Mar 2020 22:36:27,033 TRACE repos.BiletDataBaseRepository 47 findOne - Exit: successful exit
-30 Mar 2020 22:36:27,033 INFO  repos.BiletDataBaseRepository 144 update - found data
-30 Mar 2020 22:36:27,033 TRACE repos.BiletDataBaseRepository 146 update - Enter entry query
-30 Mar 2020 22:36:27,037 TRACE repos.BiletDataBaseRepository 153 update - Exit: successful query
-30 Mar 2020 22:36:27,037 TRACE repos.BiletDataBaseRepository 158 update - Exit: successful query
-30 Mar 2020 22:36:27,038 TRACE server.ChatServicesImpl 142 ticketsSold - FULL SERVER: ticketsSold SENT OBSERVER COMMAND TO notifyTicketsBought @2020-03-30
-30 Mar 2020 22:36:27,039 TRACE protocols.ChatClientRpcWorker 172 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.ticketsSold @2020-03-30
-30 Mar 2020 22:36:27,039 DEBUG protocols.ChatClientRpcWorker 189 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
-30 Mar 2020 22:36:27,039 TRACE protocols.ChatClientRpcWorker 190 sendResponse - Enter --- scriere: Response{type='TICKETS_SOLD', data='dto.MeciDTO@2c4751a1'}
-30 Mar 2020 22:36:27,040 TRACE protocols.ChatClientRpcWorker 193 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
-30 Mar 2020 22:36:27,040 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
-30 Mar 2020 22:36:27,040 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
-30 Mar 2020 22:36:27,040 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) Response{type='TICKETS_SOLD', data='dto.MeciDTO@7c99d361'} @2020-03-30
-30 Mar 2020 22:36:27,041 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='TICKETS_SOLD', data='dto.MeciDTO@7c99d361'}
-30 Mar 2020 22:36:27,041 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='TICKETS_SOLD', data='dto.MeciDTO@7c99d361'} @2020-03-30
-30 Mar 2020 22:36:27,042 TRACE network.ChatServicesRpcProxy 144 ticketsSold - Exit with(PROXY CLIENT: SUCCESSFUL ticketsSold @2020-03-30 WARNING: THIS FUNCTION HAS NO RESPONSE!!!)
-30 Mar 2020 22:36:27,290 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
-30 Mar 2020 22:36:28,038 TRACE repos.ClientDataBaseRepository 76 findAll - Enter entry findAll
-30 Mar 2020 22:36:28,038 TRACE repos.ClientDataBaseRepository 79 findAll - Enter entry query
-30 Mar 2020 22:36:28,039 INFO  repos.ClientDataBaseRepository 87 findAll - successful query
-30 Mar 2020 22:36:28,040 TRACE repos.ClientDataBaseRepository 92 findAll - Exit: successful exit
-30 Mar 2020 22:36:28,040 TRACE server.ChatServicesImpl 39 notifyTicketsBought - FULL SERVER: login RECEIVED !OBSERVER! COMMAND @2020-03-30
-30 Mar 2020 22:36:28,042 TRACE protocols.ChatClientRpcWorker 83 notifyTicketsSold - PROXY SERVER: ticketsSold BUILT RESPONSE @2020-03-30
-30 Mar 2020 22:36:28,042 TRACE protocols.ChatClientRpcWorker 83 notifyTicketsSold - PROXY SERVER: ticketsSold BUILT RESPONSE @2020-03-30
-30 Mar 2020 22:36:28,043 DEBUG protocols.ChatClientRpcWorker 189 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
-30 Mar 2020 22:36:28,043 DEBUG protocols.ChatClientRpcWorker 189 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
-30 Mar 2020 22:36:28,043 TRACE protocols.ChatClientRpcWorker 190 sendResponse - Enter --- scriere: Response{type='UPDATE_TICKETS_IN_CLIENT_MATCH', data='dto.MeciDTO@3ca4b4e'}
-30 Mar 2020 22:36:28,043 TRACE protocols.ChatClientRpcWorker 190 sendResponse - Enter --- scriere: Response{type='UPDATE_TICKETS_IN_CLIENT_MATCH', data='dto.MeciDTO@7e44647e'}
-30 Mar 2020 22:36:28,044 TRACE protocols.ChatClientRpcWorker 193 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
-30 Mar 2020 22:36:28,044 TRACE protocols.ChatClientRpcWorker 193 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
-30 Mar 2020 22:36:28,044 TRACE protocols.ChatClientRpcWorker 87 notifyTicketsSold - Exit: PROXY SERVER: ticketsSold SENT RESPONSE @2020-03-30
-30 Mar 2020 22:36:28,044 TRACE protocols.ChatClientRpcWorker 87 notifyTicketsSold - Exit: PROXY SERVER: ticketsSold SENT RESPONSE @2020-03-30
-30 Mar 2020 22:36:28,044 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
-30 Mar 2020 22:36:28,044 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
-30 Mar 2020 22:36:28,044 TRACE network.ChatServicesRpcProxy$ReaderThread 253 run - Enter PROXY CLIENT: TRACE isUpdate((Response)response) == true Response{type='UPDATE_TICKETS_IN_CLIENT_MATCH', data='dto.MeciDTO@7f02ee38'} @2020-03-30
-30 Mar 2020 22:36:28,045 TRACE network.ChatServicesRpcProxy$ReaderThread 253 run - Enter PROXY CLIENT: TRACE isUpdate((Response)response) == true Response{type='UPDATE_TICKETS_IN_CLIENT_MATCH', data='dto.MeciDTO@644d1d4c'} @2020-03-30
-30 Mar 2020 22:36:37,485 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest Request{type='LOGOUT', data='UserDTO[liviu rebreanu 1234]'} @2020-03-30
-30 Mar 2020 22:36:37,485 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
-30 Mar 2020 22:36:37,485 TRACE network.ChatServicesRpcProxy 174 sendRequest - Enter --- scriere: Request{type='LOGOUT', data='UserDTO[liviu rebreanu 1234]'}
-30 Mar 2020 22:36:37,486 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest Request{type='LOGOUT', data='UserDTO[liviu rebreanu 1234]'} @2020-03-30
-30 Mar 2020 22:36:37,486 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='LOGOUT', data='UserDTO[liviu rebreanu 1234]'}
-30 Mar 2020 22:36:37,486 TRACE network.ChatServicesRpcProxy 75 logout - PROXY CLIENT: logout SENT REQUEST @2020-03-30
-30 Mar 2020 22:36:37,487 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
-30 Mar 2020 22:36:37,487 TRACE protocols.ChatClientRpcWorker 114 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.LOGOUT @2020-03-30
-30 Mar 2020 22:36:37,487 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
-30 Mar 2020 22:36:37,487 TRACE server.ChatServicesImpl 73 logout - FULL SERVER: logout RECEIVED COMMAND @2020-03-30
-30 Mar 2020 22:36:37,487 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
-30 Mar 2020 22:36:37,487 TRACE server.ChatServicesImpl 77 logout - FULL SERVER: logout SENT RETURN TO SERVER PROXY @2020-03-30
-30 Mar 2020 22:36:37,487 TRACE protocols.ChatClientRpcWorker 121 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.logout @2020-03-30
-30 Mar 2020 22:36:37,488 DEBUG protocols.ChatClientRpcWorker 189 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
-30 Mar 2020 22:36:37,488 TRACE protocols.ChatClientRpcWorker 190 sendResponse - Enter --- scriere: Response{type='OK', data='null'}
-30 Mar 2020 22:36:37,488 TRACE protocols.ChatClientRpcWorker 193 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
-30 Mar 2020 22:36:37,488 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
-30 Mar 2020 22:36:37,488 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
-30 Mar 2020 22:36:37,489 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) Response{type='OK', data='null'} @2020-03-30
-30 Mar 2020 22:36:37,489 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='OK', data='null'}
-30 Mar 2020 22:36:37,489 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='OK', data='null'} @2020-03-30
-30 Mar 2020 22:36:37,490 TRACE network.ChatServicesRpcProxy 77 logout - PROXY CLIENT: logout RECEIVED RESPONSE @2020-03-30
-30 Mar 2020 22:36:37,491 TRACE network.ChatServicesRpcProxy 155 closeConnection - Exit with(PROXY CLIENT: SUCCESSFUL closeConnection @2020-03-30)
-30 Mar 2020 22:36:37,491 TRACE network.ChatServicesRpcProxy$ReaderThread 264 run - Exit: PROXY CLIENT: FAILED run (because other end of socket disconnected from server) : IOException java.net.SocketException: Socket closed @2020-03-30
-30 Mar 2020 22:36:37,491 TRACE network.ChatServicesRpcProxy 80 logout - Exit with(PROXY CLIENT: SUCCESSFUL logout @2020-03-30)
-30 Mar 2020 22:36:37,739 TRACE protocols.ChatClientRpcWorker 67 run - Exit with(PROXY SERVER: run : BEGIN SHUTDOWN @2020-03-30)
-30 Mar 2020 22:36:37,740 TRACE protocols.ChatClientRpcWorker 71 run - Exit with(PROXY SERVER: run : COMPLETED SHUTDOWN @2020-03-30)
-30 Mar 2020 22:36:45,102 TRACE network.ChatServicesRpcProxy 204 initializeConnection - Enter PROXY CLIENT: INITIALIZING initializeConnection @2020-03-30
-30 Mar 2020 22:36:45,103 TRACE protocols.ChatClientRpcWorker 35 <init> - Exit with(PROXY SERVER: SUCCESSFUL ChatClientRpcWorker @2020-03-30)
-30 Mar 2020 22:36:45,104 TRACE network.ChatServicesRpcProxy 212 initializeConnection - Exit with(PROXY CLIENT: SUCCESSFUL initializeConnection @2020-03-30)
-30 Mar 2020 22:36:45,104 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
-30 Mar 2020 22:36:45,104 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest Request{type='GET_MATCHES', data='null'} @2020-03-30
-30 Mar 2020 22:36:45,105 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
-30 Mar 2020 22:36:45,105 TRACE network.ChatServicesRpcProxy 174 sendRequest - Enter --- scriere: Request{type='GET_MATCHES', data='null'}
-30 Mar 2020 22:36:45,106 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest Request{type='GET_MATCHES', data='null'} @2020-03-30
-30 Mar 2020 22:36:45,106 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='GET_MATCHES', data='null'}
-30 Mar 2020 22:36:45,106 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
-30 Mar 2020 22:36:45,107 TRACE network.ChatServicesRpcProxy 114 findAllMeci - PROXY CLIENT: findAllMeci SENT REQUEST @2020-03-30
-30 Mar 2020 22:36:45,107 TRACE protocols.ChatClientRpcWorker 131 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.GET_MATCHES @2020-03-30
-30 Mar 2020 22:36:45,107 TRACE server.ChatServicesImpl 102 findAllMeci - FULL SERVER: findAllMeci RECEIVED COMMAND @2020-03-30
-30 Mar 2020 22:36:45,107 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
-30 Mar 2020 22:36:45,107 TRACE repos.MeciDataBaseRepository 70 findAll - Enter entry findAll
-30 Mar 2020 22:36:45,107 TRACE repos.MeciDataBaseRepository 73 findAll - Enter entry query
-30 Mar 2020 22:36:45,107 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
-30 Mar 2020 22:36:45,109 INFO  repos.MeciDataBaseRepository 99 findAll - successful query
-30 Mar 2020 22:36:45,109 TRACE repos.MeciDataBaseRepository 104 findAll - Exit: successful exit
-30 Mar 2020 22:36:45,109 TRACE server.ChatServicesImpl 110 findAllMeci - FULL SERVER: findAllMeci SENT RETURN TO SERVER PROXY @2020-03-30
-30 Mar 2020 22:36:45,110 TRACE protocols.ChatClientRpcWorker 136 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.findAllMeci @2020-03-30
-30 Mar 2020 22:36:45,110 DEBUG protocols.ChatClientRpcWorker 189 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
-30 Mar 2020 22:36:45,110 TRACE protocols.ChatClientRpcWorker 190 sendResponse - Enter --- scriere: Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@65970386'}
-30 Mar 2020 22:36:45,112 TRACE protocols.ChatClientRpcWorker 193 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
-30 Mar 2020 22:36:45,113 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
-30 Mar 2020 22:36:45,113 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
-30 Mar 2020 22:36:45,114 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@21ecc280'} @2020-03-30
-30 Mar 2020 22:36:45,114 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@21ecc280'}
-30 Mar 2020 22:36:45,115 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@21ecc280'} @2020-03-30
-30 Mar 2020 22:36:45,115 TRACE network.ChatServicesRpcProxy 116 findAllMeci - PROXY CLIENT: findAllMeci RECEIVED RESPONSE @2020-03-30
-30 Mar 2020 22:36:45,115 TRACE network.ChatServicesRpcProxy 124 findAllMeci - Exit with(PROXY CLIENT: SUCCESSFUL findAllMeci @2020-03-30)
-30 Mar 2020 22:36:45,116 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest Request{type='LOGIN', data='UserDTO[liviu rebreanu 1234]'} @2020-03-30
-30 Mar 2020 22:36:45,116 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
-30 Mar 2020 22:36:45,116 TRACE network.ChatServicesRpcProxy 174 sendRequest - Enter --- scriere: Request{type='LOGIN', data='UserDTO[liviu rebreanu 1234]'}
-30 Mar 2020 22:36:45,116 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest Request{type='LOGIN', data='UserDTO[liviu rebreanu 1234]'} @2020-03-30
-30 Mar 2020 22:36:45,117 TRACE network.ChatServicesRpcProxy 54 login - PROXY CLIENT: login SENT REQUEST @2020-03-30
-30 Mar 2020 22:36:45,117 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
-30 Mar 2020 22:36:45,117 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
-30 Mar 2020 22:36:45,364 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
-30 Mar 2020 22:36:45,365 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='LOGIN', data='UserDTO[liviu rebreanu 1234]'}
-30 Mar 2020 22:36:45,365 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
-30 Mar 2020 22:36:45,365 TRACE protocols.ChatClientRpcWorker 99 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.LOGIN @2020-03-30
-30 Mar 2020 22:36:45,365 TRACE server.ChatServicesImpl 59 login - FULL SERVER: login RECEIVED COMMAND @2020-03-30
-30 Mar 2020 22:36:45,366 TRACE repos.ClientDataBaseRepository 29 findClientByCredentials - Enter entry find
-30 Mar 2020 22:36:45,366 TRACE repos.ClientDataBaseRepository 35 findClientByCredentials - Enter entry query
-30 Mar 2020 22:36:45,367 INFO  repos.ClientDataBaseRepository 40 findClientByCredentials - successful query
-30 Mar 2020 22:36:45,367 TRACE repos.ClientDataBaseRepository 42 findClientByCredentials - Exit: successful exit
-30 Mar 2020 22:36:45,367 TRACE server.ChatServicesImpl 67 login - FULL SERVER: login SENT RETURN TO SERVER PROXY @2020-03-30
-30 Mar 2020 22:36:45,367 TRACE protocols.ChatClientRpcWorker 105 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.login @2020-03-30
-30 Mar 2020 22:36:45,367 DEBUG protocols.ChatClientRpcWorker 189 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
-30 Mar 2020 22:36:45,368 TRACE protocols.ChatClientRpcWorker 190 sendResponse - Enter --- scriere: Response{type='OK', data='null'}
-30 Mar 2020 22:36:45,368 TRACE protocols.ChatClientRpcWorker 193 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
-30 Mar 2020 22:36:45,368 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
-30 Mar 2020 22:36:45,368 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
-30 Mar 2020 22:36:45,369 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) Response{type='OK', data='null'} @2020-03-30
-30 Mar 2020 22:36:45,369 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='OK', data='null'}
-30 Mar 2020 22:36:45,369 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='OK', data='null'} @2020-03-30
-30 Mar 2020 22:36:45,370 TRACE network.ChatServicesRpcProxy 56 login - PROXY CLIENT: login RECEIVED RESPONSE @2020-03-30
-30 Mar 2020 22:36:45,370 TRACE network.ChatServicesRpcProxy 59 login - Exit with(PROXY CLIENT: SUCCESSFUL login @2020-03-30)
-30 Mar 2020 22:36:45,618 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
-30 Mar 2020 22:36:50,067 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest Request{type='LOGOUT', data='UserDTO[liviu rebreanu 1234]'} @2020-03-30
-30 Mar 2020 22:36:50,067 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
-30 Mar 2020 22:36:50,067 TRACE network.ChatServicesRpcProxy 174 sendRequest - Enter --- scriere: Request{type='LOGOUT', data='UserDTO[liviu rebreanu 1234]'}
-30 Mar 2020 22:36:50,068 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest Request{type='LOGOUT', data='UserDTO[liviu rebreanu 1234]'} @2020-03-30
-30 Mar 2020 22:36:50,068 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='LOGOUT', data='UserDTO[liviu rebreanu 1234]'}
-30 Mar 2020 22:36:50,068 TRACE network.ChatServicesRpcProxy 75 logout - PROXY CLIENT: logout SENT REQUEST @2020-03-30
-30 Mar 2020 22:36:50,068 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
-30 Mar 2020 22:36:50,068 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
-30 Mar 2020 22:36:50,069 TRACE protocols.ChatClientRpcWorker 114 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.LOGOUT @2020-03-30
-30 Mar 2020 22:36:50,069 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
-30 Mar 2020 22:36:50,069 TRACE server.ChatServicesImpl 73 logout - FULL SERVER: logout RECEIVED COMMAND @2020-03-30
-30 Mar 2020 22:36:50,069 TRACE server.ChatServicesImpl 77 logout - FULL SERVER: logout SENT RETURN TO SERVER PROXY @2020-03-30
-30 Mar 2020 22:36:50,069 TRACE protocols.ChatClientRpcWorker 121 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.logout @2020-03-30
-30 Mar 2020 22:36:50,069 DEBUG protocols.ChatClientRpcWorker 189 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
-30 Mar 2020 22:36:50,070 TRACE protocols.ChatClientRpcWorker 190 sendResponse - Enter --- scriere: Response{type='OK', data='null'}
-30 Mar 2020 22:36:50,070 TRACE protocols.ChatClientRpcWorker 193 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
-30 Mar 2020 22:36:50,070 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
-30 Mar 2020 22:36:50,071 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
-30 Mar 2020 22:36:50,071 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) Response{type='OK', data='null'} @2020-03-30
-30 Mar 2020 22:36:50,071 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='OK', data='null'}
-30 Mar 2020 22:36:50,071 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='OK', data='null'} @2020-03-30
-30 Mar 2020 22:36:50,072 TRACE network.ChatServicesRpcProxy 77 logout - PROXY CLIENT: logout RECEIVED RESPONSE @2020-03-30
-30 Mar 2020 22:36:50,072 TRACE network.ChatServicesRpcProxy 155 closeConnection - Exit with(PROXY CLIENT: SUCCESSFUL closeConnection @2020-03-30)
-30 Mar 2020 22:36:50,072 TRACE network.ChatServicesRpcProxy$ReaderThread 264 run - Exit: PROXY CLIENT: FAILED run (because other end of socket disconnected from server) : IOException java.net.SocketException: Socket closed @2020-03-30
-30 Mar 2020 22:36:50,073 TRACE network.ChatServicesRpcProxy 80 logout - Exit with(PROXY CLIENT: SUCCESSFUL logout @2020-03-30)
-30 Mar 2020 22:36:50,321 TRACE protocols.ChatClientRpcWorker 67 run - Exit with(PROXY SERVER: run : BEGIN SHUTDOWN @2020-03-30)
-30 Mar 2020 22:36:50,322 TRACE protocols.ChatClientRpcWorker 71 run - Exit with(PROXY SERVER: run : COMPLETED SHUTDOWN @2020-03-30)
-30 Mar 2020 22:36:52,830 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest Request{type='LOGOUT', data='UserDTO[ion ion]'} @2020-03-30
-30 Mar 2020 22:36:52,831 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
-30 Mar 2020 22:36:52,831 TRACE network.ChatServicesRpcProxy 174 sendRequest - Enter --- scriere: Request{type='LOGOUT', data='UserDTO[ion ion]'}
-30 Mar 2020 22:36:52,831 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest Request{type='LOGOUT', data='UserDTO[ion ion]'} @2020-03-30
-30 Mar 2020 22:36:52,832 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='LOGOUT', data='UserDTO[ion ion]'}
-30 Mar 2020 22:36:52,832 TRACE network.ChatServicesRpcProxy 75 logout - PROXY CLIENT: logout SENT REQUEST @2020-03-30
-30 Mar 2020 22:36:52,832 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
-30 Mar 2020 22:36:52,832 TRACE protocols.ChatClientRpcWorker 114 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.LOGOUT @2020-03-30
-30 Mar 2020 22:36:52,832 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
-30 Mar 2020 22:36:52,832 TRACE server.ChatServicesImpl 73 logout - FULL SERVER: logout RECEIVED COMMAND @2020-03-30
-30 Mar 2020 22:36:52,832 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
-30 Mar 2020 22:36:52,833 TRACE server.ChatServicesImpl 77 logout - FULL SERVER: logout SENT RETURN TO SERVER PROXY @2020-03-30
-30 Mar 2020 22:36:52,833 TRACE protocols.ChatClientRpcWorker 121 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.logout @2020-03-30
-30 Mar 2020 22:36:52,833 DEBUG protocols.ChatClientRpcWorker 189 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
-30 Mar 2020 22:36:52,833 TRACE protocols.ChatClientRpcWorker 190 sendResponse - Enter --- scriere: Response{type='OK', data='null'}
-30 Mar 2020 22:36:52,834 TRACE protocols.ChatClientRpcWorker 193 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
-30 Mar 2020 22:36:52,834 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
-30 Mar 2020 22:36:52,834 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
-30 Mar 2020 22:36:52,834 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) Response{type='OK', data='null'} @2020-03-30
-30 Mar 2020 22:36:52,834 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='OK', data='null'}
-30 Mar 2020 22:36:52,835 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='OK', data='null'} @2020-03-30
-30 Mar 2020 22:36:52,835 TRACE network.ChatServicesRpcProxy 77 logout - PROXY CLIENT: logout RECEIVED RESPONSE @2020-03-30
-30 Mar 2020 22:36:52,835 TRACE network.ChatServicesRpcProxy 155 closeConnection - Exit with(PROXY CLIENT: SUCCESSFUL closeConnection @2020-03-30)
-30 Mar 2020 22:36:52,836 TRACE network.ChatServicesRpcProxy$ReaderThread 264 run - Exit: PROXY CLIENT: FAILED run (because other end of socket disconnected from server) : IOException java.net.SocketException: Socket closed @2020-03-30
-30 Mar 2020 22:36:52,836 TRACE network.ChatServicesRpcProxy 80 logout - Exit with(PROXY CLIENT: SUCCESSFUL logout @2020-03-30)
-30 Mar 2020 22:36:53,085 TRACE protocols.ChatClientRpcWorker 67 run - Exit with(PROXY SERVER: run : BEGIN SHUTDOWN @2020-03-30)
-30 Mar 2020 22:36:53,086 TRACE protocols.ChatClientRpcWorker 71 run - Exit with(PROXY SERVER: run : COMPLETED SHUTDOWN @2020-03-30)
+30 Mar 2020 23:29:04,222 TRACE repos.ClientDataBaseRepository 22 <init> - Enter entry constructor
+30 Mar 2020 23:29:04,225 TRACE repos.JDBCInvariant 27 getConnection - Enter entry constructor
+30 Mar 2020 23:29:04,308 INFO  repos.JDBCInvariant 31 getConnection - successful connection
+30 Mar 2020 23:29:04,310 TRACE repos.JDBCInvariant 37 getConnection - Exit: successful exit
+30 Mar 2020 23:29:04,310 TRACE repos.ClientDataBaseRepository 25 <init> - Exit with(successful constructor exit)
+30 Mar 2020 23:29:04,312 TRACE repos.MeciDataBaseRepository 21 <init> - Enter entry constructor
+30 Mar 2020 23:29:04,312 TRACE repos.JDBCInvariant 27 getConnection - Enter entry constructor
+30 Mar 2020 23:29:04,361 INFO  repos.JDBCInvariant 31 getConnection - successful connection
+30 Mar 2020 23:29:04,368 TRACE repos.JDBCInvariant 37 getConnection - Exit: successful exit
+30 Mar 2020 23:29:04,369 TRACE repos.MeciDataBaseRepository 24 <init> - Exit with(successful constructor exit)
+30 Mar 2020 23:29:04,370 TRACE repos.BiletDataBaseRepository 23 <init> - Enter entry constructor
+30 Mar 2020 23:29:04,371 TRACE repos.JDBCInvariant 27 getConnection - Enter entry constructor
+30 Mar 2020 23:29:04,420 INFO  repos.JDBCInvariant 31 getConnection - successful connection
+30 Mar 2020 23:29:04,420 TRACE repos.JDBCInvariant 37 getConnection - Exit: successful exit
+30 Mar 2020 23:29:04,421 TRACE repos.BiletDataBaseRepository 26 <init> - Exit with(successful constructor exit)
+30 Mar 2020 23:29:12,528 TRACE network.ChatServicesRpcProxy 42 <init> - CLIENT SIDE PROXY INIT @2020-03-30
+30 Mar 2020 23:29:22,758 TRACE network.ChatServicesRpcProxy 204 initializeConnection - Enter PROXY CLIENT: INITIALIZING initializeConnection @2020-03-30
+30 Mar 2020 23:29:22,769 TRACE network.ChatServicesRpcProxy 212 initializeConnection - Exit with(PROXY CLIENT: SUCCESSFUL initializeConnection @2020-03-30)
+30 Mar 2020 23:29:22,772 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest @2020-03-30
+30 Mar 2020 23:29:22,772 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
+30 Mar 2020 23:29:22,776 TRACE protocols.ChatClientRpcWorker 35 <init> - Exit with(PROXY SERVER: SUCCESSFUL ChatClientRpcWorker @2020-03-30)
+30 Mar 2020 23:29:22,777 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
+30 Mar 2020 23:29:22,778 TRACE network.ChatServicesRpcProxy 175 sendRequest - Enter --- scriere: Request{type='GET_MATCHES', data='null'}
+30 Mar 2020 23:29:22,780 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest @2020-03-30
+30 Mar 2020 23:29:22,780 TRACE network.ChatServicesRpcProxy 114 findAllMeci - PROXY CLIENT: findAllMeci SENT REQUEST @2020-03-30
+30 Mar 2020 23:29:22,781 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
+30 Mar 2020 23:29:22,781 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
+30 Mar 2020 23:29:22,787 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='GET_MATCHES', data='null'}
+30 Mar 2020 23:29:22,787 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
+30 Mar 2020 23:29:22,788 TRACE protocols.ChatClientRpcWorker 129 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.GET_MATCHES @2020-03-30
+30 Mar 2020 23:29:22,788 TRACE server.ChatServicesImpl 102 findAllMeci - FULL SERVER: findAllMeci RECEIVED COMMAND @2020-03-30
+30 Mar 2020 23:29:22,788 TRACE repos.MeciDataBaseRepository 70 findAll - Enter entry findAll
+30 Mar 2020 23:29:22,789 TRACE repos.MeciDataBaseRepository 73 findAll - Enter entry query
+30 Mar 2020 23:29:22,815 INFO  repos.MeciDataBaseRepository 99 findAll - successful query
+30 Mar 2020 23:29:22,816 TRACE repos.MeciDataBaseRepository 104 findAll - Exit: successful exit
+30 Mar 2020 23:29:22,816 TRACE server.ChatServicesImpl 110 findAllMeci - FULL SERVER: findAllMeci SENT RETURN TO SERVER PROXY @2020-03-30
+30 Mar 2020 23:29:22,818 TRACE protocols.ChatClientRpcWorker 134 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.findAllMeci @2020-03-30
+30 Mar 2020 23:29:22,818 DEBUG protocols.ChatClientRpcWorker 187 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
+30 Mar 2020 23:29:22,827 TRACE protocols.ChatClientRpcWorker 189 sendResponse - Enter --- scriere: Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@6dfa359e'}
+30 Mar 2020 23:29:22,827 TRACE protocols.ChatClientRpcWorker 191 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
+30 Mar 2020 23:29:22,827 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
+30 Mar 2020 23:29:22,831 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
+30 Mar 2020 23:29:22,832 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) @2020-03-30
+30 Mar 2020 23:29:22,833 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@3d9e568'}
+30 Mar 2020 23:29:22,833 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@3d9e568'} @2020-03-30
+30 Mar 2020 23:29:22,833 TRACE network.ChatServicesRpcProxy 116 findAllMeci - PROXY CLIENT: findAllMeci RECEIVED RESPONSE @2020-03-30
+30 Mar 2020 23:29:22,834 TRACE network.ChatServicesRpcProxy 124 findAllMeci - Exit with(PROXY CLIENT: SUCCESSFUL findAllMeci @2020-03-30)
+30 Mar 2020 23:29:22,835 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest @2020-03-30
+30 Mar 2020 23:29:22,836 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
+30 Mar 2020 23:29:22,839 TRACE network.ChatServicesRpcProxy 175 sendRequest - Enter --- scriere: Request{type='LOGIN', data='UserDTO[ion ion]'}
+30 Mar 2020 23:29:22,839 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest @2020-03-30
+30 Mar 2020 23:29:22,840 TRACE network.ChatServicesRpcProxy 54 login - PROXY CLIENT: login SENT REQUEST @2020-03-30
+30 Mar 2020 23:29:22,840 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
+30 Mar 2020 23:29:22,840 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
+30 Mar 2020 23:29:23,078 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
+30 Mar 2020 23:29:23,080 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='LOGIN', data='UserDTO[ion ion]'}
+30 Mar 2020 23:29:23,080 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
+30 Mar 2020 23:29:23,080 TRACE protocols.ChatClientRpcWorker 97 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.LOGIN @2020-03-30
+30 Mar 2020 23:29:23,081 TRACE server.ChatServicesImpl 59 login - FULL SERVER: login RECEIVED COMMAND @2020-03-30
+30 Mar 2020 23:29:23,081 TRACE repos.ClientDataBaseRepository 29 findClientByCredentials - Enter entry find
+30 Mar 2020 23:29:23,081 TRACE repos.ClientDataBaseRepository 35 findClientByCredentials - Enter entry query
+30 Mar 2020 23:29:23,085 INFO  repos.ClientDataBaseRepository 40 findClientByCredentials - successful query
+30 Mar 2020 23:29:23,085 TRACE repos.ClientDataBaseRepository 42 findClientByCredentials - Exit: successful exit
+30 Mar 2020 23:29:23,085 TRACE server.ChatServicesImpl 67 login - FULL SERVER: login SENT RETURN TO SERVER PROXY @2020-03-30
+30 Mar 2020 23:29:23,085 TRACE protocols.ChatClientRpcWorker 103 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.login @2020-03-30
+30 Mar 2020 23:29:23,086 DEBUG protocols.ChatClientRpcWorker 187 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
+30 Mar 2020 23:29:23,086 TRACE protocols.ChatClientRpcWorker 189 sendResponse - Enter --- scriere: Response{type='OK', data='null'}
+30 Mar 2020 23:29:23,086 TRACE protocols.ChatClientRpcWorker 191 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
+30 Mar 2020 23:29:23,086 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
+30 Mar 2020 23:29:23,086 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
+30 Mar 2020 23:29:23,087 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) @2020-03-30
+30 Mar 2020 23:29:23,087 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='OK', data='null'}
+30 Mar 2020 23:29:23,088 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='OK', data='null'} @2020-03-30
+30 Mar 2020 23:29:23,088 TRACE network.ChatServicesRpcProxy 56 login - PROXY CLIENT: login RECEIVED RESPONSE @2020-03-30
+30 Mar 2020 23:29:23,089 TRACE network.ChatServicesRpcProxy 59 login - Exit with(PROXY CLIENT: SUCCESSFUL login @2020-03-30)
+30 Mar 2020 23:29:23,337 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
+30 Mar 2020 23:29:28,388 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest @2020-03-30
+30 Mar 2020 23:29:28,388 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
+30 Mar 2020 23:29:28,390 TRACE network.ChatServicesRpcProxy 175 sendRequest - Enter --- scriere: Request{type='TICKETS_SOLD', data='[Ljava.lang.Object;@28bef278'}
+30 Mar 2020 23:29:28,390 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='TICKETS_SOLD', data='[Ljava.lang.Object;@7fcc1855'}
+30 Mar 2020 23:29:28,390 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest @2020-03-30
+30 Mar 2020 23:29:28,390 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
+30 Mar 2020 23:29:28,391 TRACE protocols.ChatClientRpcWorker 161 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.TICKETS_SOLD @2020-03-30
+30 Mar 2020 23:29:28,391 TRACE network.ChatServicesRpcProxy 138 ticketsSold - PROXY CLIENT: ticketsSold SENT REQUEST @2020-03-30 WARNING: THIS FUNCTION HAS NO RESPONSE!!!
+30 Mar 2020 23:29:28,391 TRACE server.ChatServicesImpl 117 ticketsSold - FULL SERVER: ticketsSold RECEIVED COMMAND @2020-03-30
+30 Mar 2020 23:29:28,391 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
+30 Mar 2020 23:29:28,391 TRACE repos.MeciDataBaseRepository 168 update - Enter entry update
+30 Mar 2020 23:29:28,392 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
+30 Mar 2020 23:29:28,392 INFO  repos.MeciDataBaseRepository 174 update - validated data
+30 Mar 2020 23:29:28,392 TRACE repos.MeciDataBaseRepository 29 findOne - Enter entry find
+30 Mar 2020 23:29:28,392 TRACE repos.MeciDataBaseRepository 35 findOne - Enter entry query
+30 Mar 2020 23:29:28,394 INFO  repos.MeciDataBaseRepository 58 findOne - successful query
+30 Mar 2020 23:29:28,394 TRACE repos.MeciDataBaseRepository 60 findOne - Exit: successful exit
+30 Mar 2020 23:29:28,394 TRACE repos.MeciDataBaseRepository 29 findOne - Enter entry find
+30 Mar 2020 23:29:28,394 TRACE repos.MeciDataBaseRepository 35 findOne - Enter entry query
+30 Mar 2020 23:29:28,395 INFO  repos.MeciDataBaseRepository 58 findOne - successful query
+30 Mar 2020 23:29:28,396 TRACE repos.MeciDataBaseRepository 60 findOne - Exit: successful exit
+30 Mar 2020 23:29:28,396 INFO  repos.MeciDataBaseRepository 177 update - found data
+30 Mar 2020 23:29:28,396 TRACE repos.MeciDataBaseRepository 179 update - Enter entry query
+30 Mar 2020 23:29:28,405 TRACE repos.MeciDataBaseRepository 187 update - Exit: successful query
+30 Mar 2020 23:29:28,405 TRACE repos.MeciDataBaseRepository 192 update - Exit: successful query
+30 Mar 2020 23:29:28,406 TRACE repos.BiletDataBaseRepository 57 findAll - Enter entry findAll
+30 Mar 2020 23:29:28,406 TRACE repos.BiletDataBaseRepository 60 findAll - Enter entry query
+30 Mar 2020 23:29:28,411 INFO  repos.BiletDataBaseRepository 71 findAll - successful query
+30 Mar 2020 23:29:28,411 TRACE repos.BiletDataBaseRepository 76 findAll - Exit: successful exit
+30 Mar 2020 23:29:28,412 TRACE repos.BiletDataBaseRepository 135 update - Enter entry update
+30 Mar 2020 23:29:28,412 INFO  repos.BiletDataBaseRepository 141 update - validated data
+30 Mar 2020 23:29:28,412 TRACE repos.BiletDataBaseRepository 31 findOne - Enter entry find
+30 Mar 2020 23:29:28,412 TRACE repos.BiletDataBaseRepository 37 findOne - Enter entry query
+30 Mar 2020 23:29:28,414 INFO  repos.BiletDataBaseRepository 45 findOne - successful query
+30 Mar 2020 23:29:28,414 TRACE repos.BiletDataBaseRepository 47 findOne - Exit: successful exit
+30 Mar 2020 23:29:28,414 TRACE repos.BiletDataBaseRepository 31 findOne - Enter entry find
+30 Mar 2020 23:29:28,414 TRACE repos.BiletDataBaseRepository 37 findOne - Enter entry query
+30 Mar 2020 23:29:28,415 INFO  repos.BiletDataBaseRepository 45 findOne - successful query
+30 Mar 2020 23:29:28,416 TRACE repos.BiletDataBaseRepository 47 findOne - Exit: successful exit
+30 Mar 2020 23:29:28,416 INFO  repos.BiletDataBaseRepository 144 update - found data
+30 Mar 2020 23:29:28,416 TRACE repos.BiletDataBaseRepository 146 update - Enter entry query
+30 Mar 2020 23:29:28,419 TRACE repos.BiletDataBaseRepository 153 update - Exit: successful query
+30 Mar 2020 23:29:28,419 TRACE repos.BiletDataBaseRepository 158 update - Exit: successful query
+30 Mar 2020 23:29:28,420 TRACE server.ChatServicesImpl 141 ticketsSold - FULL SERVER: ticketsSold SENT OBSERVER COMMAND TO notifyTicketsBought @2020-03-30
+30 Mar 2020 23:29:28,421 TRACE protocols.ChatClientRpcWorker 170 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.ticketsSold @2020-03-30
+30 Mar 2020 23:29:28,421 DEBUG protocols.ChatClientRpcWorker 187 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
+30 Mar 2020 23:29:28,421 TRACE protocols.ChatClientRpcWorker 189 sendResponse - Enter --- scriere: Response{type='TICKETS_SOLD', data='dto.MeciDTO@30c3883b'}
+30 Mar 2020 23:29:28,422 TRACE protocols.ChatClientRpcWorker 191 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
+30 Mar 2020 23:29:28,422 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
+30 Mar 2020 23:29:28,422 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
+30 Mar 2020 23:29:28,422 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) @2020-03-30
+30 Mar 2020 23:29:28,423 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='TICKETS_SOLD', data='dto.MeciDTO@7a00c34a'}
+30 Mar 2020 23:29:28,423 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='TICKETS_SOLD', data='dto.MeciDTO@7a00c34a'} @2020-03-30
+30 Mar 2020 23:29:28,424 TRACE network.ChatServicesRpcProxy 144 ticketsSold - Exit with(PROXY CLIENT: SUCCESSFUL ticketsSold @2020-03-30 WARNING: THIS FUNCTION HAS NO RESPONSE!!!)
+30 Mar 2020 23:29:28,672 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
+30 Mar 2020 23:29:29,420 TRACE repos.ClientDataBaseRepository 76 findAll - Enter entry findAll
+30 Mar 2020 23:29:29,421 TRACE repos.ClientDataBaseRepository 79 findAll - Enter entry query
+30 Mar 2020 23:29:29,422 INFO  repos.ClientDataBaseRepository 87 findAll - successful query
+30 Mar 2020 23:29:29,422 TRACE repos.ClientDataBaseRepository 92 findAll - Exit: successful exit
+30 Mar 2020 23:29:29,422 TRACE server.ChatServicesImpl 39 notifyTicketsBought - FULL SERVER: login RECEIVED !OBSERVER! COMMAND @2020-03-30
+30 Mar 2020 23:29:29,424 TRACE protocols.ChatClientRpcWorker 81 notifyTicketsSold - PROXY SERVER: ticketsSold BUILT RESPONSE @2020-03-30
+30 Mar 2020 23:29:29,425 DEBUG protocols.ChatClientRpcWorker 187 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
+30 Mar 2020 23:29:29,425 TRACE protocols.ChatClientRpcWorker 189 sendResponse - Enter --- scriere: Response{type='UPDATE_TICKETS_IN_CLIENT_MATCH', data='dto.MeciDTO@2724de8b'}
+30 Mar 2020 23:29:29,425 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
+30 Mar 2020 23:29:29,426 TRACE protocols.ChatClientRpcWorker 191 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
+30 Mar 2020 23:29:29,426 TRACE network.ChatServicesRpcProxy$ReaderThread 253 run - Enter PROXY CLIENT: TRACE isUpdate((Response)response) == true @2020-03-30
+30 Mar 2020 23:29:29,426 TRACE protocols.ChatClientRpcWorker 85 notifyTicketsSold - Exit: PROXY SERVER: ticketsSold SENT RESPONSE @2020-03-30
+30 Mar 2020 23:29:35,940 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest @2020-03-30
+30 Mar 2020 23:29:35,941 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
+30 Mar 2020 23:29:35,941 TRACE network.ChatServicesRpcProxy 175 sendRequest - Enter --- scriere: Request{type='LOGOUT', data='UserDTO[ion ion]'}
+30 Mar 2020 23:29:35,941 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='LOGOUT', data='UserDTO[ion ion]'}
+30 Mar 2020 23:29:35,941 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest @2020-03-30
+30 Mar 2020 23:29:35,941 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
+30 Mar 2020 23:29:35,942 TRACE network.ChatServicesRpcProxy 75 logout - PROXY CLIENT: logout SENT REQUEST @2020-03-30
+30 Mar 2020 23:29:35,942 TRACE protocols.ChatClientRpcWorker 112 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.LOGOUT @2020-03-30
+30 Mar 2020 23:29:35,942 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
+30 Mar 2020 23:29:35,942 TRACE server.ChatServicesImpl 73 logout - FULL SERVER: logout RECEIVED COMMAND @2020-03-30
+30 Mar 2020 23:29:35,942 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
+30 Mar 2020 23:29:35,942 TRACE server.ChatServicesImpl 77 logout - FULL SERVER: logout SENT RETURN TO SERVER PROXY @2020-03-30
+30 Mar 2020 23:29:35,943 TRACE protocols.ChatClientRpcWorker 119 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.logout @2020-03-30
+30 Mar 2020 23:29:35,943 DEBUG protocols.ChatClientRpcWorker 187 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
+30 Mar 2020 23:29:35,943 TRACE protocols.ChatClientRpcWorker 189 sendResponse - Enter --- scriere: Response{type='OK', data='null'}
+30 Mar 2020 23:29:35,944 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
+30 Mar 2020 23:29:35,944 TRACE protocols.ChatClientRpcWorker 191 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
+30 Mar 2020 23:29:35,944 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
+30 Mar 2020 23:29:35,944 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) @2020-03-30
+30 Mar 2020 23:29:35,944 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='OK', data='null'}
+30 Mar 2020 23:29:35,944 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='OK', data='null'} @2020-03-30
+30 Mar 2020 23:29:35,945 TRACE network.ChatServicesRpcProxy 77 logout - PROXY CLIENT: logout RECEIVED RESPONSE @2020-03-30
+30 Mar 2020 23:29:35,946 TRACE network.ChatServicesRpcProxy 155 closeConnection - Exit with(PROXY CLIENT: SUCCESSFUL closeConnection @2020-03-30)
+30 Mar 2020 23:29:35,946 TRACE network.ChatServicesRpcProxy$ReaderThread 264 run - Exit: PROXY CLIENT: FAILED run (because other end of socket disconnected from server) : IOException java.net.SocketException: Socket closed @2020-03-30
+30 Mar 2020 23:29:35,946 TRACE network.ChatServicesRpcProxy 80 logout - Exit with(PROXY CLIENT: SUCCESSFUL logout @2020-03-30)
+30 Mar 2020 23:29:36,195 TRACE protocols.ChatClientRpcWorker 65 run - Exit with(PROXY SERVER: run : BEGIN SHUTDOWN @2020-03-30)
+30 Mar 2020 23:29:36,196 TRACE protocols.ChatClientRpcWorker 69 run - Exit with(PROXY SERVER: run : COMPLETED SHUTDOWN @2020-03-30)
+30 Mar 2020 23:33:58,537 TRACE network.ChatServicesRpcProxy 42 <init> - CLIENT SIDE PROXY INIT @2020-03-30
+30 Mar 2020 23:34:08,093 TRACE repos.ClientDataBaseRepository 22 <init> - Enter entry constructor
+30 Mar 2020 23:34:08,096 TRACE repos.JDBCInvariant 27 getConnection - Enter entry constructor
+30 Mar 2020 23:34:08,181 INFO  repos.JDBCInvariant 31 getConnection - successful connection
+30 Mar 2020 23:34:08,183 TRACE repos.JDBCInvariant 37 getConnection - Exit: successful exit
+30 Mar 2020 23:34:08,183 TRACE repos.ClientDataBaseRepository 25 <init> - Exit with(successful constructor exit)
+30 Mar 2020 23:34:08,184 TRACE repos.MeciDataBaseRepository 21 <init> - Enter entry constructor
+30 Mar 2020 23:34:08,184 TRACE repos.JDBCInvariant 27 getConnection - Enter entry constructor
+30 Mar 2020 23:34:08,233 INFO  repos.JDBCInvariant 31 getConnection - successful connection
+30 Mar 2020 23:34:08,234 TRACE repos.JDBCInvariant 37 getConnection - Exit: successful exit
+30 Mar 2020 23:34:08,234 TRACE repos.MeciDataBaseRepository 24 <init> - Exit with(successful constructor exit)
+30 Mar 2020 23:34:08,235 TRACE repos.BiletDataBaseRepository 23 <init> - Enter entry constructor
+30 Mar 2020 23:34:08,236 TRACE repos.JDBCInvariant 27 getConnection - Enter entry constructor
+30 Mar 2020 23:34:08,286 INFO  repos.JDBCInvariant 31 getConnection - successful connection
+30 Mar 2020 23:34:08,287 TRACE repos.JDBCInvariant 37 getConnection - Exit: successful exit
+30 Mar 2020 23:34:08,287 TRACE repos.BiletDataBaseRepository 26 <init> - Exit with(successful constructor exit)
+30 Mar 2020 23:34:36,952 TRACE network.ChatServicesRpcProxy 204 initializeConnection - Enter PROXY CLIENT: INITIALIZING initializeConnection @2020-03-30
+30 Mar 2020 23:34:36,965 TRACE network.ChatServicesRpcProxy 212 initializeConnection - Exit with(PROXY CLIENT: SUCCESSFUL initializeConnection @2020-03-30)
+30 Mar 2020 23:34:36,969 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest @2020-03-30
+30 Mar 2020 23:34:36,969 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
+30 Mar 2020 23:34:36,972 TRACE protocols.ChatClientRpcWorker 35 <init> - Exit with(PROXY SERVER: SUCCESSFUL ChatClientRpcWorker @2020-03-30)
+30 Mar 2020 23:34:36,973 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
+30 Mar 2020 23:34:36,976 TRACE network.ChatServicesRpcProxy 175 sendRequest - Enter --- scriere: Request{type='LOGIN', data='UserDTO[ion ion]'}
+30 Mar 2020 23:34:36,978 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest @2020-03-30
+30 Mar 2020 23:34:36,979 TRACE network.ChatServicesRpcProxy 54 login - PROXY CLIENT: login SENT REQUEST @2020-03-30
+30 Mar 2020 23:34:36,979 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
+30 Mar 2020 23:34:36,979 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
+30 Mar 2020 23:34:36,984 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='LOGIN', data='UserDTO[ion ion]'}
+30 Mar 2020 23:34:36,985 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
+30 Mar 2020 23:34:36,985 TRACE protocols.ChatClientRpcWorker 97 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.LOGIN @2020-03-30
+30 Mar 2020 23:34:36,986 TRACE server.ChatServicesImpl 59 login - FULL SERVER: login RECEIVED COMMAND @2020-03-30
+30 Mar 2020 23:34:36,987 TRACE repos.ClientDataBaseRepository 29 findClientByCredentials - Enter entry find
+30 Mar 2020 23:34:36,987 TRACE repos.ClientDataBaseRepository 35 findClientByCredentials - Enter entry query
+30 Mar 2020 23:34:37,012 INFO  repos.ClientDataBaseRepository 40 findClientByCredentials - successful query
+30 Mar 2020 23:34:37,012 TRACE repos.ClientDataBaseRepository 42 findClientByCredentials - Exit: successful exit
+30 Mar 2020 23:34:37,013 TRACE server.ChatServicesImpl 67 login - FULL SERVER: login SENT RETURN TO SERVER PROXY @2020-03-30
+30 Mar 2020 23:34:37,013 TRACE protocols.ChatClientRpcWorker 103 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.login @2020-03-30
+30 Mar 2020 23:34:37,013 DEBUG protocols.ChatClientRpcWorker 187 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
+30 Mar 2020 23:34:37,016 TRACE protocols.ChatClientRpcWorker 189 sendResponse - Enter --- scriere: Response{type='OK', data='null'}
+30 Mar 2020 23:34:37,016 TRACE protocols.ChatClientRpcWorker 191 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
+30 Mar 2020 23:34:37,017 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
+30 Mar 2020 23:34:37,019 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
+30 Mar 2020 23:34:37,021 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) @2020-03-30
+30 Mar 2020 23:34:37,021 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='OK', data='null'}
+30 Mar 2020 23:34:37,021 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='OK', data='null'} @2020-03-30
+30 Mar 2020 23:34:37,022 TRACE network.ChatServicesRpcProxy 56 login - PROXY CLIENT: login RECEIVED RESPONSE @2020-03-30
+30 Mar 2020 23:34:37,022 TRACE network.ChatServicesRpcProxy 59 login - Exit with(PROXY CLIENT: SUCCESSFUL login @2020-03-30)
+30 Mar 2020 23:34:37,205 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest @2020-03-30
+30 Mar 2020 23:34:37,206 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
+30 Mar 2020 23:34:37,206 TRACE network.ChatServicesRpcProxy 175 sendRequest - Enter --- scriere: Request{type='GET_MATCHES', data='null'}
+30 Mar 2020 23:34:37,207 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest @2020-03-30
+30 Mar 2020 23:34:37,207 TRACE network.ChatServicesRpcProxy 114 findAllMeci - PROXY CLIENT: findAllMeci SENT REQUEST @2020-03-30
+30 Mar 2020 23:34:37,207 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
+30 Mar 2020 23:34:37,208 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
+30 Mar 2020 23:34:37,268 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
+30 Mar 2020 23:34:37,269 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='GET_MATCHES', data='null'}
+30 Mar 2020 23:34:37,270 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
+30 Mar 2020 23:34:37,270 TRACE protocols.ChatClientRpcWorker 129 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.GET_MATCHES @2020-03-30
+30 Mar 2020 23:34:37,271 TRACE server.ChatServicesImpl 102 findAllMeci - FULL SERVER: findAllMeci RECEIVED COMMAND @2020-03-30
+30 Mar 2020 23:34:37,274 TRACE repos.MeciDataBaseRepository 70 findAll - Enter entry findAll
+30 Mar 2020 23:34:37,275 TRACE repos.MeciDataBaseRepository 73 findAll - Enter entry query
+30 Mar 2020 23:34:37,284 INFO  repos.MeciDataBaseRepository 99 findAll - successful query
+30 Mar 2020 23:34:37,285 TRACE repos.MeciDataBaseRepository 104 findAll - Exit: successful exit
+30 Mar 2020 23:34:37,286 TRACE server.ChatServicesImpl 110 findAllMeci - FULL SERVER: findAllMeci SENT RETURN TO SERVER PROXY @2020-03-30
+30 Mar 2020 23:34:37,286 TRACE protocols.ChatClientRpcWorker 134 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.findAllMeci @2020-03-30
+30 Mar 2020 23:34:37,286 DEBUG protocols.ChatClientRpcWorker 187 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
+30 Mar 2020 23:34:37,295 TRACE protocols.ChatClientRpcWorker 189 sendResponse - Enter --- scriere: Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@636722f6'}
+30 Mar 2020 23:34:37,296 TRACE protocols.ChatClientRpcWorker 191 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
+30 Mar 2020 23:34:37,296 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
+30 Mar 2020 23:34:37,324 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
+30 Mar 2020 23:34:37,325 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) @2020-03-30
+30 Mar 2020 23:34:37,325 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@937e4e9'}
+30 Mar 2020 23:34:37,325 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@937e4e9'} @2020-03-30
+30 Mar 2020 23:34:37,326 TRACE network.ChatServicesRpcProxy 116 findAllMeci - PROXY CLIENT: findAllMeci RECEIVED RESPONSE @2020-03-30
+30 Mar 2020 23:34:37,359 TRACE network.ChatServicesRpcProxy 124 findAllMeci - Exit with(PROXY CLIENT: SUCCESSFUL findAllMeci @2020-03-30)
+30 Mar 2020 23:34:37,548 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
+30 Mar 2020 23:35:06,872 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest @2020-03-30
+30 Mar 2020 23:35:06,872 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
+30 Mar 2020 23:35:06,874 TRACE network.ChatServicesRpcProxy 175 sendRequest - Enter --- scriere: Request{type='TICKETS_SOLD', data='[Ljava.lang.Object;@65e67bfa'}
+30 Mar 2020 23:35:06,874 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest @2020-03-30
+30 Mar 2020 23:35:06,874 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='TICKETS_SOLD', data='[Ljava.lang.Object;@45aba714'}
+30 Mar 2020 23:35:06,874 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
+30 Mar 2020 23:35:06,874 TRACE network.ChatServicesRpcProxy 138 ticketsSold - PROXY CLIENT: ticketsSold SENT REQUEST @2020-03-30 WARNING: THIS FUNCTION HAS NO RESPONSE!!!
+30 Mar 2020 23:35:06,875 TRACE protocols.ChatClientRpcWorker 161 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.TICKETS_SOLD @2020-03-30
+30 Mar 2020 23:35:06,875 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
+30 Mar 2020 23:35:06,875 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
+30 Mar 2020 23:35:06,875 TRACE server.ChatServicesImpl 117 ticketsSold - FULL SERVER: ticketsSold RECEIVED COMMAND @2020-03-30
+30 Mar 2020 23:35:06,875 TRACE repos.MeciDataBaseRepository 168 update - Enter entry update
+30 Mar 2020 23:35:06,876 INFO  repos.MeciDataBaseRepository 174 update - validated data
+30 Mar 2020 23:35:06,876 TRACE repos.MeciDataBaseRepository 29 findOne - Enter entry find
+30 Mar 2020 23:35:06,876 TRACE repos.MeciDataBaseRepository 35 findOne - Enter entry query
+30 Mar 2020 23:35:06,878 INFO  repos.MeciDataBaseRepository 58 findOne - successful query
+30 Mar 2020 23:35:06,878 TRACE repos.MeciDataBaseRepository 60 findOne - Exit: successful exit
+30 Mar 2020 23:35:06,878 TRACE repos.MeciDataBaseRepository 29 findOne - Enter entry find
+30 Mar 2020 23:35:06,878 TRACE repos.MeciDataBaseRepository 35 findOne - Enter entry query
+30 Mar 2020 23:35:06,879 INFO  repos.MeciDataBaseRepository 58 findOne - successful query
+30 Mar 2020 23:35:06,879 TRACE repos.MeciDataBaseRepository 60 findOne - Exit: successful exit
+30 Mar 2020 23:35:06,880 INFO  repos.MeciDataBaseRepository 177 update - found data
+30 Mar 2020 23:35:06,880 TRACE repos.MeciDataBaseRepository 179 update - Enter entry query
+30 Mar 2020 23:35:06,889 TRACE repos.MeciDataBaseRepository 187 update - Exit: successful query
+30 Mar 2020 23:35:06,889 TRACE repos.MeciDataBaseRepository 192 update - Exit: successful query
+30 Mar 2020 23:35:06,889 TRACE repos.BiletDataBaseRepository 57 findAll - Enter entry findAll
+30 Mar 2020 23:35:06,889 TRACE repos.BiletDataBaseRepository 60 findAll - Enter entry query
+30 Mar 2020 23:35:06,892 INFO  repos.BiletDataBaseRepository 71 findAll - successful query
+30 Mar 2020 23:35:06,893 TRACE repos.BiletDataBaseRepository 76 findAll - Exit: successful exit
+30 Mar 2020 23:35:06,894 TRACE server.ChatServicesImpl 141 ticketsSold - FULL SERVER: ticketsSold SENT OBSERVER COMMAND TO notifyTicketsBought @2020-03-30
+30 Mar 2020 23:35:06,894 TRACE protocols.ChatClientRpcWorker 170 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.ticketsSold @2020-03-30
+30 Mar 2020 23:35:06,895 DEBUG protocols.ChatClientRpcWorker 187 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
+30 Mar 2020 23:35:06,895 TRACE protocols.ChatClientRpcWorker 189 sendResponse - Enter --- scriere: Response{type='TICKETS_SOLD', data='dto.MeciDTO@4ffdd300'}
+30 Mar 2020 23:35:06,895 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
+30 Mar 2020 23:35:06,895 TRACE protocols.ChatClientRpcWorker 191 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
+30 Mar 2020 23:35:06,895 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) @2020-03-30
+30 Mar 2020 23:35:06,895 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
+30 Mar 2020 23:35:06,896 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='TICKETS_SOLD', data='dto.MeciDTO@4d39f8eb'}
+30 Mar 2020 23:35:06,896 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='TICKETS_SOLD', data='dto.MeciDTO@4d39f8eb'} @2020-03-30
+30 Mar 2020 23:35:06,897 TRACE network.ChatServicesRpcProxy 144 ticketsSold - Exit with(PROXY CLIENT: SUCCESSFUL ticketsSold @2020-03-30 WARNING: THIS FUNCTION HAS NO RESPONSE!!!)
+30 Mar 2020 23:35:07,146 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
+30 Mar 2020 23:35:07,895 TRACE repos.ClientDataBaseRepository 76 findAll - Enter entry findAll
+30 Mar 2020 23:35:07,896 TRACE repos.ClientDataBaseRepository 79 findAll - Enter entry query
+30 Mar 2020 23:35:07,897 INFO  repos.ClientDataBaseRepository 87 findAll - successful query
+30 Mar 2020 23:35:07,897 TRACE repos.ClientDataBaseRepository 92 findAll - Exit: successful exit
+30 Mar 2020 23:35:07,898 TRACE server.ChatServicesImpl 39 notifyTicketsBought - FULL SERVER: login RECEIVED !OBSERVER! COMMAND @2020-03-30
+30 Mar 2020 23:35:07,900 TRACE protocols.ChatClientRpcWorker 81 notifyTicketsSold - PROXY SERVER: ticketsSold BUILT RESPONSE @2020-03-30
+30 Mar 2020 23:35:07,901 DEBUG protocols.ChatClientRpcWorker 187 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
+30 Mar 2020 23:35:07,901 TRACE protocols.ChatClientRpcWorker 189 sendResponse - Enter --- scriere: Response{type='UPDATE_TICKETS_IN_CLIENT_MATCH', data='dto.MeciDTO@110453e6'}
+30 Mar 2020 23:35:07,901 TRACE protocols.ChatClientRpcWorker 191 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
+30 Mar 2020 23:35:07,901 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
+30 Mar 2020 23:35:07,901 TRACE protocols.ChatClientRpcWorker 85 notifyTicketsSold - Exit: PROXY SERVER: ticketsSold SENT RESPONSE @2020-03-30
+30 Mar 2020 23:35:07,902 TRACE network.ChatServicesRpcProxy$ReaderThread 253 run - Enter PROXY CLIENT: TRACE isUpdate((Response)response) == true @2020-03-30
+30 Mar 2020 23:35:12,658 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest @2020-03-30
+30 Mar 2020 23:35:12,658 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
+30 Mar 2020 23:35:12,659 TRACE network.ChatServicesRpcProxy 175 sendRequest - Enter --- scriere: Request{type='GET_MATCHES', data='null'}
+30 Mar 2020 23:35:12,659 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='GET_MATCHES', data='null'}
+30 Mar 2020 23:35:12,659 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest @2020-03-30
+30 Mar 2020 23:35:12,659 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
+30 Mar 2020 23:35:12,659 TRACE network.ChatServicesRpcProxy 114 findAllMeci - PROXY CLIENT: findAllMeci SENT REQUEST @2020-03-30
+30 Mar 2020 23:35:12,660 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
+30 Mar 2020 23:35:12,660 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
+30 Mar 2020 23:35:12,660 TRACE protocols.ChatClientRpcWorker 129 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.GET_MATCHES @2020-03-30
+30 Mar 2020 23:35:12,660 TRACE server.ChatServicesImpl 102 findAllMeci - FULL SERVER: findAllMeci RECEIVED COMMAND @2020-03-30
+30 Mar 2020 23:35:12,661 TRACE repos.MeciDataBaseRepository 70 findAll - Enter entry findAll
+30 Mar 2020 23:35:12,661 TRACE repos.MeciDataBaseRepository 73 findAll - Enter entry query
+30 Mar 2020 23:35:12,662 INFO  repos.MeciDataBaseRepository 99 findAll - successful query
+30 Mar 2020 23:35:12,662 TRACE repos.MeciDataBaseRepository 104 findAll - Exit: successful exit
+30 Mar 2020 23:35:12,663 TRACE server.ChatServicesImpl 110 findAllMeci - FULL SERVER: findAllMeci SENT RETURN TO SERVER PROXY @2020-03-30
+30 Mar 2020 23:35:12,663 TRACE protocols.ChatClientRpcWorker 134 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.findAllMeci @2020-03-30
+30 Mar 2020 23:35:12,663 DEBUG protocols.ChatClientRpcWorker 187 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
+30 Mar 2020 23:35:12,666 TRACE protocols.ChatClientRpcWorker 189 sendResponse - Enter --- scriere: Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@597d5964'}
+30 Mar 2020 23:35:12,666 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
+30 Mar 2020 23:35:12,666 TRACE protocols.ChatClientRpcWorker 191 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
+30 Mar 2020 23:35:12,666 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) @2020-03-30
+30 Mar 2020 23:35:12,666 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
+30 Mar 2020 23:35:12,667 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@57daa311'}
+30 Mar 2020 23:35:12,667 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@57daa311'} @2020-03-30
+30 Mar 2020 23:35:12,667 TRACE network.ChatServicesRpcProxy 116 findAllMeci - PROXY CLIENT: findAllMeci RECEIVED RESPONSE @2020-03-30
+30 Mar 2020 23:35:12,667 TRACE network.ChatServicesRpcProxy 124 findAllMeci - Exit with(PROXY CLIENT: SUCCESSFUL findAllMeci @2020-03-30)
+30 Mar 2020 23:35:12,916 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
+30 Mar 2020 23:35:13,160 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest @2020-03-30
+30 Mar 2020 23:35:13,160 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
+30 Mar 2020 23:35:13,160 TRACE network.ChatServicesRpcProxy 175 sendRequest - Enter --- scriere: Request{type='GET_MATCHES_W_TICKETS', data='null'}
+30 Mar 2020 23:35:13,160 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='GET_MATCHES_W_TICKETS', data='null'}
+30 Mar 2020 23:35:13,160 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest @2020-03-30
+30 Mar 2020 23:35:13,161 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
+30 Mar 2020 23:35:13,161 TRACE network.ChatServicesRpcProxy 92 findAllMeciWithTickets - PROXY CLIENT: findAllMeciWithTickets SENT REQUEST @2020-03-30
+30 Mar 2020 23:35:13,161 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
+30 Mar 2020 23:35:13,161 TRACE protocols.ChatClientRpcWorker 145 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.GET_MATCHES_W_TICKETS @2020-03-30
+30 Mar 2020 23:35:13,161 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
+30 Mar 2020 23:35:13,161 TRACE server.ChatServicesImpl 82 findAllMeciWithTickets - FULL SERVER: findAllMeciWithTickets RECEIVED COMMAND @2020-03-30
+30 Mar 2020 23:35:13,162 TRACE repos.MeciDataBaseRepository 70 findAll - Enter entry findAll
+30 Mar 2020 23:35:13,162 TRACE repos.MeciDataBaseRepository 73 findAll - Enter entry query
+30 Mar 2020 23:35:13,163 INFO  repos.MeciDataBaseRepository 99 findAll - successful query
+30 Mar 2020 23:35:13,163 TRACE repos.MeciDataBaseRepository 104 findAll - Exit: successful exit
+30 Mar 2020 23:35:13,165 TRACE server.ChatServicesImpl 96 findAllMeciWithTickets - FULL SERVER: findAllMeciWithTickets SENT RETURN TO SERVER PROXY @2020-03-30
+30 Mar 2020 23:35:13,165 TRACE protocols.ChatClientRpcWorker 150 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.findAllMeci @2020-03-30
+30 Mar 2020 23:35:13,166 DEBUG protocols.ChatClientRpcWorker 187 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
+30 Mar 2020 23:35:13,166 TRACE protocols.ChatClientRpcWorker 189 sendResponse - Enter --- scriere: Response{type='GET_MATCHES_W_TICKETS', data='[Ldto.MeciDTO;@79032a79'}
+30 Mar 2020 23:35:13,167 TRACE protocols.ChatClientRpcWorker 191 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
+30 Mar 2020 23:35:13,167 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
+30 Mar 2020 23:35:13,167 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
+30 Mar 2020 23:35:13,167 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) @2020-03-30
+30 Mar 2020 23:35:13,167 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='GET_MATCHES_W_TICKETS', data='[Ldto.MeciDTO;@7f81b957'}
+30 Mar 2020 23:35:13,168 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='GET_MATCHES_W_TICKETS', data='[Ldto.MeciDTO;@7f81b957'} @2020-03-30
+30 Mar 2020 23:35:13,168 TRACE network.ChatServicesRpcProxy 94 findAllMeciWithTickets - PROXY CLIENT: findAllMeciWithTickets RECEIVED RESPONSE @2020-03-30
+30 Mar 2020 23:35:13,168 TRACE network.ChatServicesRpcProxy 102 findAllMeciWithTickets - Exit with(PROXY CLIENT: SUCCESSFUL findAllMeciWithTickets @2020-03-30)
+30 Mar 2020 23:35:13,418 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
+30 Mar 2020 23:35:13,684 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest @2020-03-30
+30 Mar 2020 23:35:13,684 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
+30 Mar 2020 23:35:13,684 TRACE network.ChatServicesRpcProxy 175 sendRequest - Enter --- scriere: Request{type='GET_MATCHES', data='null'}
+30 Mar 2020 23:35:13,685 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest @2020-03-30
+30 Mar 2020 23:35:13,685 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='GET_MATCHES', data='null'}
+30 Mar 2020 23:35:13,685 TRACE network.ChatServicesRpcProxy 114 findAllMeci - PROXY CLIENT: findAllMeci SENT REQUEST @2020-03-30
+30 Mar 2020 23:35:13,685 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
+30 Mar 2020 23:35:13,685 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
+30 Mar 2020 23:35:13,685 TRACE protocols.ChatClientRpcWorker 129 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.GET_MATCHES @2020-03-30
+30 Mar 2020 23:35:13,686 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
+30 Mar 2020 23:35:13,686 TRACE server.ChatServicesImpl 102 findAllMeci - FULL SERVER: findAllMeci RECEIVED COMMAND @2020-03-30
+30 Mar 2020 23:35:13,686 TRACE repos.MeciDataBaseRepository 70 findAll - Enter entry findAll
+30 Mar 2020 23:35:13,686 TRACE repos.MeciDataBaseRepository 73 findAll - Enter entry query
+30 Mar 2020 23:35:13,687 INFO  repos.MeciDataBaseRepository 99 findAll - successful query
+30 Mar 2020 23:35:13,688 TRACE repos.MeciDataBaseRepository 104 findAll - Exit: successful exit
+30 Mar 2020 23:35:13,688 TRACE server.ChatServicesImpl 110 findAllMeci - FULL SERVER: findAllMeci SENT RETURN TO SERVER PROXY @2020-03-30
+30 Mar 2020 23:35:13,688 TRACE protocols.ChatClientRpcWorker 134 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.findAllMeci @2020-03-30
+30 Mar 2020 23:35:13,688 DEBUG protocols.ChatClientRpcWorker 187 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
+30 Mar 2020 23:35:13,690 TRACE protocols.ChatClientRpcWorker 189 sendResponse - Enter --- scriere: Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@205274d7'}
+30 Mar 2020 23:35:13,690 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
+30 Mar 2020 23:35:13,690 TRACE protocols.ChatClientRpcWorker 191 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
+30 Mar 2020 23:35:13,690 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) @2020-03-30
+30 Mar 2020 23:35:13,691 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
+30 Mar 2020 23:35:13,691 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@545952b6'}
+30 Mar 2020 23:35:13,691 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@545952b6'} @2020-03-30
+30 Mar 2020 23:35:13,691 TRACE network.ChatServicesRpcProxy 116 findAllMeci - PROXY CLIENT: findAllMeci RECEIVED RESPONSE @2020-03-30
+30 Mar 2020 23:35:13,691 TRACE network.ChatServicesRpcProxy 124 findAllMeci - Exit with(PROXY CLIENT: SUCCESSFUL findAllMeci @2020-03-30)
+30 Mar 2020 23:35:13,941 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
+30 Mar 2020 23:35:18,611 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest @2020-03-30
+30 Mar 2020 23:35:18,612 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
+30 Mar 2020 23:35:18,612 TRACE network.ChatServicesRpcProxy 175 sendRequest - Enter --- scriere: Request{type='LOGOUT', data='UserDTO[ion ion]'}
+30 Mar 2020 23:35:18,612 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='LOGOUT', data='UserDTO[ion ion]'}
+30 Mar 2020 23:35:18,612 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest @2020-03-30
+30 Mar 2020 23:35:18,612 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
+30 Mar 2020 23:35:18,613 TRACE network.ChatServicesRpcProxy 75 logout - PROXY CLIENT: logout SENT REQUEST @2020-03-30
+30 Mar 2020 23:35:18,613 TRACE protocols.ChatClientRpcWorker 112 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.LOGOUT @2020-03-30
+30 Mar 2020 23:35:18,613 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
+30 Mar 2020 23:35:18,613 TRACE server.ChatServicesImpl 73 logout - FULL SERVER: logout RECEIVED COMMAND @2020-03-30
+30 Mar 2020 23:35:18,613 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
+30 Mar 2020 23:35:18,613 TRACE server.ChatServicesImpl 77 logout - FULL SERVER: logout SENT RETURN TO SERVER PROXY @2020-03-30
+30 Mar 2020 23:35:18,613 TRACE protocols.ChatClientRpcWorker 119 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.logout @2020-03-30
+30 Mar 2020 23:35:18,613 DEBUG protocols.ChatClientRpcWorker 187 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
+30 Mar 2020 23:35:18,614 TRACE protocols.ChatClientRpcWorker 189 sendResponse - Enter --- scriere: Response{type='OK', data='null'}
+30 Mar 2020 23:35:18,614 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
+30 Mar 2020 23:35:18,614 TRACE protocols.ChatClientRpcWorker 191 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
+30 Mar 2020 23:35:18,614 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
+30 Mar 2020 23:35:18,614 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) @2020-03-30
+30 Mar 2020 23:35:18,614 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='OK', data='null'}
+30 Mar 2020 23:35:18,615 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='OK', data='null'} @2020-03-30
+30 Mar 2020 23:35:18,615 TRACE network.ChatServicesRpcProxy 77 logout - PROXY CLIENT: logout RECEIVED RESPONSE @2020-03-30
+30 Mar 2020 23:35:18,615 TRACE network.ChatServicesRpcProxy 155 closeConnection - Exit with(PROXY CLIENT: SUCCESSFUL closeConnection @2020-03-30)
+30 Mar 2020 23:35:18,616 TRACE network.ChatServicesRpcProxy$ReaderThread 264 run - Exit: PROXY CLIENT: FAILED run (because other end of socket disconnected from server) : IOException java.net.SocketException: Socket closed @2020-03-30
+30 Mar 2020 23:35:18,616 TRACE network.ChatServicesRpcProxy 80 logout - Exit with(PROXY CLIENT: SUCCESSFUL logout @2020-03-30)
+30 Mar 2020 23:35:18,864 TRACE protocols.ChatClientRpcWorker 65 run - Exit with(PROXY SERVER: run : BEGIN SHUTDOWN @2020-03-30)
+30 Mar 2020 23:35:18,865 TRACE protocols.ChatClientRpcWorker 69 run - Exit with(PROXY SERVER: run : COMPLETED SHUTDOWN @2020-03-30)
+30 Mar 2020 23:35:23,979 TRACE network.ChatServicesRpcProxy 204 initializeConnection - Enter PROXY CLIENT: INITIALIZING initializeConnection @2020-03-30
+30 Mar 2020 23:35:23,981 TRACE protocols.ChatClientRpcWorker 35 <init> - Exit with(PROXY SERVER: SUCCESSFUL ChatClientRpcWorker @2020-03-30)
+30 Mar 2020 23:35:23,981 TRACE network.ChatServicesRpcProxy 212 initializeConnection - Exit with(PROXY CLIENT: SUCCESSFUL initializeConnection @2020-03-30)
+30 Mar 2020 23:35:23,982 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest @2020-03-30
+30 Mar 2020 23:35:23,982 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
+30 Mar 2020 23:35:23,982 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
+30 Mar 2020 23:35:23,983 TRACE network.ChatServicesRpcProxy 175 sendRequest - Enter --- scriere: Request{type='LOGIN', data='UserDTO[ion ion]'}
+30 Mar 2020 23:35:23,983 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest @2020-03-30
+30 Mar 2020 23:35:23,983 TRACE network.ChatServicesRpcProxy 54 login - PROXY CLIENT: login SENT REQUEST @2020-03-30
+30 Mar 2020 23:35:23,984 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
+30 Mar 2020 23:35:23,984 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='LOGIN', data='UserDTO[ion ion]'}
+30 Mar 2020 23:35:23,984 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
+30 Mar 2020 23:35:23,984 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
+30 Mar 2020 23:35:23,984 TRACE protocols.ChatClientRpcWorker 97 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.LOGIN @2020-03-30
+30 Mar 2020 23:35:23,984 TRACE server.ChatServicesImpl 59 login - FULL SERVER: login RECEIVED COMMAND @2020-03-30
+30 Mar 2020 23:35:23,984 TRACE repos.ClientDataBaseRepository 29 findClientByCredentials - Enter entry find
+30 Mar 2020 23:35:23,984 TRACE repos.ClientDataBaseRepository 35 findClientByCredentials - Enter entry query
+30 Mar 2020 23:35:23,985 INFO  repos.ClientDataBaseRepository 40 findClientByCredentials - successful query
+30 Mar 2020 23:35:23,986 TRACE repos.ClientDataBaseRepository 42 findClientByCredentials - Exit: successful exit
+30 Mar 2020 23:35:23,986 TRACE server.ChatServicesImpl 67 login - FULL SERVER: login SENT RETURN TO SERVER PROXY @2020-03-30
+30 Mar 2020 23:35:23,986 TRACE protocols.ChatClientRpcWorker 103 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.login @2020-03-30
+30 Mar 2020 23:35:23,986 DEBUG protocols.ChatClientRpcWorker 187 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
+30 Mar 2020 23:35:23,986 TRACE protocols.ChatClientRpcWorker 189 sendResponse - Enter --- scriere: Response{type='OK', data='null'}
+30 Mar 2020 23:35:23,986 TRACE protocols.ChatClientRpcWorker 191 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
+30 Mar 2020 23:35:23,987 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
+30 Mar 2020 23:35:23,987 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
+30 Mar 2020 23:35:23,988 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) @2020-03-30
+30 Mar 2020 23:35:23,988 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='OK', data='null'}
+30 Mar 2020 23:35:23,988 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='OK', data='null'} @2020-03-30
+30 Mar 2020 23:35:23,988 TRACE network.ChatServicesRpcProxy 56 login - PROXY CLIENT: login RECEIVED RESPONSE @2020-03-30
+30 Mar 2020 23:35:23,989 TRACE network.ChatServicesRpcProxy 59 login - Exit with(PROXY CLIENT: SUCCESSFUL login @2020-03-30)
+30 Mar 2020 23:35:24,073 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest @2020-03-30
+30 Mar 2020 23:35:24,073 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
+30 Mar 2020 23:35:24,074 TRACE network.ChatServicesRpcProxy 175 sendRequest - Enter --- scriere: Request{type='GET_MATCHES', data='null'}
+30 Mar 2020 23:35:24,074 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest @2020-03-30
+30 Mar 2020 23:35:24,074 TRACE network.ChatServicesRpcProxy 114 findAllMeci - PROXY CLIENT: findAllMeci SENT REQUEST @2020-03-30
+30 Mar 2020 23:35:24,074 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
+30 Mar 2020 23:35:24,074 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
+30 Mar 2020 23:35:24,238 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
+30 Mar 2020 23:35:24,238 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='GET_MATCHES', data='null'}
+30 Mar 2020 23:35:24,238 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
+30 Mar 2020 23:35:24,238 TRACE protocols.ChatClientRpcWorker 129 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.GET_MATCHES @2020-03-30
+30 Mar 2020 23:35:24,239 TRACE server.ChatServicesImpl 102 findAllMeci - FULL SERVER: findAllMeci RECEIVED COMMAND @2020-03-30
+30 Mar 2020 23:35:24,239 TRACE repos.MeciDataBaseRepository 70 findAll - Enter entry findAll
+30 Mar 2020 23:35:24,239 TRACE repos.MeciDataBaseRepository 73 findAll - Enter entry query
+30 Mar 2020 23:35:24,240 INFO  repos.MeciDataBaseRepository 99 findAll - successful query
+30 Mar 2020 23:35:24,240 TRACE repos.MeciDataBaseRepository 104 findAll - Exit: successful exit
+30 Mar 2020 23:35:24,240 TRACE server.ChatServicesImpl 110 findAllMeci - FULL SERVER: findAllMeci SENT RETURN TO SERVER PROXY @2020-03-30
+30 Mar 2020 23:35:24,240 TRACE protocols.ChatClientRpcWorker 134 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.findAllMeci @2020-03-30
+30 Mar 2020 23:35:24,241 DEBUG protocols.ChatClientRpcWorker 187 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
+30 Mar 2020 23:35:24,243 TRACE protocols.ChatClientRpcWorker 189 sendResponse - Enter --- scriere: Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@1fb8d240'}
+30 Mar 2020 23:35:24,243 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
+30 Mar 2020 23:35:24,243 TRACE protocols.ChatClientRpcWorker 191 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
+30 Mar 2020 23:35:24,243 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) @2020-03-30
+30 Mar 2020 23:35:24,243 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
+30 Mar 2020 23:35:24,244 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@59b232e8'}
+30 Mar 2020 23:35:24,244 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@59b232e8'} @2020-03-30
+30 Mar 2020 23:35:24,244 TRACE network.ChatServicesRpcProxy 116 findAllMeci - PROXY CLIENT: findAllMeci RECEIVED RESPONSE @2020-03-30
+30 Mar 2020 23:35:24,245 TRACE network.ChatServicesRpcProxy 124 findAllMeci - Exit with(PROXY CLIENT: SUCCESSFUL findAllMeci @2020-03-30)
+30 Mar 2020 23:35:24,494 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
+30 Mar 2020 23:35:29,721 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest @2020-03-30
+30 Mar 2020 23:35:29,721 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
+30 Mar 2020 23:35:29,722 TRACE network.ChatServicesRpcProxy 175 sendRequest - Enter --- scriere: Request{type='GET_MATCHES_W_TICKETS', data='null'}
+30 Mar 2020 23:35:29,722 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='GET_MATCHES_W_TICKETS', data='null'}
+30 Mar 2020 23:35:29,722 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest @2020-03-30
+30 Mar 2020 23:35:29,722 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
+30 Mar 2020 23:35:29,722 TRACE network.ChatServicesRpcProxy 92 findAllMeciWithTickets - PROXY CLIENT: findAllMeciWithTickets SENT REQUEST @2020-03-30
+30 Mar 2020 23:35:29,723 TRACE protocols.ChatClientRpcWorker 145 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.GET_MATCHES_W_TICKETS @2020-03-30
+30 Mar 2020 23:35:29,723 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
+30 Mar 2020 23:35:29,723 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
+30 Mar 2020 23:35:29,723 TRACE server.ChatServicesImpl 82 findAllMeciWithTickets - FULL SERVER: findAllMeciWithTickets RECEIVED COMMAND @2020-03-30
+30 Mar 2020 23:35:29,723 TRACE repos.MeciDataBaseRepository 70 findAll - Enter entry findAll
+30 Mar 2020 23:35:29,723 TRACE repos.MeciDataBaseRepository 73 findAll - Enter entry query
+30 Mar 2020 23:35:29,725 INFO  repos.MeciDataBaseRepository 99 findAll - successful query
+30 Mar 2020 23:35:29,725 TRACE repos.MeciDataBaseRepository 104 findAll - Exit: successful exit
+30 Mar 2020 23:35:29,725 TRACE server.ChatServicesImpl 96 findAllMeciWithTickets - FULL SERVER: findAllMeciWithTickets SENT RETURN TO SERVER PROXY @2020-03-30
+30 Mar 2020 23:35:29,725 TRACE protocols.ChatClientRpcWorker 150 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.findAllMeci @2020-03-30
+30 Mar 2020 23:35:29,726 DEBUG protocols.ChatClientRpcWorker 187 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
+30 Mar 2020 23:35:29,727 TRACE protocols.ChatClientRpcWorker 189 sendResponse - Enter --- scriere: Response{type='GET_MATCHES_W_TICKETS', data='[Ldto.MeciDTO;@285a585'}
+30 Mar 2020 23:35:29,727 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
+30 Mar 2020 23:35:29,727 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) @2020-03-30
+30 Mar 2020 23:35:29,727 TRACE protocols.ChatClientRpcWorker 191 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
+30 Mar 2020 23:35:29,728 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
+30 Mar 2020 23:35:29,728 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='GET_MATCHES_W_TICKETS', data='[Ldto.MeciDTO;@5775d7ae'}
+30 Mar 2020 23:35:29,728 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='GET_MATCHES_W_TICKETS', data='[Ldto.MeciDTO;@5775d7ae'} @2020-03-30
+30 Mar 2020 23:35:29,728 TRACE network.ChatServicesRpcProxy 94 findAllMeciWithTickets - PROXY CLIENT: findAllMeciWithTickets RECEIVED RESPONSE @2020-03-30
+30 Mar 2020 23:35:29,728 TRACE network.ChatServicesRpcProxy 102 findAllMeciWithTickets - Exit with(PROXY CLIENT: SUCCESSFUL findAllMeciWithTickets @2020-03-30)
+30 Mar 2020 23:35:29,979 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
+30 Mar 2020 23:35:30,100 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest @2020-03-30
+30 Mar 2020 23:35:30,100 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
+30 Mar 2020 23:35:30,100 TRACE network.ChatServicesRpcProxy 175 sendRequest - Enter --- scriere: Request{type='GET_MATCHES', data='null'}
+30 Mar 2020 23:35:30,100 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest @2020-03-30
+30 Mar 2020 23:35:30,100 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='GET_MATCHES', data='null'}
+30 Mar 2020 23:35:30,100 TRACE network.ChatServicesRpcProxy 114 findAllMeci - PROXY CLIENT: findAllMeci SENT REQUEST @2020-03-30
+30 Mar 2020 23:35:30,101 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
+30 Mar 2020 23:35:30,101 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
+30 Mar 2020 23:35:30,101 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
+30 Mar 2020 23:35:30,101 TRACE protocols.ChatClientRpcWorker 129 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.GET_MATCHES @2020-03-30
+30 Mar 2020 23:35:30,101 TRACE server.ChatServicesImpl 102 findAllMeci - FULL SERVER: findAllMeci RECEIVED COMMAND @2020-03-30
+30 Mar 2020 23:35:30,101 TRACE repos.MeciDataBaseRepository 70 findAll - Enter entry findAll
+30 Mar 2020 23:35:30,101 TRACE repos.MeciDataBaseRepository 73 findAll - Enter entry query
+30 Mar 2020 23:35:30,102 INFO  repos.MeciDataBaseRepository 99 findAll - successful query
+30 Mar 2020 23:35:30,103 TRACE repos.MeciDataBaseRepository 104 findAll - Exit: successful exit
+30 Mar 2020 23:35:30,103 TRACE server.ChatServicesImpl 110 findAllMeci - FULL SERVER: findAllMeci SENT RETURN TO SERVER PROXY @2020-03-30
+30 Mar 2020 23:35:30,103 TRACE protocols.ChatClientRpcWorker 134 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.findAllMeci @2020-03-30
+30 Mar 2020 23:35:30,103 DEBUG protocols.ChatClientRpcWorker 187 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
+30 Mar 2020 23:35:30,105 TRACE protocols.ChatClientRpcWorker 189 sendResponse - Enter --- scriere: Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@7ff40e9c'}
+30 Mar 2020 23:35:30,105 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
+30 Mar 2020 23:35:30,105 TRACE protocols.ChatClientRpcWorker 191 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
+30 Mar 2020 23:35:30,105 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) @2020-03-30
+30 Mar 2020 23:35:30,105 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
+30 Mar 2020 23:35:30,113 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@534a5998'}
+30 Mar 2020 23:35:30,114 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@534a5998'} @2020-03-30
+30 Mar 2020 23:35:30,114 TRACE network.ChatServicesRpcProxy 116 findAllMeci - PROXY CLIENT: findAllMeci RECEIVED RESPONSE @2020-03-30
+30 Mar 2020 23:35:30,114 TRACE network.ChatServicesRpcProxy 124 findAllMeci - Exit with(PROXY CLIENT: SUCCESSFUL findAllMeci @2020-03-30)
+30 Mar 2020 23:35:30,355 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
+30 Mar 2020 23:35:31,678 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest @2020-03-30
+30 Mar 2020 23:35:31,678 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
+30 Mar 2020 23:35:31,679 TRACE network.ChatServicesRpcProxy 175 sendRequest - Enter --- scriere: Request{type='GET_MATCHES_W_TICKETS', data='null'}
+30 Mar 2020 23:35:31,679 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='GET_MATCHES_W_TICKETS', data='null'}
+30 Mar 2020 23:35:31,679 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest @2020-03-30
+30 Mar 2020 23:35:31,679 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
+30 Mar 2020 23:35:31,679 TRACE network.ChatServicesRpcProxy 92 findAllMeciWithTickets - PROXY CLIENT: findAllMeciWithTickets SENT REQUEST @2020-03-30
+30 Mar 2020 23:35:31,679 TRACE protocols.ChatClientRpcWorker 145 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.GET_MATCHES_W_TICKETS @2020-03-30
+30 Mar 2020 23:35:31,679 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
+30 Mar 2020 23:35:31,679 TRACE server.ChatServicesImpl 82 findAllMeciWithTickets - FULL SERVER: findAllMeciWithTickets RECEIVED COMMAND @2020-03-30
+30 Mar 2020 23:35:31,679 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
+30 Mar 2020 23:35:31,680 TRACE repos.MeciDataBaseRepository 70 findAll - Enter entry findAll
+30 Mar 2020 23:35:31,680 TRACE repos.MeciDataBaseRepository 73 findAll - Enter entry query
+30 Mar 2020 23:35:31,681 INFO  repos.MeciDataBaseRepository 99 findAll - successful query
+30 Mar 2020 23:35:31,681 TRACE repos.MeciDataBaseRepository 104 findAll - Exit: successful exit
+30 Mar 2020 23:35:31,682 TRACE server.ChatServicesImpl 96 findAllMeciWithTickets - FULL SERVER: findAllMeciWithTickets SENT RETURN TO SERVER PROXY @2020-03-30
+30 Mar 2020 23:35:31,682 TRACE protocols.ChatClientRpcWorker 150 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.findAllMeci @2020-03-30
+30 Mar 2020 23:35:31,682 DEBUG protocols.ChatClientRpcWorker 187 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
+30 Mar 2020 23:35:31,683 TRACE protocols.ChatClientRpcWorker 189 sendResponse - Enter --- scriere: Response{type='GET_MATCHES_W_TICKETS', data='[Ldto.MeciDTO;@5c2eec61'}
+30 Mar 2020 23:35:31,683 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
+30 Mar 2020 23:35:31,683 TRACE protocols.ChatClientRpcWorker 191 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
+30 Mar 2020 23:35:31,684 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
+30 Mar 2020 23:35:31,684 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) @2020-03-30
+30 Mar 2020 23:35:31,684 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='GET_MATCHES_W_TICKETS', data='[Ldto.MeciDTO;@1648dd95'}
+30 Mar 2020 23:35:31,684 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='GET_MATCHES_W_TICKETS', data='[Ldto.MeciDTO;@1648dd95'} @2020-03-30
+30 Mar 2020 23:35:31,684 TRACE network.ChatServicesRpcProxy 94 findAllMeciWithTickets - PROXY CLIENT: findAllMeciWithTickets RECEIVED RESPONSE @2020-03-30
+30 Mar 2020 23:35:31,685 TRACE network.ChatServicesRpcProxy 102 findAllMeciWithTickets - Exit with(PROXY CLIENT: SUCCESSFUL findAllMeciWithTickets @2020-03-30)
+30 Mar 2020 23:35:31,935 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
+30 Mar 2020 23:35:32,062 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest @2020-03-30
+30 Mar 2020 23:35:32,063 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
+30 Mar 2020 23:35:32,063 TRACE network.ChatServicesRpcProxy 175 sendRequest - Enter --- scriere: Request{type='GET_MATCHES', data='null'}
+30 Mar 2020 23:35:32,063 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='GET_MATCHES', data='null'}
+30 Mar 2020 23:35:32,063 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest @2020-03-30
+30 Mar 2020 23:35:32,063 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
+30 Mar 2020 23:35:32,063 TRACE network.ChatServicesRpcProxy 114 findAllMeci - PROXY CLIENT: findAllMeci SENT REQUEST @2020-03-30
+30 Mar 2020 23:35:32,063 TRACE protocols.ChatClientRpcWorker 129 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.GET_MATCHES @2020-03-30
+30 Mar 2020 23:35:32,063 TRACE server.ChatServicesImpl 102 findAllMeci - FULL SERVER: findAllMeci RECEIVED COMMAND @2020-03-30
+30 Mar 2020 23:35:32,063 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
+30 Mar 2020 23:35:32,064 TRACE repos.MeciDataBaseRepository 70 findAll - Enter entry findAll
+30 Mar 2020 23:35:32,064 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
+30 Mar 2020 23:35:32,064 TRACE repos.MeciDataBaseRepository 73 findAll - Enter entry query
+30 Mar 2020 23:35:32,065 INFO  repos.MeciDataBaseRepository 99 findAll - successful query
+30 Mar 2020 23:35:32,065 TRACE repos.MeciDataBaseRepository 104 findAll - Exit: successful exit
+30 Mar 2020 23:35:32,065 TRACE server.ChatServicesImpl 110 findAllMeci - FULL SERVER: findAllMeci SENT RETURN TO SERVER PROXY @2020-03-30
+30 Mar 2020 23:35:32,065 TRACE protocols.ChatClientRpcWorker 134 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.findAllMeci @2020-03-30
+30 Mar 2020 23:35:32,065 DEBUG protocols.ChatClientRpcWorker 187 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
+30 Mar 2020 23:35:32,066 TRACE protocols.ChatClientRpcWorker 189 sendResponse - Enter --- scriere: Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@48c806a0'}
+30 Mar 2020 23:35:32,067 TRACE protocols.ChatClientRpcWorker 191 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
+30 Mar 2020 23:35:32,067 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
+30 Mar 2020 23:35:32,067 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
+30 Mar 2020 23:35:32,067 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) @2020-03-30
+30 Mar 2020 23:35:32,067 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@5e2588c6'}
+30 Mar 2020 23:35:32,067 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='GET_MATCHES', data='[Ldto.MeciDTO;@5e2588c6'} @2020-03-30
+30 Mar 2020 23:35:32,068 TRACE network.ChatServicesRpcProxy 116 findAllMeci - PROXY CLIENT: findAllMeci RECEIVED RESPONSE @2020-03-30
+30 Mar 2020 23:35:32,068 TRACE network.ChatServicesRpcProxy 124 findAllMeci - Exit with(PROXY CLIENT: SUCCESSFUL findAllMeci @2020-03-30)
+30 Mar 2020 23:35:32,317 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
+30 Mar 2020 23:35:32,674 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest @2020-03-30
+30 Mar 2020 23:35:32,675 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
+30 Mar 2020 23:35:32,675 TRACE network.ChatServicesRpcProxy 175 sendRequest - Enter --- scriere: Request{type='GET_MATCHES_W_TICKETS', data='null'}
+30 Mar 2020 23:35:32,675 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='GET_MATCHES_W_TICKETS', data='null'}
+30 Mar 2020 23:35:32,675 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest @2020-03-30
+30 Mar 2020 23:35:32,675 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
+30 Mar 2020 23:35:32,675 TRACE network.ChatServicesRpcProxy 92 findAllMeciWithTickets - PROXY CLIENT: findAllMeciWithTickets SENT REQUEST @2020-03-30
+30 Mar 2020 23:35:32,676 TRACE protocols.ChatClientRpcWorker 145 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.GET_MATCHES_W_TICKETS @2020-03-30
+30 Mar 2020 23:35:32,676 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
+30 Mar 2020 23:35:32,676 TRACE server.ChatServicesImpl 82 findAllMeciWithTickets - FULL SERVER: findAllMeciWithTickets RECEIVED COMMAND @2020-03-30
+30 Mar 2020 23:35:32,676 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
+30 Mar 2020 23:35:32,676 TRACE repos.MeciDataBaseRepository 70 findAll - Enter entry findAll
+30 Mar 2020 23:35:32,676 TRACE repos.MeciDataBaseRepository 73 findAll - Enter entry query
+30 Mar 2020 23:35:32,677 INFO  repos.MeciDataBaseRepository 99 findAll - successful query
+30 Mar 2020 23:35:32,678 TRACE repos.MeciDataBaseRepository 104 findAll - Exit: successful exit
+30 Mar 2020 23:35:32,678 TRACE server.ChatServicesImpl 96 findAllMeciWithTickets - FULL SERVER: findAllMeciWithTickets SENT RETURN TO SERVER PROXY @2020-03-30
+30 Mar 2020 23:35:32,678 TRACE protocols.ChatClientRpcWorker 150 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.findAllMeci @2020-03-30
+30 Mar 2020 23:35:32,679 DEBUG protocols.ChatClientRpcWorker 187 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
+30 Mar 2020 23:35:32,680 TRACE protocols.ChatClientRpcWorker 189 sendResponse - Enter --- scriere: Response{type='GET_MATCHES_W_TICKETS', data='[Ldto.MeciDTO;@124801c7'}
+30 Mar 2020 23:35:32,680 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
+30 Mar 2020 23:35:32,680 TRACE protocols.ChatClientRpcWorker 191 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
+30 Mar 2020 23:35:32,680 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) @2020-03-30
+30 Mar 2020 23:35:32,680 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
+30 Mar 2020 23:35:32,680 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='GET_MATCHES_W_TICKETS', data='[Ldto.MeciDTO;@2714ec0b'}
+30 Mar 2020 23:35:32,681 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='GET_MATCHES_W_TICKETS', data='[Ldto.MeciDTO;@2714ec0b'} @2020-03-30
+30 Mar 2020 23:35:32,681 TRACE network.ChatServicesRpcProxy 94 findAllMeciWithTickets - PROXY CLIENT: findAllMeciWithTickets RECEIVED RESPONSE @2020-03-30
+30 Mar 2020 23:35:32,681 TRACE network.ChatServicesRpcProxy 102 findAllMeciWithTickets - Exit with(PROXY CLIENT: SUCCESSFUL findAllMeciWithTickets @2020-03-30)
+30 Mar 2020 23:35:32,930 DEBUG protocols.ChatClientRpcWorker 46 run - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - Object request=input.readObject();
+30 Mar 2020 23:35:38,197 TRACE network.ChatServicesRpcProxy 171 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest @2020-03-30
+30 Mar 2020 23:35:38,197 DEBUG network.ChatServicesRpcProxy 173 sendRequest - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(request);
+30 Mar 2020 23:35:38,198 TRACE network.ChatServicesRpcProxy 175 sendRequest - Enter --- scriere: Request{type='LOGOUT', data='UserDTO[ion ion]'}
+30 Mar 2020 23:35:38,198 TRACE network.ChatServicesRpcProxy 177 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest @2020-03-30
+30 Mar 2020 23:35:38,198 TRACE protocols.ChatClientRpcWorker 48 run - Enter --- citire: Request{type='LOGOUT', data='UserDTO[ion ion]'}
+30 Mar 2020 23:35:38,198 TRACE network.ChatServicesRpcProxy 75 logout - PROXY CLIENT: logout SENT REQUEST @2020-03-30
+30 Mar 2020 23:35:38,198 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
+30 Mar 2020 23:35:38,198 TRACE network.ChatServicesRpcProxy 187 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
+30 Mar 2020 23:35:38,199 DEBUG network.ChatServicesRpcProxy 189 readResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     C I T I R E     !!! - response=qresponses.take();
+30 Mar 2020 23:35:38,199 TRACE protocols.ChatClientRpcWorker 112 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.LOGOUT @2020-03-30
+30 Mar 2020 23:35:38,199 TRACE server.ChatServicesImpl 73 logout - FULL SERVER: logout RECEIVED COMMAND @2020-03-30
+30 Mar 2020 23:35:38,199 TRACE server.ChatServicesImpl 77 logout - FULL SERVER: logout SENT RETURN TO SERVER PROXY @2020-03-30
+30 Mar 2020 23:35:38,199 TRACE protocols.ChatClientRpcWorker 119 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.logout @2020-03-30
+30 Mar 2020 23:35:38,200 DEBUG protocols.ChatClientRpcWorker 187 sendResponse - E S T E   P O S I B I L   S A     F I U   B L O C A T     D E     S C R I E R E     !!! - output.writeObject(response);
+30 Mar 2020 23:35:38,200 TRACE protocols.ChatClientRpcWorker 189 sendResponse - Enter --- scriere: Response{type='OK', data='null'}
+30 Mar 2020 23:35:38,201 TRACE network.ChatServicesRpcProxy$ReaderThread 250 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
+30 Mar 2020 23:35:38,201 TRACE protocols.ChatClientRpcWorker 191 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
+30 Mar 2020 23:35:38,201 TRACE network.ChatServicesRpcProxy$ReaderThread 257 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) @2020-03-30
+30 Mar 2020 23:35:38,201 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
+30 Mar 2020 23:35:38,201 TRACE network.ChatServicesRpcProxy 191 readResponse - Enter --- citire: Response{type='OK', data='null'}
+30 Mar 2020 23:35:38,201 TRACE network.ChatServicesRpcProxy 192 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL qresponses.take readResponse Response{type='OK', data='null'} @2020-03-30
+30 Mar 2020 23:35:38,202 TRACE network.ChatServicesRpcProxy 77 logout - PROXY CLIENT: logout RECEIVED RESPONSE @2020-03-30
+30 Mar 2020 23:35:38,202 TRACE network.ChatServicesRpcProxy 155 closeConnection - Exit with(PROXY CLIENT: SUCCESSFUL closeConnection @2020-03-30)
+30 Mar 2020 23:35:38,202 TRACE network.ChatServicesRpcProxy$ReaderThread 264 run - Exit: PROXY CLIENT: FAILED run (because other end of socket disconnected from server) : IOException java.net.SocketException: Socket closed @2020-03-30
+30 Mar 2020 23:35:38,203 TRACE network.ChatServicesRpcProxy 80 logout - Exit with(PROXY CLIENT: SUCCESSFUL logout @2020-03-30)
+30 Mar 2020 23:35:38,452 TRACE protocols.ChatClientRpcWorker 65 run - Exit with(PROXY SERVER: run : BEGIN SHUTDOWN @2020-03-30)
+30 Mar 2020 23:35:38,452 TRACE protocols.ChatClientRpcWorker 69 run - Exit with(PROXY SERVER: run : COMPLETED SHUTDOWN @2020-03-30)
