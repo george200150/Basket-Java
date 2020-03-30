@@ -78,12 +78,12 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
-        <option value="Interface" />
         <option value="FxmlFile" />
         <option value="CSS File" />
-        <option value="Class" />
         <option value="spring-beans.schema" />
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -96,7 +96,7 @@
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/FACULTATE A2S2/MPP/Curs3/Curs3/TaskSpringXML/TaskSpringXML/build.gradle" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Model/src/main/resources" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -117,12 +117,17 @@
       <recent name="mvc.controllers" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\George\Documents\GitHub\Basket-Java\src\main\resources\views\" />
-      <recent name="C:\Users\George\Documents\GitHub\Basket-Java\src\main\java\utils\observers" />
-      <recent name="C:\Users\George\Documents\GitHub\Basket-Java\src\main\java\utils" />
+      <recent name="C:\Users\George\Documents\GitHub\Basket-Java\Model\src\main\resources" />
+      <recent name="C:\Users\George\Documents\GitHub\Basket-Java\Server\src\main\resources" />
+      <recent name="C:\Users\George\Documents\GitHub\Basket-Java\Persistence\src\main\resources" />
+      <recent name="C:\Users\George\Documents\GitHub\Basket-Java\Networking\src\main\resources" />
+      <recent name="C:\Users\George\Documents\GitHub\Basket-Java\Client\src\main\resources\views" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="model.domain" />
       <recent name="mvc" />
+      <recent name="server" />
+      <recent name="protocols" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
@@ -140,12 +145,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.StartRpcClient">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="11.0.4" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="LAB1_MPP.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StartRpcClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StartRpcClient" />
+      <module name="LAB1_MPP.Client.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StartRpcServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StartRpcServer" />
+      <module name="LAB1_MPP.Server.main" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -169,55 +188,17 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="LAB1 MPP [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="jar" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="LAB1 MPP [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="LAB1 MPP-1.0.jar" type="JarApplication" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/build/libs/LAB1 MPP-1.0.jar" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.StartRpcServer" />
+        <item itemvalue="Application.StartRpcClient" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Gradle.LAB1 MPP [build]" />
         <item itemvalue="JAR Application.LAB1 MPP-1.0.jar" />
-        <item itemvalue="Gradle.LAB1 MPP [jar]" />
-        <item itemvalue="Gradle.LAB1 MPP [test]" />
       </list>
     </recent_temporary>
   </component>
@@ -257,7 +238,20 @@
       <workItem from="1584270576939" duration="22648000" />
       <workItem from="1584384609164" duration="4933000" />
       <workItem from="1584458300854" duration="4734000" />
-      <workItem from="1584524377669" duration="4756000" />
+      <workItem from="1584524377669" duration="6123000" />
+      <workItem from="1584606846913" duration="947000" />
+      <workItem from="1584690568781" duration="887000" />
+      <workItem from="1584877173088" duration="91000" />
+      <workItem from="1585074078902" duration="627000" />
+      <workItem from="1585248944973" duration="602000" />
+      <workItem from="1585249994263" duration="494000" />
+      <workItem from="1585251450426" duration="428000" />
+      <workItem from="1585252049738" duration="836000" />
+      <workItem from="1585380806488" duration="5480000" />
+      <workItem from="1585397302510" duration="12000" />
+      <workItem from="1585397334683" duration="23959000" />
+      <workItem from="1585466900359" duration="27407000" />
+      <workItem from="1585554641182" duration="15181000" />
     </task>
     <servers />
   </component>
@@ -276,5 +270,462 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Server/src/main/java/server/ChatServicesImpl.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="110" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Server/src/main/java/server/ChatServicesImpl.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="111" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Server/src/main/java/server/ChatServicesImpl.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="114" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Server/src/main/java/server/ChatServicesImpl.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="115" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Server/src/main/java/server/ChatServicesImpl.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="116" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/AccountController.java</url>
+          <line>170</line>
+          <option name="timeStamp" value="256" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Server/src/main/java/server/ChatServicesImpl.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="259" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>102</line>
+          <option name="timeStamp" value="262" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>262</line>
+          <option name="timeStamp" value="301" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>263</line>
+          <option name="timeStamp" value="302" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>160</line>
+          <option name="timeStamp" value="336" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>137</line>
+          <option name="timeStamp" value="337" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>157</line>
+          <option name="timeStamp" value="338" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>152</line>
+          <option name="timeStamp" value="339" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>140</line>
+          <option name="timeStamp" value="340" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>162</line>
+          <option name="timeStamp" value="341" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>142</line>
+          <option name="timeStamp" value="342" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>164</line>
+          <option name="timeStamp" value="343" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/AccountController.java</url>
+          <line>167</line>
+          <option name="timeStamp" value="350" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/AccountController.java</url>
+          <line>171</line>
+          <option name="timeStamp" value="351" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/AccountController.java</url>
+          <line>172</line>
+          <option name="timeStamp" value="352" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/AccountController.java</url>
+          <line>173</line>
+          <option name="timeStamp" value="353" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/AccountController.java</url>
+          <line>174</line>
+          <option name="timeStamp" value="354" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Model/src/main/java/model/domain/MeciPlusInfo.java</url>
+          <line>122</line>
+          <option name="timeStamp" value="411" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Model/src/main/java/model/domain/MeciPlusInfo.java</url>
+          <line>123</line>
+          <option name="timeStamp" value="412" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Model/src/main/java/model/domain/MeciPlusInfo.java</url>
+          <line>124</line>
+          <option name="timeStamp" value="413" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Model/src/main/java/model/domain/MeciPlusInfo.java</url>
+          <line>125</line>
+          <option name="timeStamp" value="414" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Model/src/main/java/model/domain/MeciPlusInfo.java</url>
+          <line>126</line>
+          <option name="timeStamp" value="415" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Model/src/main/java/model/domain/MeciPlusInfo.java</url>
+          <line>127</line>
+          <option name="timeStamp" value="416" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Model/src/main/java/model/domain/MeciPlusInfo.java</url>
+          <line>128</line>
+          <option name="timeStamp" value="417" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Model/src/main/java/model/domain/MeciPlusInfo.java</url>
+          <line>129</line>
+          <option name="timeStamp" value="418" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Model/src/main/java/model/domain/MeciPlusInfo.java</url>
+          <line>130</line>
+          <option name="timeStamp" value="419" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/AccountController.java</url>
+          <line>176</line>
+          <option name="timeStamp" value="423" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/AccountController.java</url>
+          <line>177</line>
+          <option name="timeStamp" value="424" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>224</line>
+          <option name="timeStamp" value="454" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>226</line>
+          <option name="timeStamp" value="455" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>228</line>
+          <option name="timeStamp" value="457" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>229</line>
+          <option name="timeStamp" value="458" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>210</line>
+          <option name="timeStamp" value="464" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>211</line>
+          <option name="timeStamp" value="465" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>213</line>
+          <option name="timeStamp" value="466" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>159</line>
+          <option name="timeStamp" value="488" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>171</line>
+          <option name="timeStamp" value="489" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="501" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="502" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="503" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="504" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="505" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/LoginFormController.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="516" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/LoginFormController.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="517" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/LoginFormController.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="518" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/LoginFormController.java</url>
+          <line>76</line>
+          <option name="timeStamp" value="519" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/LoginFormController.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="520" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/LoginFormController.java</url>
+          <line>78</line>
+          <option name="timeStamp" value="521" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/LoginFormController.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="522" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/LoginFormController.java</url>
+          <line>90</line>
+          <option name="timeStamp" value="523" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>172</line>
+          <option name="timeStamp" value="529" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>173</line>
+          <option name="timeStamp" value="530" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>174</line>
+          <option name="timeStamp" value="531" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>175</line>
+          <option name="timeStamp" value="532" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>176</line>
+          <option name="timeStamp" value="533" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>177</line>
+          <option name="timeStamp" value="534" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>178</line>
+          <option name="timeStamp" value="535" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>179</line>
+          <option name="timeStamp" value="536" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>167</line>
+          <option name="timeStamp" value="538" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>166</line>
+          <option name="timeStamp" value="539" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>168</line>
+          <option name="timeStamp" value="540" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>169</line>
+          <option name="timeStamp" value="541" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+          <line>159</line>
+          <option name="timeStamp" value="542" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+          <line>160</line>
+          <option name="timeStamp" value="543" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+          <line>161</line>
+          <option name="timeStamp" value="544" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+          <line>162</line>
+          <option name="timeStamp" value="545" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+          <line>163</line>
+          <option name="timeStamp" value="546" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+          <line>164</line>
+          <option name="timeStamp" value="547" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+          <line>165</line>
+          <option name="timeStamp" value="548" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+          <line>166</line>
+          <option name="timeStamp" value="549" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+          <line>167</line>
+          <option name="timeStamp" value="550" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+          <line>168</line>
+          <option name="timeStamp" value="551" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+          <line>169</line>
+          <option name="timeStamp" value="552" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+          <line>171</line>
+          <option name="timeStamp" value="553" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+          <line>173</line>
+          <option name="timeStamp" value="554" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+          <line>174</line>
+          <option name="timeStamp" value="555" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+          <line>175</line>
+          <option name="timeStamp" value="556" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+          <line>176</line>
+          <option name="timeStamp" value="557" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+          <line>177</line>
+          <option name="timeStamp" value="558" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+          <line>179</line>
+          <option name="timeStamp" value="559" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+          <line>180</line>
+          <option name="timeStamp" value="560" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Server/src/main/java/server/ChatServicesImpl.java</url>
+          <line>27</line>
+          <properties class="server.ChatServicesImpl" method="&lt;init&gt;">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="109" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>258</line>
+          <properties class="network.ChatServicesRpcProxy.ReaderThread">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
