@@ -8,13 +8,15 @@ public class DTOUtils {
     public static Client getFromDTO(UserDTO usdto){
         String id=usdto.getId();
         String pass=usdto.getPasswd();
-        return new Client(id, pass);
-
+        Client client = new Client(id, pass);
+        client.setNume(usdto.getNume());
+        return client;
     }
     public static UserDTO getDTO(Client user){
         String id=user.getId();
         String pass=user.getPassword();
-        return new UserDTO(id, pass);
+        String nume=user.getNume();
+        return new UserDTO(id, pass, nume);
     }
 
     public static UserDTO[] getDTO(Client[] users){
@@ -100,18 +102,5 @@ public class DTOUtils {
         String idClient = biletDTO.getIdClient();
 
         return new Bilet(id, numeClient, pret, idMeci, idClient);
-    }
-
-
-
-    public static Echipa getFromDTO(EchipaDTO echipaDTO) {
-        String id = echipaDTO.getId();
-        String nume = echipaDTO.getNume();
-        return new Echipa(id, nume);
-    }
-    public static EchipaDTO getDTO(Echipa echipa){
-        String id = echipa.getId();
-        String nume = echipa.getNume();
-        return new EchipaDTO(id,nume);
     }
 }

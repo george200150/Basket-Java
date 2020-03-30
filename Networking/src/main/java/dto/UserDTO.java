@@ -6,14 +6,24 @@ import java.io.Serializable;
 public class UserDTO implements Serializable{
     private String id;
     private String passwd;
+    private String nume;
 
-    public UserDTO(String id) {
-        this(id,"");
-    }
-
-    public UserDTO(String id, String passwd) {
+    public UserDTO(String id, String passwd, String nume) {
         this.id = id;
         this.passwd = passwd;
+        this.nume = nume;
+    }
+
+    public void setPasswd(String passwd) {
+        this.passwd = passwd;
+    }
+
+    public String getNume() {
+        return nume;
+    }
+
+    public void setNume(String nume) {
+        this.nume = nume;
     }
 
     public String getId() {

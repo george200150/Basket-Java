@@ -1,6 +1,7 @@
 package repos;
 
-import model.loggers.Log;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,6 +11,7 @@ import java.util.Properties;
 public class JDBCInvariant {
     private static Connection connection = null;
     private static Properties jdbcProps = null;
+    static final Logger logger = LogManager.getLogger(JDBCInvariant.class);
 
     public JDBCInvariant(Properties props) {
         jdbcProps = props;
@@ -22,17 +24,17 @@ public class JDBCInvariant {
         String user = jdbcProps.getProperty("jdbc.postgres.user");
         String password = jdbcProps.getProperty("jdbc.postgres.password");
         try {
-            Log.logger.traceEntry("entry constructor");
+            logger.traceEntry("entry constructor");
             Class.forName(driver);
             connection = DriverManager
                     .getConnection(url, user, password);
-            Log.logger.info("successful connection");
+            logger.info("successful connection");
 
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
-            Log.logger.error("connection failure"  + e.getMessage());
+            logger.error("connection failure"  + e.getMessage());
         }
-        Log.logger.traceExit("successful exit", connection);
+        logger.traceExit("successful exit", connection);
         //TODO: maybe should throw ERROR here in order to notify database NOT REACHABLE ???
         return connection;
     }

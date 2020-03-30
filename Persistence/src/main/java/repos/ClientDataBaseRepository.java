@@ -1,9 +1,10 @@
 package repos;
 
 import model.domain.Client;
-import model.loggers.Log;
 import model.validators.ValidationException;
 import model.validators.Validator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -12,34 +13,36 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClientDataBaseRepository implements CrudRepository<String, Client> {
+    static final Logger logger = LogManager.getLogger(ClientDataBaseRepository.class);
     private Connection connection;
     private Validator<Client> validator;
 
     public ClientDataBaseRepository(Validator<Client> validator) {
-        Log.logger.traceEntry("entry constructor");
+
+        logger.traceEntry("entry constructor");
         this.connection = JDBCInvariant.getConnection();
         this.validator = validator;
-        Log.logger.traceExit("successful constructor exit");
+        logger.traceExit("successful constructor exit");
     }
 
     public Client findClientByCredentials(String username, String password) throws IllegalArgumentException {
-        Log.logger.traceEntry("entry find");
+        logger.traceEntry("entry find");
         if (username == null || password == null) {
-            Log.logger.error("null id exception");
+            logger.error("null id exception");
             throw new IllegalArgumentException("ID-UL SI PAROLA NU POT FI NULL");
         }
         try {
-            Log.logger.traceEntry("entry query");
+            logger.traceEntry("entry query");
             ResultSet data = connection.createStatement().executeQuery("SELECT * FROM \"Clienti\"  WHERE id =" + "\'" + username + "\' AND password =" + "\'" + password + "\'");
             data.next();
             String idd = data.getString(1); // daca nu putem obtine id-ul, nu exista clientul
             String passwd = data.getString(2);
-            Log.logger.info("successful query");
+            logger.info("successful query");
             Client client = new Client(idd, passwd);
-            Log.logger.traceExit("successful exit", client);
+            logger.traceExit("successful exit", client);
             return client;
         } catch (SQLException ignored) {
-            Log.logger.error("query exception" + ignored.getMessage());
+            logger.error("query exception" + ignored.getMessage());
         }
         return null;
     }
@@ -47,33 +50,33 @@ public class ClientDataBaseRepository implements CrudRepository<String, Client> 
 
     @Override
     public Client findOne(String id) throws IllegalArgumentException {
-        Log.logger.traceEntry("entry find");
+        logger.traceEntry("entry find");
         if (id == null) {
-            Log.logger.error("null id exception");
+            logger.error("null id exception");
             throw new IllegalArgumentException("ID-ul NU POATE FI NULL");
         }
         try {
-            Log.logger.traceEntry("entry query");
+            logger.traceEntry("entry query");
             ResultSet data = connection.createStatement().executeQuery("SELECT * FROM \"Clienti\"  WHERE id =" + "\'" + id + "\'");
             data.next();
             String idd = data.getString(1); // daca nu putem obtine id-ul, nu exista clientul
             String passwd = data.getString(2);
-            Log.logger.info("successful query");
+            logger.info("successful query");
             Client client = new Client(idd, passwd);
-            Log.logger.traceExit("successful exit", client);
+            logger.traceExit("successful exit", client);
             return client;
         } catch (SQLException ignored) {
-            Log.logger.error("query exception" + ignored.getMessage());
+            logger.error("query exception" + ignored.getMessage());
         }
         return null;
     }
 
     @Override
     public Iterable<Client> findAll() {
-        Log.logger.traceEntry("entry findAll");
+        logger.traceEntry("entry findAll");
         List<Client> lst = new ArrayList<>();
         try {
-            Log.logger.traceEntry("entry query");
+            logger.traceEntry("entry query");
             ResultSet data = connection.createStatement().executeQuery("SELECT * FROM \"Clienti\"");
             while (data.next()) {
                 String id = data.getString(1);
@@ -81,96 +84,96 @@ public class ClientDataBaseRepository implements CrudRepository<String, Client> 
                 Client client = new Client(id, passwd);
                 lst.add(client);
             }
-            Log.logger.info("successful query");
+            logger.info("successful query");
         } catch (SQLException ignored) {
-            Log.logger.error("query error" + ignored.getMessage());
+            logger.error("query error" + ignored.getMessage());
             throw new IllegalArgumentException("Error: Could not connect to the database");
         }
-        Log.logger.traceExit("successful exit", lst);
+        logger.traceExit("successful exit", lst);
         return lst;
     }
 
 
     @Override
     public Client save(Client entity) throws ValidationException {
-        Log.logger.traceEntry("entry save");
+        logger.traceEntry("entry save");
         if (entity == null) {
-            Log.logger.error("null id exception");
+            logger.error("null id exception");
             throw new IllegalArgumentException("ENTITATEA NU POATE FI NULL");
         }
         validator.validate(entity);
-        Log.logger.info("validated data");
+        logger.info("validated data");
         if (findOne(entity.getId()) != null) {
-            Log.logger.error("duplicate found exception");
+            logger.error("duplicate found exception");
             throw new ValidationException("DUPLICAT GASIT!");
         }
 
         try {
-            Log.logger.traceEntry("entry query");
+            logger.traceEntry("entry query");
             connection.createStatement().execute("INSERT INTO \"Clienti\" VALUES (" +
                     entity.getId() + ",\'" + entity.getPassword() + "\')"
             );
 
         } catch (SQLException e) {
-            Log.logger.error("query error" + e.getMessage());
+            logger.error("query error" + e.getMessage());
             e.printStackTrace();
         }
-        Log.logger.traceExit("successful query", null);
+        logger.traceExit("successful query", null);
         return null;
     }
 
     @Override
     public Client delete(String id) throws IllegalArgumentException {
-        Log.logger.traceEntry("entry delete");
+        logger.traceEntry("entry delete");
         if (id == null) {
-            Log.logger.error("null id exception");
+            logger.error("null id exception");
             throw new IllegalArgumentException("ID-ul nu poate fi NULL!");
         }
         Client client = findOne(id);
-        Log.logger.info("found data");
+        logger.info("found data");
         if (client != null) {
             try {
-                Log.logger.traceEntry("entry query");
+                logger.traceEntry("entry query");
                 connection.createStatement()
                         .execute("DELETE FROM \"Clienti\" WHERE id = " + "\'" + id + "\'");
-                Log.logger.traceExit("successful query", null);
+                logger.traceExit("successful query", null);
             } catch (SQLException e) {
-                Log.logger.error("query error" + e.getMessage());
+                logger.error("query error" + e.getMessage());
                 e.printStackTrace();
             }
         }
-        Log.logger.traceExit("successful query", client);
+        logger.traceExit("successful query", client);
         return client;
     }
 
     @Override
     public Client update(Client entity) throws ValidationException {
-        Log.logger.traceEntry("entry update");
+        logger.traceEntry("entry update");
         if (entity == null) {
-            Log.logger.error("null entity exception");
+            logger.error("null entity exception");
             throw new IllegalArgumentException("Entitatea nu poate fi NULL!");
         }
         validator.validate(entity);
-        Log.logger.info("validated data");
+        logger.info("validated data");
         if (findOne(entity.getId()) != null) {
             Client old = findOne(entity.getId());
-            Log.logger.info("found data");
+            logger.info("found data");
             try {
-                Log.logger.traceEntry("entry query");
+                logger.traceEntry("entry query");
 
                 connection.createStatement().execute("UPDATE \"Clienti\" SET " +
                         ",\"password\" = \'" + entity.getPassword() + "\'" + "WHERE id =" + "\'" + entity.getId() + "\'"
                 );
 
-                Log.logger.traceExit("successful query", null);
+                logger.traceExit("successful query", null);
             } catch (SQLException e) {
-                Log.logger.error("query error" + e.getMessage());
+                logger.error("query error" + e.getMessage());
                 e.printStackTrace();
             }
-            Log.logger.traceExit("successful query", old);
+            logger.traceExit("successful query", old);
             return old;
         }
-        Log.logger.traceExit("not found data. unsuccessful update", null);
+        logger.traceExit("not found data. unsuccessful update", null);
         return null;
     }
 }

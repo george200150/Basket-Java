@@ -1,8 +1,9 @@
 package repos;
 
 import model.domain.*;
-import model.loggers.Log;
 import model.validators.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -12,25 +13,26 @@ import java.util.Date;
 import java.util.List;
 
 public class MeciDataBaseRepository implements CrudRepository<String, Meci> {
+    static final Logger logger = LogManager.getLogger(MeciDataBaseRepository.class);
     private Connection connection;
     private Validator<Meci> validator;
 
     public MeciDataBaseRepository(Validator<Meci> validator) {
-        Log.logger.traceEntry("entry constructor");
+        logger.traceEntry("entry constructor");
         this.connection = JDBCInvariant.getConnection();
         this.validator = validator;
-        Log.logger.traceExit("successful constructor exit");
+        logger.traceExit("successful constructor exit");
     }
 
     @Override
     public Meci findOne(String id) throws IllegalArgumentException {
-        Log.logger.traceEntry("entry find");
+        logger.traceEntry("entry find");
         if (id == null) {
-            Log.logger.error("null id exception");
+            logger.error("null id exception");
             throw new IllegalArgumentException("ID-ul NU POATE FI NULL");
         }
         try {
-            Log.logger.traceEntry("entry query");
+            logger.traceEntry("entry query");
             ResultSet data = connection.createStatement().executeQuery("SELECT * FROM \"Meciuri\"  WHERE id =" + "\'" + id + "\'");
             data.next();//TODO: sql injection prone
             //String id = data.getString(1);
@@ -53,22 +55,22 @@ public class MeciDataBaseRepository implements CrudRepository<String, Meci> {
                 tip = TipMeci.FINALA;
             }
             int numarBileteDisponibile = data.getInt(6);
-            Log.logger.info("successful query");
+            logger.info("successful query");
             Meci meci = new Meci(id,homeId,awayId,date,tip, numarBileteDisponibile);
-            Log.logger.traceExit("successful exit", meci);
+            logger.traceExit("successful exit", meci);
             return meci;
         } catch (SQLException ignored) {
-            Log.logger.error("query exception" + ignored.getMessage());
+            logger.error("query exception" + ignored.getMessage());
         }
         return null;
     }
 
     @Override
     public Iterable<Meci> findAll() {
-        Log.logger.traceEntry("entry findAll");
+        logger.traceEntry("entry findAll");
         List<Meci> lst = new ArrayList<>();
         try {
-            Log.logger.traceEntry("entry query");
+            logger.traceEntry("entry query");
             ResultSet data = connection.createStatement().executeQuery("SELECT * FROM \"Meciuri\"");
             while (data.next()) {
                 String id = data.getString(1);
@@ -94,32 +96,32 @@ public class MeciDataBaseRepository implements CrudRepository<String, Meci> {
                 Meci meci = new Meci(id,homeId,awayId,date,tip, numarBileteDisponibile);
                 lst.add(meci);
             }
-            Log.logger.info("successful query");
+            logger.info("successful query");
         } catch (SQLException ignored) {
-            Log.logger.error("query error" + ignored.getMessage());
+            logger.error("query error" + ignored.getMessage());
             throw new IllegalArgumentException("Error: Could not connect to the database");
         }
-        Log.logger.traceExit("successful exit", lst);
+        logger.traceExit("successful exit", lst);
         return lst;
     }
 
 
     @Override
     public Meci save(Meci entity) throws ValidationException {
-        Log.logger.traceEntry("entry save");
+        logger.traceEntry("entry save");
         if (entity == null) {
-            Log.logger.error("null id exception");
+            logger.error("null id exception");
             throw new IllegalArgumentException("ENTITATEA NU POATE FI NULL");
         }
         validator.validate(entity);
-        Log.logger.info("validated data");
+        logger.info("validated data");
         if (findOne(entity.getId()) != null) {
-            Log.logger.error("duplicate found exception");
+            logger.error("duplicate found exception");
             throw new ValidationException("DUPLICAT GASIT!");
         }
 
         try {
-            Log.logger.traceEntry("entry query");
+            logger.traceEntry("entry query");
             connection.createStatement().execute("INSERT INTO \"Meciuri\" VALUES (" +
                     entity.getId() + ",\'" +
                     entity.getHome() + "\',\'" +
@@ -130,51 +132,51 @@ public class MeciDataBaseRepository implements CrudRepository<String, Meci> {
             );
 
         } catch (SQLException e) {
-            Log.logger.error("query error" + e.getMessage());
+            logger.error("query error" + e.getMessage());
             e.printStackTrace();
         }
-        Log.logger.traceExit("successful query", null);
+        logger.traceExit("successful query", null);
         return null;
     }
 
     @Override
     public Meci delete(String id) throws IllegalArgumentException {
-        Log.logger.traceEntry("entry delete");
+        logger.traceEntry("entry delete");
         if (id == null) {
-            Log.logger.error("null id exception");
+            logger.error("null id exception");
             throw new IllegalArgumentException("ID-ul nu poate fi NULL!");
         }
         Meci meci = findOne(id);
-        Log.logger.info("found data");
+        logger.info("found data");
         if (meci != null) {
             try {
-                Log.logger.traceEntry("entry query");
+                logger.traceEntry("entry query");
                 connection.createStatement()
                         .execute("DELETE FROM \"Meciuri\" WHERE id = " + "\'" +  id + "\'");
-                Log.logger.traceExit("successful query", null);
+                logger.traceExit("successful query", null);
             } catch (SQLException e) {
-                Log.logger.error("query error" + e.getMessage());
+                logger.error("query error" + e.getMessage());
                 e.printStackTrace();
             }
         }
-        Log.logger.traceExit("successful query", meci);
+        logger.traceExit("successful query", meci);
         return meci;
     }
 
     @Override
     public Meci update(Meci entity) throws ValidationException {
-        Log.logger.traceEntry("entry update");
+        logger.traceEntry("entry update");
         if (entity == null){
-            Log.logger.error("null entity exception");
+            logger.error("null entity exception");
             throw new IllegalArgumentException("Entitatea nu poate fi NULL!");
         }
         validator.validate(entity);
-        Log.logger.info("validated data");
+        logger.info("validated data");
         if (findOne(entity.getId()) != null) {
             Meci old = findOne(entity.getId());
-            Log.logger.info("found data");
+            logger.info("found data");
             try {
-                Log.logger.traceEntry("entry query");
+                logger.traceEntry("entry query");
                 connection.createStatement().execute("UPDATE \"Meciuri\" SET " +
                         "home = \'" + entity.getHome() + "\'" +
                         ",away = \'" + entity.getAway() + "\'" +
@@ -182,15 +184,15 @@ public class MeciDataBaseRepository implements CrudRepository<String, Meci> {
                         ",tip = \'" + entity.getTip().getNumVal() + "\'" +
                         ",\"numarBilete\" = \'" + entity.getNumarBileteDisponibile() + "\'" + "WHERE id =" + "\'" + entity.getId() + "\'"
                 );
-                Log.logger.traceExit("successful query", null);
+                logger.traceExit("successful query", null);
             } catch (SQLException e) {
-                Log.logger.error("query error" + e.getMessage());
+                logger.error("query error" + e.getMessage());
                 e.printStackTrace();
             }
-            Log.logger.traceExit("successful query", old);
+            logger.traceExit("successful query", old);
             return old;
         }
-        Log.logger.traceExit("not found data. unsuccessful update", null);
+        logger.traceExit("not found data. unsuccessful update", null);
         return null;
     }
 }

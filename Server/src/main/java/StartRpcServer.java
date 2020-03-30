@@ -1,9 +1,6 @@
 import model.validators.BiletValidator;
 import model.validators.ClientValidator;
-import model.validators.EchipaValidator;
 import model.validators.MeciValidator;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import server.ChatServicesImpl;
 import services.IServices;
 
@@ -20,7 +17,6 @@ public class StartRpcServer {
     private static int defaultPort = 55555;
 
     public static void main(String[] args) {
-        // UserRepository userRepo=new UserRepositoryMock();
         Properties serverProps = new Properties();
         try {
             serverProps.load(StartRpcServer.class.getResourceAsStream("/server.properties"));
@@ -31,15 +27,21 @@ public class StartRpcServer {
             return;
         }
 
-        ApplicationContext context=new ClassPathXmlApplicationContext("Basket-Java.xml");
-        JDBCInvariant jdbcInv = context.getBean(JDBCInvariant.class);
+        Properties properties = new Properties();
+        try {
+            properties.load(JDBCInvariant.class.getResourceAsStream("/bd.config"));
+            properties.list(System.out);
+        } catch (IOException e) {
+            System.err.println("Cannot find bd.config " + e);
+            return;
+        }
+        JDBCInvariant jdbcInv = new JDBCInvariant(properties);
 
 
         ClientDataBaseRepository userRepo = new ClientDataBaseRepository(ClientValidator.getInstance());
         MeciDataBaseRepository meciRepo = new MeciDataBaseRepository(MeciValidator.getInstance());
         BiletDataBaseRepository biletRepo = new BiletDataBaseRepository(BiletValidator.getInstance());
-        EchipaDataBaseRepository echipaRepo = new EchipaDataBaseRepository(EchipaValidator.getInstance());
-        IServices chatServerImpl = new ChatServicesImpl(userRepo, meciRepo, biletRepo, echipaRepo);
+        IServices chatServerImpl = new ChatServicesImpl(userRepo, meciRepo, biletRepo);
         int serverPort = defaultPort;
         try {
             serverPort = Integer.parseInt(serverProps.getProperty("server.port"));

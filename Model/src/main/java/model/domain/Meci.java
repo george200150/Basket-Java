@@ -21,49 +21,23 @@ public class Meci extends Entity<String> {
     public String getId() {
         return super.getId();
     }
-
     public void setId(String id) {
         super.setId(id);
     }
-
     public String getHome() {
         return home;
     }
-
-    public void setHome(String home) {
-        this.home = home;
-    }
-
     public String getAway() {
         return away;
     }
-
-    public void setAway(String away) {
-        this.away = away;
-    }
-
     public Date getDate() {
         return date;
     }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
     public TipMeci getTip() {
         return tip;
     }
-
-    public void setTip(TipMeci tip) {
-        this.tip = tip;
-    }
-
     public int getNumarBileteDisponibile() {
         return numarBileteDisponibile;
-    }
-
-    public void setNumarBileteDisponibile(int numarBileteDisponibile) {
-        this.numarBileteDisponibile = numarBileteDisponibile;
     }
 
     @Override

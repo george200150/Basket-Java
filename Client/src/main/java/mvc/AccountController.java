@@ -1,6 +1,5 @@
 package mvc;
 
-import model.domain.MeciDTOShow;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -36,22 +35,22 @@ public class AccountController implements IObserver {
     private Label labelStudent;
 
     @FXML
-    TableColumn<MeciDTOShow, String> meciViewColumnHome;
+    TableColumn<Meci, String> meciViewColumnHome;
     @FXML
-    TableColumn<MeciDTOShow, String> meciViewColumnAway;
+    TableColumn<Meci, String> meciViewColumnAway;
     @FXML
-    TableColumn<MeciDTOShow, String> meciViewColumnData;
+    TableColumn<Meci, String> meciViewColumnData;
     @FXML
-    TableColumn<MeciDTOShow, String> meciViewColumnTip;
+    TableColumn<Meci, String> meciViewColumnTip;
     @FXML
-    TableColumn<MeciDTOShow, String> meciViewColumnBilete; //created DTO in order to show "SOLD OUT" message
+    TableColumn<Meci, Integer> meciViewColumnBilete;
     @FXML
-    TableView<MeciDTOShow> tableViewMeciuri;
+    TableView<Meci> tableViewMeciuri;
 
 
     private Client loggedInClient;//TODO: LOGIN CREDENTIALS
     private IServices server;
-    private ObservableList<MeciDTOShow> model = FXCollections.observableArrayList();
+    private ObservableList<Meci> model = FXCollections.observableArrayList();
     private Stage dialogStage;
 
 
@@ -69,67 +68,23 @@ public class AccountController implements IObserver {
     }
 
     private void initModel() {
-
-        Iterable<Meci> meciuri = null;
         try {
-            meciuri = Arrays.asList(server.findAllMeci()); //called from proxy
+            Iterable<Meci> meciuri = Arrays.asList(server.findAllMeci()); //called from proxy
+
+            List<Meci> meciList = StreamSupport
+                    .stream(meciuri.spliterator(), false)
+                    .collect(Collectors.toList());
+
+            model.setAll(meciList);
         } catch (ServicesException e) {
             e.printStackTrace();
+            CustomAlert.showErrorMessage(dialogStage,"FAILED TO INITIALIZE THE DATA");
         }
-        List<Meci> meciList = StreamSupport
-                .stream(meciuri.spliterator(), false)
-                .collect(Collectors.toList());
 
-        model.setAll(toDTO(meciList));
     }
 
-    private MeciDTOShow toDTO(Meci m){
-        String id = m.getId();
-        int bilete = m.getNumarBileteDisponibile();
-        TipMeci tip = m.getTip();
-        Date date = m.getDate();
-        Echipa home = null;
-        try {
-            home = server.findOneEchipa(m.getHome()); // call in proxy
-        } catch (ServicesException e) {
-            e.printStackTrace();
-        }
-        Echipa away = null;
-        try {
-            away = server.findOneEchipa(m.getAway()); // call in proxy
-        } catch (ServicesException e) {
-            e.printStackTrace();
-        }
-        return new MeciDTOShow(id, home, away, date, tip, bilete); //TODO: CAREFUL!!! MAY FAIL BECAUSE OF LOST INFORMATION OVER NETWORK (idk, still TCP, but I'm sceptical)
-    }
-
-    private List<MeciDTOShow> toDTO(List<Meci> meciList) {
-        return meciList.stream()
-                .map(m -> {
-                    String id = m.getId();
-                    int bilete = m.getNumarBileteDisponibile();
-                    TipMeci tip = m.getTip();
-                    Date date = m.getDate();
-                    Echipa home = null;
-                    try {
-                        home = server.findOneEchipa(m.getHome()); // call in proxy
-                    } catch (ServicesException e) {
-                        e.printStackTrace();
-                    }
-                    Echipa away = null;
-                    try {
-                        away = server.findOneEchipa(m.getAway()); // call in proxy
-                    } catch (ServicesException e) {
-                        e.printStackTrace();
-                    }
-                    return new MeciDTOShow(id, home, away, date, tip, bilete); //TODO: CAREFUL!!! MAY FAIL BECAUSE OF LOST INFORMATION OVER NETWORK (idk, still TCP, but I'm sceptical)
-                })
-                .collect(Collectors.toList());
-    }
 
     public void handleBackToLogInChoice(ActionEvent actionEvent) {
-        // TODO: ??? NOTIFY OTHER CUSTOMERS THAT CURRENT USER HAS LOGGED OUT ???
-        // TODO: use the clients repository for saving currently logged in clients ???
         try {
             // create a new stage for the popup dialog.
             FXMLLoader loader = new FXMLLoader();
@@ -146,7 +101,6 @@ public class AccountController implements IObserver {
 
             LoginFormController loginFormController = loader.getController();
             loginFormController.setService(server, dialogStage);
-            /*TODO: REMOVED THIS: loginFormController.setAccountController(this);*/
 
             this.server.logout(loggedInClient, this);
             this.dialogStage.close();
@@ -164,21 +118,21 @@ public class AccountController implements IObserver {
 
     @FXML
     public void initialize() {
-        meciViewColumnBilete.setCellFactory(param -> new TableCell<MeciDTOShow, String>() {
+        meciViewColumnBilete.setCellFactory(param -> new TableCell<Meci, Integer>() {
             @Override
-            protected void updateItem(String item, boolean empty) { // long live stack overflow (when moving the column things happen...)
+            protected void updateItem(Integer item, boolean empty) { // long live stack overflow
                 if (!empty) {
                     int currentIndex = indexProperty().getValue() < 0 ? 0 : indexProperty().getValue();
-                    String numarBilete = param
+                    int numarBilete = param
                             .getTableView().getItems()
-                            .get(currentIndex).getNumarBileteSauSoldOut();
-                    if (numarBilete.equals("SOLD OUT")) {
+                            .get(currentIndex).getNumarBileteDisponibile();
+                    if (numarBilete == 0) {
                         setStyle("-fx-font-weight: bold");
                         setStyle("-fx-text-fill: red");
-                        setText(numarBilete);
+                        setText("SOLD OUT");
                     }
                     else{
-                        setText(numarBilete);
+                        setText(Integer.toString(numarBilete));
                         setStyle("-fx-font-weight: normal");
                         setStyle("-fx-text-fill: black");
                     }
@@ -186,91 +140,65 @@ public class AccountController implements IObserver {
             }
         });
 
-        meciViewColumnHome.setCellValueFactory(new PropertyValueFactory<MeciDTOShow, String>("homeString"));
-        meciViewColumnAway.setCellValueFactory(new PropertyValueFactory<MeciDTOShow, String>("awayString"));
-        meciViewColumnData.setCellValueFactory(new PropertyValueFactory<MeciDTOShow, String>("date"));
-        meciViewColumnTip.setCellValueFactory(new PropertyValueFactory<MeciDTOShow, String>("tip"));
-        meciViewColumnBilete.setCellValueFactory(new PropertyValueFactory<MeciDTOShow, String>("numarBileteSauSoldOut"));
+        meciViewColumnHome.setCellValueFactory(new PropertyValueFactory<Meci, String>("home"));
+        meciViewColumnAway.setCellValueFactory(new PropertyValueFactory<Meci, String>("away"));
+        meciViewColumnData.setCellValueFactory(new PropertyValueFactory<Meci, String>("date"));
+        meciViewColumnTip.setCellValueFactory(new PropertyValueFactory<Meci, String>("tip"));
+        meciViewColumnBilete.setCellValueFactory(new PropertyValueFactory<Meci, Integer>("numarBileteDisponibile"));
 
         tableViewMeciuri.setItems(model);
 
     }
 
     public void handleBuyTickets(ActionEvent actionEvent) {
-        MeciDTOShow m = this.tableViewMeciuri.getSelectionModel().getSelectedItem();
+        Meci m = this.tableViewMeciuri.getSelectionModel().getSelectedItem();
         if (m == null) {
             CustomAlert.showErrorMessage(dialogStage, "NU ATI SELECTAT UN MECI!");
         } else {
             String name = this.textFieldNume.getText(); //TODO: put parameter NAME in BILET
             String id = m.getId();
-            String home = m.getHome().getId();
-            String away = m.getAway().getId();
+            String home = m.getHome();
+            String away = m.getAway();
             Date date = m.getDate();
             TipMeci tip = m.getTip();
-            int numarPrecedent = m.getNumarBilete();
+            int numarPrecedent = m.getNumarBileteDisponibile();
             int numarVandute = (int) this.spinnerBilete.getValue();
             int numarActualizat = numarPrecedent - numarVandute;
-            Iterable<Bilet> bilete = null;
-            try {
-                bilete = Arrays.asList(server.findAllBilet()); // call in proxy
-            } catch (ServicesException e) {
-                e.printStackTrace();
-            }
-            List<Bilet> bileteList = StreamSupport.stream(bilete.spliterator(), false)
-                    .filter(x -> x.getIdMeci().equals(m.getId()))
-                    .filter(x -> x.getIdClient() == null) // get all the unassigned tickets for the selected match
-                    .collect(Collectors.toList());
-
-            if (bileteList.size() >= numarVandute) { //must be (else logic error)
-                for (int i = 0; i < numarVandute; i++) {
-                    Bilet bilet = bileteList.get(i);
-                    bilet.setIdClient(loggedInClient.getId());
-                    bilet.setNumeClient(name);
-                    try {
-                        server.updateBilet(bilet); //TODO: was surrounded with TRY/CATCH (networking part)
-                    } catch (ServicesException e) {
-                        e.printStackTrace();
-                    }
-                }// assigned all the tickets to the client
+            if (numarActualizat >= 0) { //remaining tickets number cannot be negative.
                 Meci meci = new Meci(id, home, away, date, tip, numarActualizat);
                 try {
-                    server.ticketsSold(meci); //TODO: TICKETS_SOLD !!!
+                    loggedInClient.setNume(name);
+                    server.ticketsSold(meci, loggedInClient); //TODO: TICKETS_SOLD !!!
                 } catch (ServicesException e) {
                     e.printStackTrace();
                 }
                 CustomAlert.showMessage(dialogStage, Alert.AlertType.CONFIRMATION, "Tranzactie incheiata cu succes!", "Ati cumparat " + numarVandute + " bilete la meciul " + m.getId() + "!");
-            }
-            else {
+            } else {
                 //eat it
             }
         }
     }
 
     public void handleLoadModelMeci(MouseEvent mouseEvent) {
-        MeciDTOShow item = this.tableViewMeciuri.getSelectionModel().getSelectedItem();
+        Meci item = this.tableViewMeciuri.getSelectionModel().getSelectedItem();
         if (item == null)
             return;
         int min = 0;
-        int max = item.getNumarBilete();
+        int max = item.getNumarBileteDisponibile();
         int initialValue = 1;
         this.spinnerBilete.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(min, max));
         this.spinnerBilete.getValueFactory().setValue(initialValue);
     }
 
     public void handleFilterDescTickets(ActionEvent actionEvent) {
-        Iterable<Meci> meciuri = null;
-        try {
-            meciuri = Arrays.asList(server.findAllMeci());
-        } catch (ServicesException e) {
-            e.printStackTrace();
-        }
-        List<Meci> meciList = StreamSupport
-                .stream(meciuri.spliterator(), false)
-                .filter(x-> x.getNumarBileteDisponibile() > 0)
-                .sorted((m1,m2)-> m2.getNumarBileteDisponibile() - m1.getNumarBileteDisponibile())
-                .collect(Collectors.toList());
+            List<Meci> meciuri = null;
+            try {
+                meciuri = Arrays.asList(server.findAllMeciWithTickets());
+            } catch (ServicesException e) {
+                e.printStackTrace();
+            }
 
-        model.setAll(toDTO(meciList));
+            model.setAll(meciuri);
     }
 
     public void refreshMeciuri(ActionEvent actionEvent) {
@@ -278,17 +206,18 @@ public class AccountController implements IObserver {
     }
 
     @Override
-    public void ticketsSold(Meci meci) throws ServicesException {
+    public void notifyTicketsSold(Meci meci) throws ServicesException {
         System.out.println("ACCOUNT_CONTROLLER: REQUEST TO REFRESH TABLE");
-        MeciDTOShow meciDTO = toDTO(meci);
-        if (this.model.contains(meciDTO)){ // IMPLEMENTED COMPARATOR ON ID
-            this.model.remove(meciDTO);
-            this.model.add(meciDTO);
+        if (this.model.contains(meci)) {
+            this.model.remove(meci);
+            this.model.add(meci);
             System.out.println("SUCCESSFULLY REFRESHED TABLE");
-        }
-        else{
+        } else {
             System.out.println("FAILED TO FIND MATCH !!! BAD BAD BAD BAD BAD BAD BAD BAD BAD");
         }
+        initModel();
+
+        System.out.println("ACCOUNT_CONTROLLER: FINISHED TO REFRESH TABLE");
     }
 }
 

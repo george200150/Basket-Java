@@ -30,25 +30,8 @@ public class LoginFormController {
     Button buttonLogIn;
 
     private Stage dialogStage;
-    private AccountController accountController;
-    //private MasterService masterService;
     private IServices server;
-    private Client user;
 
-    Parent mainChatParent;
-
-    public void setServer(IServices s) {
-        server = s;
-    }
-
-
-    public void setParent(Parent p) {
-        mainChatParent = p;
-    }
-
-    /*public void setAccountController(AccountController accountController) {
-        this.accountController = accountController;
-    }*/
 
     @FXML
     private void initialize() {
@@ -60,7 +43,6 @@ public class LoginFormController {
     }
 
     public void handleLogIn(ActionEvent actionEvent) {
-
         String userName = this.textFieldUserName.getText();
         String password = this.passwordFieldUserPassword.getText();
         Client user = new Client(userName, password);
@@ -78,16 +60,16 @@ public class LoginFormController {
             Scene scene = new Scene(root);
             dialogStage.setScene(scene);
 
-            accountController = loader.getController();
+            AccountController accountController = loader.getController();
             accountController.setService(server, dialogStage);
-            accountController.setLoggedInClient(user); //TODO: separate tasks
+
+            accountController.setLoggedInClient(user);
 
 
             this.server.login(user, accountController); //LOGIN HERE, AFTER WE HAVE INITIALISED THE CONTROLLER.
 
             this.dialogStage.close();
             dialogStage.show();
-            dialogStage.setMaximized(true);
 
         } catch (IOException e) {
             e.printStackTrace();
