@@ -2,8 +2,11 @@ package services;
 
 import model.domain.Meci;
 
-public interface IObserver {
+import java.rmi.Remote;
+import java.rmi.RemoteException;
 
-    void notifyTicketsSold(Meci meci) throws ServicesException;
+public interface IObserver extends Remote {
+
+    void notifyTicketsSold(Meci meci) throws ServicesException, RemoteException;
 
 }

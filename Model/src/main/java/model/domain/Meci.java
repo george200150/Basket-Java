@@ -1,8 +1,9 @@
 package model.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Meci extends Entity<String> {
+public class Meci extends Entity<String> implements Serializable {
     private String home;
     private String away;
     private Date date;

@@ -2,7 +2,9 @@ package model.validators;
 
 import model.domain.Client;
 
-public class ClientValidator extends AbstractValidator<Client>  {
+import java.io.Serializable;
+
+public class ClientValidator extends AbstractValidator<Client> implements Serializable {
 
     private ClientValidator() {
     }

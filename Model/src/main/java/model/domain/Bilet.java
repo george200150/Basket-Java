@@ -1,6 +1,8 @@
 package model.domain;
 
-public class Bilet extends Entity<String> {
+import java.io.Serializable;
+
+public class Bilet extends Entity<String> implements Serializable {
     private String numeClient;
     private float pret;
     private String idMeci;

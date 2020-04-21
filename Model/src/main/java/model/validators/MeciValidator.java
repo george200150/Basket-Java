@@ -2,7 +2,9 @@ package model.validators;
 
 import model.domain.Meci;
 
-public class MeciValidator extends AbstractValidator<Meci>  {
+import java.io.Serializable;
+
+public class MeciValidator extends AbstractValidator<Meci> implements Serializable {
 
     private MeciValidator() {
     }

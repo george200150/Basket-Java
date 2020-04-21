@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <util:properties id="jdbcProps" location="bd.config"/>
+
+    <bean id="jdbcInv" class="repos.JDBCInvariant">
+        <constructor-arg ref="jdbcProps"/>
+    </bean>
+
+    <bean id="valClient" class="model.validators.ClientValidator" factory-method="getInstance"/>
+    <bean id="valBilet" class="model.validators.BiletValidator" factory-method="getInstance"/>
+    <bean id="valMeci" class="model.validators.MeciValidator" factory-method="getInstance"/>
+
+    <bean id="repoClient" class="repos.ClientDataBaseRepository">
+        <constructor-arg ref="valClient"/>
+    </bean>
+    <bean id="repoMeci" class="repos.MeciDataBaseRepository">
+        <constructor-arg ref="valMeci"/>
+    </bean>
+    <bean id="repoBilet" class="repos.BiletDataBaseRepository">
+        <constructor-arg ref="valBilet"/>
+    </bean>
+    <!--Created the beans needed by the constructor of the Server-->
+
+    <bean id="chatService" class="server.ChatServicesImpl">
+        <constructor-arg index="0" ref="repoClient"/>
+        <constructor-arg index="1" ref="repoMeci"/>
+        <constructor-arg index="2" ref="repoBilet"/>
+    </bean>
+    <!--Created the Server that we will further use in the RMI bean-->
+
+    <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+        <property name="serviceName" value="Chat"/> <!--Numele dupa care este cautat de client-->
+        <property name="service" ref="chatService"/> <!--Referinta care bean-ul care implementeaza serviciile respective--> <!--WARNING: MUST USE REF HERE !!!-->
+        <property name="serviceInterface" value="services.IServices"/> <!--Clientii vor putea apela doar metodele din aceasta interfata-->
+        <property name="servicePort" value="1099"/> <!--By default 1099-->
+    </bean>
+
+</beans>

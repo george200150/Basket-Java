@@ -2,7 +2,9 @@ package model.validators;
 
 import model.domain.Bilet;
 
-public class BiletValidator extends AbstractValidator<Bilet>  {
+import java.io.Serializable;
+
+public class BiletValidator extends AbstractValidator<Bilet> implements Serializable {
 
     private BiletValidator() {
     }

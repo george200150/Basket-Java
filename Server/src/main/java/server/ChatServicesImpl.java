@@ -8,6 +8,7 @@ import services.IServices;
 import model.domain.*;
 import services.ServicesException;
 
+import java.rmi.RemoteException;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
@@ -19,8 +20,8 @@ import java.util.stream.StreamSupport;
 
 
 public class ChatServicesImpl implements IServices {
-    static final Logger logger = LogManager.getLogger(ChatServicesImpl.class);
-    private ClientDataBaseRepository userRepository; //TODO: not so generic anymore...
+    private static final Logger logger = LogManager.getLogger(ChatServicesImpl.class);
+    private ClientDataBaseRepository userRepository;
     private MeciDataBaseRepository meciRepository;
     private BiletDataBaseRepository biletRepository;
     private Map<String, IObserver> loggedClients;
@@ -46,7 +47,7 @@ public class ChatServicesImpl implements IServices {
                     try {
                         System.out.println("Notifying [" + us.getId() + "] tickets were bought for match [" + meci.getId() + "].");
                         chatClient.notifyTicketsSold(meci);
-                    } catch (ServicesException e) {
+                    } catch (ServicesException | RemoteException e) {
                         System.out.println("Error notifying friend " + e);
                     }
                 });

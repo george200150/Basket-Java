@@ -1,6 +1,8 @@
 package model.domain;
 
-public enum TipMeci {
+import java.io.Serializable;
+
+public enum TipMeci implements Serializable {
     CALIFICARE(1),
     SAISPREZECIME(2),
     OPTIME(3),

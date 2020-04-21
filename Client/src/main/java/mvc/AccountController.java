@@ -19,13 +19,16 @@ import services.IServices;
 import services.ServicesException;
 
 import java.io.IOException;
+import java.io.Serializable;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-public class AccountController implements IObserver {
+public class AccountController extends UnicastRemoteObject implements IObserver, Serializable {
 
     @FXML
     public TextField textFieldNume;
@@ -54,6 +57,8 @@ public class AccountController implements IObserver {
     private ObservableList<Meci> model = FXCollections.observableArrayList();
     private Stage dialogStage;
 
+    public AccountController() throws RemoteException {
+    }
 
 
     public void setService(IServices server, Stage stage) {

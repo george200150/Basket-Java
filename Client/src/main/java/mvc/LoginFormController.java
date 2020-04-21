@@ -19,9 +19,12 @@ import services.IServices;
 import services.ServicesException;
 
 import java.io.IOException;
+import java.io.Serializable;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 
 
-public class LoginFormController {
+public class LoginFormController extends UnicastRemoteObject implements Serializable {
     @FXML
     TextField textFieldUserName;
     @FXML
@@ -31,6 +34,9 @@ public class LoginFormController {
 
     private Stage dialogStage;
     private IServices server;
+
+    public LoginFormController() throws RemoteException {
+    }
 
 
     @FXML

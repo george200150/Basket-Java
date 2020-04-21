@@ -1,6 +1,8 @@
 package model.domain;
 
-public class Client extends Entity<String> {
+import java.io.Serializable;
+
+public class Client extends Entity<String> implements Serializable {
 
     private String password;
     private String nume;
