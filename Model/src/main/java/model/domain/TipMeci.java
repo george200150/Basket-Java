@@ -19,4 +19,8 @@ public enum TipMeci implements Serializable {
     public int getNumVal() {
         return numVal;
     }
+
+    public void setNumVal(int numVal){
+        this.numVal = numVal;
+    }
 }

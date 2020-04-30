@@ -1,7 +1,4 @@
 rootProject.name = 'LAB1 MPP'
-include 'Client'
 include 'Model'
 include 'Persistence'
 include 'Server'
-include 'Services'
-
