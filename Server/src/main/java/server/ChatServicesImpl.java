@@ -22,10 +22,16 @@ public class ChatServicesImpl implements IServices {
     static final Logger logger = LogManager.getLogger(ChatServicesImpl.class);
     private ClientDataBaseRepository userRepository; //TODO: not so generic...
     private MeciDataBaseRepository meciRepository;
+<<<<<<< Updated upstream
     private BiletDataBaseRepository biletRepository;
     private Map<String, IObserver> loggedClients;
+=======
+    //private BiletDataBaseRepository biletRepository;
+    private BiletHBMRepository biletRepository;
+>>>>>>> Stashed changes
 
-    public ChatServicesImpl(ClientDataBaseRepository uRepo, MeciDataBaseRepository mRepo, BiletDataBaseRepository bRepo) {
+    //public ChatServicesImpl(ClientDataBaseRepository uRepo, MeciDataBaseRepository mRepo, BiletDataBaseRepository bRepo) {
+    public ChatServicesImpl(ClientDataBaseRepository uRepo, MeciDataBaseRepository mRepo, BiletHBMRepository bRepo) {
         userRepository = uRepo;
         meciRepository = mRepo;
         biletRepository = bRepo;
@@ -120,6 +126,7 @@ public class ChatServicesImpl implements IServices {
         if (ret == null)
             throw new ServicesException("MECI NOT FOUND IN DB TO BE UPDATED!");
         int delta = ret.getNumarBileteDisponibile() - meci.getNumarBileteDisponibile(); // number of tickets bought
+<<<<<<< Updated upstream
         List<Bilet> goodTickets = StreamSupport.stream(biletRepository.findAll().spliterator(), false).filter(x ->x.getIdClient() == null).collect(Collectors.toList());
         for (int i = 0; i < delta; i++) {
             Bilet bilet = goodTickets.get(i);
@@ -128,6 +135,15 @@ public class ChatServicesImpl implements IServices {
             Bilet res = biletRepository.update(bilet);
             if (res == null)
                 throw new ServicesException("BILET NOT FOUNT IN DB TO BE UPDATED!");
+=======
+        List<Bilet> goodTickets = StreamSupport.stream(biletRepository.findAll().spliterator(), false).filter(x -> x.getIdClient() == null && x.getIdMeci().equals(meci.getId())).collect(Collectors.toList());
+        // !!! this function @requires enough not assigned tickets to be in the database when called. else @throws IndexOutOfBoundsException
+        for (int i = 0; i < delta; i++) {
+            Bilet bilet = goodTickets.get(i);
+            bilet.setIdClient(loggedInClient.getId());
+            bilet.setNumeClient(loggedInClient.getNume());
+            biletRepository.update(bilet);
+>>>>>>> Stashed changes
         }
         notifyTicketsBought(meci);
         logger.trace("FULL SERVER: ticketsSold SENT OBSERVER COMMAND TO notifyTicketsBought @"+ LocalDate.now());

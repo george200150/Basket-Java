@@ -4,6 +4,7 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+<<<<<<< Updated upstream
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
@@ -15,6 +16,19 @@
             <option value="$PROJECT_DIR$/Persistence" />
             <option value="$PROJECT_DIR$/Server" />
             <option value="$PROJECT_DIR$/Services" />
+=======
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="#JAVA_INTERNAL" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Model" />
+            <option value="$PROJECT_DIR$/Persistence" />
+            <option value="$PROJECT_DIR$/Server" />
+>>>>>>> Stashed changes
           </set>
         </option>
         <option name="useQualifiedModuleNames" value="true" />

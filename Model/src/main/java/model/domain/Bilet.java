@@ -1,6 +1,13 @@
 package model.domain;
 
+<<<<<<< Updated upstream
 public class Bilet extends Entity<String> {
+=======
+import java.io.Serializable;
+
+public class Bilet extends Entity<String> implements Serializable {
+    private String id;
+>>>>>>> Stashed changes
     private String numeClient;
     private float pret;
     private String idMeci;
@@ -8,25 +15,30 @@ public class Bilet extends Entity<String> {
 
     public Bilet(String id, String numeClient, float pret, String idMeci) {
         super.setId(id);
+        this.id = id;
         this.numeClient = numeClient;
         this.pret = pret;
         this.idMeci = idMeci;
     }
 
     public Bilet(String id, String numeClient, float pret, String idMeci, String idClient) {
-        super.setId(id);
+        this.id = id;
         this.numeClient = numeClient;
         this.pret = pret;
         this.idMeci = idMeci;
         this.idClient = idClient;
     }
 
+    public Bilet() {
+
+    }
+
     public String getId() {
-        return super.getId();
+        return this.id;
     }
 
     public void setId(String id) {
-        super.setId(id);
+        this.id = id;
     }
 
     public String getNumeClient() {

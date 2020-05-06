@@ -38,7 +38,11 @@ public class ClientDataBaseRepository implements CrudRepository<String, Client> 
             String idd = data.getString(1); // daca nu putem obtine id-ul, nu exista clientul
             String passwd = data.getString(2);
             logger.info("successful query");
+<<<<<<< Updated upstream
             Client client = new Client(idd, passwd);
+=======
+            Client client = new Client(idd, "null_session_id", passwd,"null_nume","null_host",-1);
+>>>>>>> Stashed changes
             logger.traceExit("successful exit", client);
             return client;
         } catch (SQLException ignored) {
@@ -62,7 +66,11 @@ public class ClientDataBaseRepository implements CrudRepository<String, Client> 
             String idd = data.getString(1); // daca nu putem obtine id-ul, nu exista clientul
             String passwd = data.getString(2);
             logger.info("successful query");
+<<<<<<< Updated upstream
             Client client = new Client(idd, passwd);
+=======
+            Client client = new Client(idd, "null_session_id", passwd,"null_nume","null_host",-1);
+>>>>>>> Stashed changes
             logger.traceExit("successful exit", client);
             return client;
         } catch (SQLException ignored) {
@@ -81,7 +89,11 @@ public class ClientDataBaseRepository implements CrudRepository<String, Client> 
             while (data.next()) {
                 String id = data.getString(1);
                 String passwd = data.getString(2);
+<<<<<<< Updated upstream
                 Client client = new Client(id, passwd);
+=======
+                Client client = new Client(id, "null_session_id", passwd,"null_nume","null_host",-1);
+>>>>>>> Stashed changes
                 lst.add(client);
             }
             logger.info("successful query");

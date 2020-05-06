@@ -19,7 +19,51 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
+<<<<<<< Updated upstream
     <expand />
+=======
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MPP@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MPP@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MPP@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="MPP: database" type="162271b6:PgImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MPP@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="MPP: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MPP@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="MPP: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MPP@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="MPP: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+        <item name="Bilete: table" type="69fad909:PgImplModel$LocalTable" />
+      </path>
+    </expand>
+>>>>>>> Stashed changes
     <select />
   </component>
   <component name="ExternalProjectsData">
@@ -75,14 +119,26 @@
       </state>
     </system>
   </component>
+<<<<<<< Updated upstream
+=======
+  <component name="FavoritesManager">
+    <favorites_list name="Basket-Java-copy" />
+  </component>
+>>>>>>> Stashed changes
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
         <option value="CSS File" />
+<<<<<<< Updated upstream
         <option value="spring-beans.schema" />
         <option value="Interface" />
         <option value="Enum" />
+=======
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="spring-beans.schema" />
+>>>>>>> Stashed changes
         <option value="Class" />
       </list>
     </option>
@@ -96,12 +152,18 @@
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< Updated upstream
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Model/src/main/resources" />
+=======
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+>>>>>>> Stashed changes
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15299335" />
     <property name="project.structure.side.proportion" value="0.2755102" />
+<<<<<<< Updated upstream
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
@@ -124,13 +186,44 @@
       <recent name="C:\Users\George\Documents\GitHub\Basket-Java\Client\src\main\resources\views" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+=======
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="show.unlinked.gradle.project.popup" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="mvc.controllers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\George\Documents\GitHub\Basket-Java-copy\src\main\resources" />
+      <recent name="C:\Users\George\Documents\GitHub\Basket-Java-copy\Server\src\main\java\apacheThrift" />
+      <recent name="C:\Users\George\Documents\GitHub\Basket-Java-copy\Network\src\main\java\network" />
+      <recent name="C:\Users\George\Documents\GitHub\Basket-Java-copy\Network\src\main\java" />
+      <recent name="C:\Users\George\Documents\GitHub\Basket-Java-copy\Network\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="apacheThrift" />
+>>>>>>> Stashed changes
       <recent name="model.domain" />
       <recent name="mvc" />
       <recent name="server" />
       <recent name="protocols" />
     </key>
+<<<<<<< Updated upstream
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
+=======
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\George\Documents\GitHub\Basket-Java-copy\Model\src\main\resources" />
+      <recent name="C:\Users\George\Documents\GitHub\Basket-Java-copy\Server\src\main\java\apacheThrift" />
+      <recent name="C:\Users\George\Documents\GitHub\Basket-Java-copy\Model\src\main\java\model\domain" />
+      <recent name="C:\Users\George\Documents\GitHub\Basket-Java\src\main\resources" />
+      <recent name="C:\Users\George\Documents\GitHub\Basket-Java" />
+>>>>>>> Stashed changes
     </key>
   </component>
   <component name="RunDashboard">
@@ -145,30 +238,68 @@
       </list>
     </option>
   </component>
+<<<<<<< Updated upstream
   <component name="RunManager" selected="Application.StartRpcClient">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="11.0.4" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="LAB1_MPP.main" />
+=======
+  <component name="RunManager" selected="Application.TransformerServer (1)">
+    <configuration name="TestAnnot" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="model.TestAnnot" />
+      <module name="LAB1_MPP.Model.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+>>>>>>> Stashed changes
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< Updated upstream
     <configuration name="StartRpcClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="StartRpcClient" />
       <module name="LAB1_MPP.Client.main" />
+=======
+    <configuration name="TestRepoIHateThis" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="model.TestRepoIHateThis" />
+      <module name="LAB1_MPP.Model.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+>>>>>>> Stashed changes
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< Updated upstream
     <configuration name="StartRpcServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="StartRpcServer" />
       <module name="LAB1_MPP.Server.main" />
+=======
+    <configuration name="TransformerClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="transformer.TransformerClient" />
+      <module name="LAB1_MPP.Server.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="transformer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+>>>>>>> Stashed changes
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< Updated upstream
     <configuration name="LAB1 MPP [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -199,6 +330,88 @@
         <item itemvalue="Application.Main" />
         <item itemvalue="Gradle.LAB1 MPP [build]" />
         <item itemvalue="JAR Application.LAB1 MPP-1.0.jar" />
+=======
+    <configuration name="TransformerServer (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="apacheThrift.TransformerServer" />
+      <module name="LAB1_MPP.Server.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="apacheThrift.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TransformerServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="transformer.TransformerServer" />
+      <module name="LAB1_MPP.Server.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="transformer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <module name="Networking" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <module name="Networking" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.TestAnnot" />
+        <item itemvalue="Application.TestRepoIHateThis" />
+        <item itemvalue="Application.TransformerServer (1)" />
+        <item itemvalue="Application.TransformerServer" />
+        <item itemvalue="Application.TransformerClient" />
+>>>>>>> Stashed changes
       </list>
     </recent_temporary>
   </component>
@@ -252,6 +465,54 @@
       <workItem from="1585397334683" duration="23959000" />
       <workItem from="1585466900359" duration="27407000" />
       <workItem from="1585554641182" duration="15181000" />
+<<<<<<< Updated upstream
+=======
+      <workItem from="1585597739651" duration="2966000" />
+      <workItem from="1585680639229" duration="2563000" />
+      <workItem from="1585726602510" duration="9338000" />
+      <workItem from="1585823991032" duration="610000" />
+      <workItem from="1585837753627" duration="1065000" />
+      <workItem from="1585898577093" duration="1030000" />
+      <workItem from="1586194673978" duration="252000" />
+      <workItem from="1586200633521" duration="878000" />
+      <workItem from="1586883734759" duration="8427000" />
+      <workItem from="1587028358997" duration="1302000" />
+      <workItem from="1587030026368" duration="569000" />
+      <workItem from="1587030613618" duration="132000" />
+      <workItem from="1587030762869" duration="148000" />
+      <workItem from="1587030927612" duration="54000" />
+      <workItem from="1587031009545" duration="745000" />
+      <workItem from="1587032408067" duration="539000" />
+      <workItem from="1587032964492" duration="141000" />
+      <workItem from="1587033120220" duration="431000" />
+      <workItem from="1587033567921" duration="1552000" />
+      <workItem from="1587464629818" duration="1193000" />
+      <workItem from="1587465845966" duration="43000" />
+      <workItem from="1587466335456" duration="6317000" />
+      <workItem from="1587478313093" duration="754000" />
+      <workItem from="1587486924019" duration="3343000" />
+      <workItem from="1587495008647" duration="7125000" />
+      <workItem from="1587539842391" duration="7845000" />
+      <workItem from="1587721116020" duration="1101000" />
+      <workItem from="1587723738004" duration="218000" />
+      <workItem from="1587740942170" duration="238000" />
+      <workItem from="1587891168366" duration="720000" />
+      <workItem from="1588063112862" duration="107000" />
+      <workItem from="1588063243785" duration="4946000" />
+      <workItem from="1588092919441" duration="1439000" />
+      <workItem from="1588097788499" duration="54000" />
+      <workItem from="1588141944916" duration="4102000" />
+      <workItem from="1588168794137" duration="221000" />
+      <workItem from="1588182320163" duration="667000" />
+      <workItem from="1588189436920" duration="914000" />
+      <workItem from="1588190383578" duration="5615000" />
+      <workItem from="1588199289145" duration="6731000" />
+      <workItem from="1588235614707" duration="4114000" />
+      <workItem from="1588254861004" duration="2724000" />
+      <workItem from="1588503736015" duration="1535000" />
+      <workItem from="1588686307310" duration="4511000" />
+      <workItem from="1588754917182" duration="12518000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
@@ -275,6 +536,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
+<<<<<<< Updated upstream
           <url>file://$PROJECT_DIR$/Server/src/main/java/server/ChatServicesImpl.java</url>
           <line>28</line>
           <option name="timeStamp" value="110" />
@@ -312,16 +574,33 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
           <line>102</line>
+=======
+          <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/AccountController.java</url>
+          <line>182</line>
+          <option name="timeStamp" value="256" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>103</line>
+>>>>>>> Stashed changes
           <option name="timeStamp" value="262" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+<<<<<<< Updated upstream
           <line>262</line>
+=======
+          <line>265</line>
+>>>>>>> Stashed changes
           <option name="timeStamp" value="301" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+<<<<<<< Updated upstream
           <line>263</line>
+=======
+          <line>266</line>
+>>>>>>> Stashed changes
           <option name="timeStamp" value="302" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -366,27 +645,47 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/AccountController.java</url>
+<<<<<<< Updated upstream
           <line>167</line>
+=======
+          <line>179</line>
+>>>>>>> Stashed changes
           <option name="timeStamp" value="350" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/AccountController.java</url>
+<<<<<<< Updated upstream
           <line>171</line>
+=======
+          <line>183</line>
+>>>>>>> Stashed changes
           <option name="timeStamp" value="351" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/AccountController.java</url>
+<<<<<<< Updated upstream
           <line>172</line>
+=======
+          <line>184</line>
+>>>>>>> Stashed changes
           <option name="timeStamp" value="352" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/AccountController.java</url>
+<<<<<<< Updated upstream
           <line>173</line>
+=======
+          <line>185</line>
+>>>>>>> Stashed changes
           <option name="timeStamp" value="353" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/AccountController.java</url>
+<<<<<<< Updated upstream
           <line>174</line>
+=======
+          <line>186</line>
+>>>>>>> Stashed changes
           <option name="timeStamp" value="354" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -436,47 +735,79 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/AccountController.java</url>
+<<<<<<< Updated upstream
           <line>176</line>
+=======
+          <line>188</line>
+>>>>>>> Stashed changes
           <option name="timeStamp" value="423" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/AccountController.java</url>
+<<<<<<< Updated upstream
           <line>177</line>
+=======
+          <line>189</line>
+>>>>>>> Stashed changes
           <option name="timeStamp" value="424" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+<<<<<<< Updated upstream
           <line>224</line>
+=======
+          <line>228</line>
+>>>>>>> Stashed changes
           <option name="timeStamp" value="454" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+<<<<<<< Updated upstream
           <line>226</line>
+=======
+          <line>230</line>
+>>>>>>> Stashed changes
           <option name="timeStamp" value="455" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+<<<<<<< Updated upstream
           <line>228</line>
           <option name="timeStamp" value="457" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
           <line>229</line>
+=======
+          <line>232</line>
+>>>>>>> Stashed changes
           <option name="timeStamp" value="458" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+<<<<<<< Updated upstream
           <line>210</line>
+=======
+          <line>214</line>
+>>>>>>> Stashed changes
           <option name="timeStamp" value="464" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+<<<<<<< Updated upstream
           <line>211</line>
+=======
+          <line>215</line>
+>>>>>>> Stashed changes
           <option name="timeStamp" value="465" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+<<<<<<< Updated upstream
           <line>213</line>
+=======
+          <line>217</line>
+>>>>>>> Stashed changes
           <option name="timeStamp" value="466" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -491,31 +822,52 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+<<<<<<< Updated upstream
           <line>47</line>
+=======
+          <line>48</line>
+>>>>>>> Stashed changes
           <option name="timeStamp" value="501" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+<<<<<<< Updated upstream
           <line>48</line>
+=======
+          <line>49</line>
+>>>>>>> Stashed changes
           <option name="timeStamp" value="502" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+<<<<<<< Updated upstream
           <line>46</line>
+=======
+          <line>47</line>
+>>>>>>> Stashed changes
           <option name="timeStamp" value="503" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+<<<<<<< Updated upstream
           <line>50</line>
+=======
+          <line>51</line>
+>>>>>>> Stashed changes
           <option name="timeStamp" value="504" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+<<<<<<< Updated upstream
           <line>49</line>
+=======
+          <line>50</line>
+>>>>>>> Stashed changes
           <option name="timeStamp" value="505" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/LoginFormController.java</url>
+<<<<<<< Updated upstream
           <line>73</line>
           <option name="timeStamp" value="516" />
         </line-breakpoint>
@@ -533,25 +885,45 @@
           <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/LoginFormController.java</url>
           <line>76</line>
           <option name="timeStamp" value="519" />
+=======
+          <line>76</line>
+          <option name="timeStamp" value="516" />
+>>>>>>> Stashed changes
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/LoginFormController.java</url>
           <line>77</line>
+<<<<<<< Updated upstream
           <option name="timeStamp" value="520" />
+=======
+          <option name="timeStamp" value="517" />
+>>>>>>> Stashed changes
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/LoginFormController.java</url>
           <line>78</line>
+<<<<<<< Updated upstream
           <option name="timeStamp" value="521" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/LoginFormController.java</url>
           <line>89</line>
+=======
+          <option name="timeStamp" value="518" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/LoginFormController.java</url>
+          <line>99</line>
+>>>>>>> Stashed changes
           <option name="timeStamp" value="522" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Client/src/main/java/mvc/LoginFormController.java</url>
+<<<<<<< Updated upstream
           <line>90</line>
+=======
+          <line>100</line>
+>>>>>>> Stashed changes
           <option name="timeStamp" value="523" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -561,37 +933,65 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+<<<<<<< Updated upstream
           <line>173</line>
+=======
+          <line>174</line>
+>>>>>>> Stashed changes
           <option name="timeStamp" value="530" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+<<<<<<< Updated upstream
           <line>174</line>
+=======
+          <line>176</line>
+>>>>>>> Stashed changes
           <option name="timeStamp" value="531" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+<<<<<<< Updated upstream
           <line>175</line>
+=======
+          <line>177</line>
+>>>>>>> Stashed changes
           <option name="timeStamp" value="532" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+<<<<<<< Updated upstream
           <line>176</line>
+=======
+          <line>178</line>
+>>>>>>> Stashed changes
           <option name="timeStamp" value="533" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+<<<<<<< Updated upstream
           <line>177</line>
+=======
+          <line>179</line>
+>>>>>>> Stashed changes
           <option name="timeStamp" value="534" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+<<<<<<< Updated upstream
           <line>178</line>
+=======
+          <line>180</line>
+>>>>>>> Stashed changes
           <option name="timeStamp" value="535" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+<<<<<<< Updated upstream
           <line>179</line>
+=======
+          <line>181</line>
+>>>>>>> Stashed changes
           <option name="timeStamp" value="536" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -615,101 +1015,178 @@
           <option name="timeStamp" value="541" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+<<<<<<< Updated upstream
           <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+=======
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ClientRpcWorker.java</url>
+>>>>>>> Stashed changes
           <line>159</line>
           <option name="timeStamp" value="542" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+<<<<<<< Updated upstream
           <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+=======
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ClientRpcWorker.java</url>
+>>>>>>> Stashed changes
           <line>160</line>
           <option name="timeStamp" value="543" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+<<<<<<< Updated upstream
           <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+=======
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ClientRpcWorker.java</url>
+>>>>>>> Stashed changes
           <line>161</line>
           <option name="timeStamp" value="544" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+<<<<<<< Updated upstream
           <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+=======
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ClientRpcWorker.java</url>
+>>>>>>> Stashed changes
           <line>162</line>
           <option name="timeStamp" value="545" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+<<<<<<< Updated upstream
           <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+=======
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ClientRpcWorker.java</url>
+>>>>>>> Stashed changes
           <line>163</line>
           <option name="timeStamp" value="546" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+<<<<<<< Updated upstream
           <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+=======
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ClientRpcWorker.java</url>
+>>>>>>> Stashed changes
           <line>164</line>
           <option name="timeStamp" value="547" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+<<<<<<< Updated upstream
           <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+=======
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ClientRpcWorker.java</url>
+>>>>>>> Stashed changes
           <line>165</line>
           <option name="timeStamp" value="548" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+<<<<<<< Updated upstream
           <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+=======
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ClientRpcWorker.java</url>
+>>>>>>> Stashed changes
           <line>166</line>
           <option name="timeStamp" value="549" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+<<<<<<< Updated upstream
           <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+=======
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ClientRpcWorker.java</url>
+>>>>>>> Stashed changes
           <line>167</line>
           <option name="timeStamp" value="550" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+<<<<<<< Updated upstream
           <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+=======
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ClientRpcWorker.java</url>
+>>>>>>> Stashed changes
           <line>168</line>
           <option name="timeStamp" value="551" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+<<<<<<< Updated upstream
           <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+=======
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ClientRpcWorker.java</url>
+>>>>>>> Stashed changes
           <line>169</line>
           <option name="timeStamp" value="552" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+<<<<<<< Updated upstream
           <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+=======
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ClientRpcWorker.java</url>
+>>>>>>> Stashed changes
           <line>171</line>
           <option name="timeStamp" value="553" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+<<<<<<< Updated upstream
           <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+=======
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ClientRpcWorker.java</url>
+>>>>>>> Stashed changes
           <line>173</line>
           <option name="timeStamp" value="554" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+<<<<<<< Updated upstream
           <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+=======
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ClientRpcWorker.java</url>
+>>>>>>> Stashed changes
           <line>174</line>
           <option name="timeStamp" value="555" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+<<<<<<< Updated upstream
           <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+=======
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ClientRpcWorker.java</url>
+>>>>>>> Stashed changes
           <line>175</line>
           <option name="timeStamp" value="556" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+<<<<<<< Updated upstream
           <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+=======
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ClientRpcWorker.java</url>
+>>>>>>> Stashed changes
           <line>176</line>
           <option name="timeStamp" value="557" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+<<<<<<< Updated upstream
           <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+=======
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ClientRpcWorker.java</url>
+>>>>>>> Stashed changes
           <line>177</line>
           <option name="timeStamp" value="558" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+<<<<<<< Updated upstream
           <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+=======
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ClientRpcWorker.java</url>
+>>>>>>> Stashed changes
           <line>179</line>
           <option name="timeStamp" value="559" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+<<<<<<< Updated upstream
           <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ChatClientRpcWorker.java</url>
+=======
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/protocols/ClientRpcWorker.java</url>
+>>>>>>> Stashed changes
           <line>180</line>
           <option name="timeStamp" value="560" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
+<<<<<<< Updated upstream
           <url>file://$PROJECT_DIR$/Server/src/main/java/server/ChatServicesImpl.java</url>
           <line>27</line>
           <properties class="server.ChatServicesImpl" method="&lt;init&gt;">
@@ -727,5 +1204,29 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+=======
+          <url>file://$PROJECT_DIR$/Networking/src/main/java/network/ChatServicesRpcProxy.java</url>
+          <line>261</line>
+          <properties class="network.ChatServicesRpcProxy.ReaderThread">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Model/src/main/java/model/TestRepoIHateThis.java</url>
+          <line>14</line>
+          <properties class="model.TestRepoIHateThis" method="addBilet">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="561" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Remote">
+        <watch expression="((StandardServiceRegistryImpl)registry).configurationValues" custom="org.hibernate.boot.registry.internal.StandardServiceRegistryImpl" />
+      </configuration>
+    </watches-manager>
+>>>>>>> Stashed changes
   </component>
 </project>
