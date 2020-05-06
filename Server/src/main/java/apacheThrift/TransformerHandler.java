@@ -10,6 +10,7 @@ import org.apache.thrift.protocol.TProtocol;
 import org.apache.thrift.transport.TSocket;
 import org.apache.thrift.transport.TTransport;
 import repos.BiletDataBaseRepository;
+import repos.BiletHBMRepository;
 import repos.ClientDataBaseRepository;
 import repos.MeciDataBaseRepository;
 import server.ChatServicesImpl;
@@ -21,15 +22,21 @@ public class TransformerHandler implements TransformerService.Iface {
 
     private MeciDataBaseRepository meciDataBaseRepository;
     private ClientDataBaseRepository clientDataBaseRepository;
-    private BiletDataBaseRepository biletDataBaseRepository;
+    //private BiletDataBaseRepository biletDataBaseRepository;
+    private BiletHBMRepository biletDataBaseRepository;
     private ChatServicesImpl chatServerImpl;
     private ArrayList<Client> myClients = new ArrayList<>();
 
     public TransformerHandler() {
         clientDataBaseRepository = new ClientDataBaseRepository(ClientValidator.getInstance());
         meciDataBaseRepository = new MeciDataBaseRepository(MeciValidator.getInstance());
-        biletDataBaseRepository = new BiletDataBaseRepository(BiletValidator.getInstance());
+        //biletDataBaseRepository = new BiletDataBaseRepository(BiletValidator.getInstance());
+        biletDataBaseRepository = new BiletHBMRepository(BiletValidator.getInstance());
         chatServerImpl = new ChatServicesImpl(clientDataBaseRepository, meciDataBaseRepository, biletDataBaseRepository);
+    }
+
+    public void shutdown(){
+        BiletHBMRepository.close();
     }
 
     private void alertClients() {
@@ -52,11 +59,13 @@ public class TransformerHandler implements TransformerService.Iface {
         //System.out.println("Client's server host: " + host);
         //System.out.println("Client's server port: " + port);
         Random random = new Random();
-        String id = Double.toString(random.nextDouble());;
-        myClients.add(new Client(id, password, username, host, port));
+        String sessionId = Double.toString(random.nextDouble());
 
-        if (chatServerImpl.loginThrift(username, password)) {
-            return "ok";
+        Client loggedInClient = chatServerImpl.loginThrift(username, password);
+
+        if (loggedInClient != null) {
+            myClients.add(new Client(loggedInClient.getId(), sessionId, password, username, host, port));
+            return loggedInClient.getId();
         } else {
             return "error";
         }
@@ -83,10 +92,11 @@ public class TransformerHandler implements TransformerService.Iface {
         else if (enumValue == 5) tipNonDTO = TipMeci.SEMIFINALA;
         else if (enumValue == 6) tipNonDTO = TipMeci.FINALA;
 
-        Date date = new Date(meci.getDate());
+        long TICKS_AT_EPOCH = 621355968000000000L;
+        Date date = new Date((meci.getDate() - TICKS_AT_EPOCH)/10000);
 
         Meci meciNonDTO = new Meci(meci.getId(),meci.getHome(),meci.getAway(),date,tipNonDTO,meci.getNumarBileteDisponibile());
-        Client loggedInClient = new Client(client.id, client.password,client.nume,client.ip,client.port);
+        Client loggedInClient = new Client(client.id, client.sessionId, client.password,client.nume,client.ip,client.port);
         chatServerImpl.ticketsSold(meciNonDTO, loggedInClient);
         alertClients();
     }

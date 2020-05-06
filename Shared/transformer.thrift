@@ -2,11 +2,12 @@ namespace java transformer
 namespace netstd transformer
 
 struct ClientDTO{
-1:string id,
-2:string password,
-3:string nume,
-4:string ip,
-5:i32 port
+1:string sessionId,
+2:string id,
+3:string password,
+4:string nume,
+5:string ip,
+6:i32 port
 }
 
 enum TipMeciDTO{

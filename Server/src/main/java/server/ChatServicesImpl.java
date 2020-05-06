@@ -16,16 +16,18 @@ public class ChatServicesImpl {
     private static final Logger logger = LogManager.getLogger(ChatServicesImpl.class);
     private ClientDataBaseRepository userRepository;
     private MeciDataBaseRepository meciRepository;
-    private BiletDataBaseRepository biletRepository;
+    //private BiletDataBaseRepository biletRepository;
+    private BiletHBMRepository biletRepository;
 
-    public ChatServicesImpl(ClientDataBaseRepository uRepo, MeciDataBaseRepository mRepo, BiletDataBaseRepository bRepo) {
+    //public ChatServicesImpl(ClientDataBaseRepository uRepo, MeciDataBaseRepository mRepo, BiletDataBaseRepository bRepo) {
+    public ChatServicesImpl(ClientDataBaseRepository uRepo, MeciDataBaseRepository mRepo, BiletHBMRepository bRepo) {
         userRepository = uRepo;
         meciRepository = mRepo;
         biletRepository = bRepo;
     }
 
-    public synchronized boolean loginThrift(String username, String password) {
-        return userRepository.findClientByCredentials(username, password) != null;
+    public synchronized Client loginThrift(String username, String password) {
+        return userRepository.findClientByCredentials(username, password);
     }
 
     public synchronized List<MeciDTO> findAllMeciWithTickets() {
@@ -79,11 +81,12 @@ public class ChatServicesImpl {
         Meci ret = meciRepository.update(meci);
 
         int delta = ret.getNumarBileteDisponibile() - meci.getNumarBileteDisponibile(); // number of tickets bought
-        List<Bilet> goodTickets = StreamSupport.stream(biletRepository.findAll().spliterator(), false).filter(x -> x.getIdClient() == null).collect(Collectors.toList());
+        List<Bilet> goodTickets = StreamSupport.stream(biletRepository.findAll().spliterator(), false).filter(x -> x.getIdClient() == null && x.getIdMeci().equals(meci.getId())).collect(Collectors.toList());
+        // !!! this function @requires enough not assigned tickets to be in the database when called. else @throws IndexOutOfBoundsException
         for (int i = 0; i < delta; i++) {
             Bilet bilet = goodTickets.get(i);
             bilet.setIdClient(loggedInClient.getId());
-            bilet.setNumeClient(loggedInClient.getId());
+            bilet.setNumeClient(loggedInClient.getNume());
             biletRepository.update(bilet);
         }
     }

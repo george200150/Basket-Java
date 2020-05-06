@@ -5,14 +5,15 @@ import java.io.Serializable;
 
 public class Client extends Entity<String> implements Serializable {
 
+    private String sessionId;
     private String password;
     private String nume;
-
     private String host;
     private int port;
 
-    public Client(String id, String password, String nume, String host, int port) {
+    public Client(String id, String sessionId, String password, String nume, String host, int port) {
         super.setId(id);
+        this.sessionId = sessionId;
         this.password = password;
         this.nume = nume;
         this.host = host;
@@ -24,6 +25,13 @@ public class Client extends Entity<String> implements Serializable {
         this.port = port;
     }
 
+    public String getSessionId() {
+        return sessionId;
+    }
+
+    public void setSessionId(String sessionId) {
+        this.sessionId = sessionId;
+    }
 
     public String getId() {
         return super.getId();

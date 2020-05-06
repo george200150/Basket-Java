@@ -19,4 +19,13 @@ dependencies {
 
     compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.13.0'
     compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.13.0'
+
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.2.10.Final'
+
+    // http://mvnrepository.com/artifact/postgresql/postgresql
+    compile group: 'postgresql', name: 'postgresql', version: '9.0-801.jdbc4'
+
+    // LONG LIVE THE STACK OVERFLOW !!!
+    implementation "jakarta.xml.bind:jakarta.xml.bind-api:2.3.2"
+    implementation "org.glassfish.jaxb:jaxb-runtime:2.3.2"
 }

@@ -34,6 +34,7 @@ public class TransformerServer {
             new Thread(simple).start();
         } catch (Exception x) {
             x.printStackTrace();
+            handler.shutdown(); // Hopefully, connections will go right...
         }
     }
 
@@ -46,6 +47,7 @@ public class TransformerServer {
             server.serve();
         } catch (Exception e) {
             e.printStackTrace();
+            handler.shutdown(); // Hopefully, connections will go right...
         }
     }
 }
