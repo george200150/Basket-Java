@@ -1,36 +1,88 @@
 package server;
 
+import basket.model.domain.Bilet;
+import basket.model.domain.Client;
+import basket.model.domain.Meci;
+import basket.services.rest.repos.BiletDataBaseRepository;
+import basket.services.rest.repos.ClientDataBaseRepository;
+import basket.services.rest.repos.MeciDataBaseRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import repos.*;
-import model.domain.*;
+import services.IObserver;
+import services.IServices;
+import services.ServicesException;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 
-public class ChatServicesImpl {
-    private static final Logger logger = LogManager.getLogger(ChatServicesImpl.class);
-    private ClientDataBaseRepository userRepository;
+public class ChatServicesImpl implements IServices {
+    static final Logger logger = LogManager.getLogger(ChatServicesImpl.class);
+    private ClientDataBaseRepository userRepository; //TODO: not so generic anymore...
     private MeciDataBaseRepository meciRepository;
-    //private BiletDataBaseRepository biletRepository;
-    private BiletHBMRepository biletRepository;
+    private BiletDataBaseRepository biletRepository;
+    private Map<String, IObserver> loggedClients;
 
-    //public ChatServicesImpl(ClientDataBaseRepository uRepo, MeciDataBaseRepository mRepo, BiletDataBaseRepository bRepo) {
-    public ChatServicesImpl(ClientDataBaseRepository uRepo, MeciDataBaseRepository mRepo, BiletHBMRepository bRepo) {
+    public ChatServicesImpl(ClientDataBaseRepository uRepo, MeciDataBaseRepository mRepo, BiletDataBaseRepository bRepo) {
         userRepository = uRepo;
         meciRepository = mRepo;
         biletRepository = bRepo;
+        loggedClients = new ConcurrentHashMap<>();
     }
 
-    public synchronized Client loginThrift(String username, String password) {
-        return userRepository.findClientByCredentials(username, password);
+    private static final int defaultThreadsNo = 5;
+
+    private void notifyTicketsBought(Meci meci) throws ServicesException {
+        Iterable<Client> users = userRepository.findAll();
+        logger.trace("FULL SERVER: login RECEIVED !OBSERVER! COMMAND @"+ LocalDate.now());
+        ExecutorService executor= Executors.newFixedThreadPool(defaultThreadsNo);
+
+        for(Client us :users) {
+            IObserver chatClient = loggedClients.get(us.getId());
+            if (chatClient != null)
+                executor.execute(() -> {
+                    try {
+                        System.out.println("Notifying [" + us.getId() + "] tickets were bought for match [" + meci.getId() + "].");
+                        chatClient.notifyTicketsSold(meci);
+                    } catch (ServicesException e) {
+                        System.out.println("Error notifying friend " + e);
+                    }
+                });
+        }
+        executor.shutdown();
     }
 
-    public synchronized List<MeciDTO> findAllMeciWithTickets() {
+
+    public synchronized void login(Client user, IObserver client) throws ServicesException {
+        logger.trace("FULL SERVER: login RECEIVED COMMAND @"+ LocalDate.now());
+        Client userR = userRepository.findClientByCredentials(user.getId(), user.getPassword());
+        if (userR != null) {
+            if (loggedClients.get(user.getId()) != null)
+                throw new ServicesException("User already logged in.");
+            loggedClients.put(user.getId(), client);
+        } else
+            throw new ServicesException("Authentication failed.");
+        logger.trace("FULL SERVER: login SENT RETURN TO SERVER PROXY @"+ LocalDate.now());
+    }
+
+
+
+    public synchronized void logout(Client user, IObserver client) throws ServicesException {
+        logger.trace("FULL SERVER: logout RECEIVED COMMAND @"+ LocalDate.now());
+        IObserver localClient=loggedClients.remove(user.getId());
+        if (localClient==null)
+            throw new ServicesException("User "+user.getId()+" is not logged in.");
+        logger.trace("FULL SERVER: logout SENT RETURN TO SERVER PROXY @"+ LocalDate.now());
+    }
+
+    @Override
+    public synchronized Meci[] findAllMeciWithTickets() throws ServicesException{
         logger.trace("FULL SERVER: findAllMeciWithTickets RECEIVED COMMAND @"+ LocalDate.now());
         System.out.println("_DEBUG: FIND MATCHES WITH TICKETS");
         List<Meci> meciAll = StreamSupport.stream(meciRepository.findAll().spliterator(), false).collect(Collectors.toList());
@@ -46,10 +98,11 @@ public class ChatServicesImpl {
             meciuri[i] = meciList.get(i);
         }
         logger.trace("FULL SERVER: findAllMeciWithTickets SENT RETURN TO SERVER PROXY @"+ LocalDate.now());
-        return getMeciDTOS(meciuri);
+        return meciuri;
     }
 
-    public synchronized List<MeciDTO> findAllMeci() {
+    @Override
+    public synchronized Meci[] findAllMeci() throws ServicesException {
         logger.trace("FULL SERVER: findAllMeci RECEIVED COMMAND @"+ LocalDate.now());
         System.out.println("_DEBUG: FIND MATCHES");
         List<Meci> fromDBresult = StreamSupport.stream(meciRepository.findAll().spliterator(), false).collect(Collectors.toList());
@@ -59,35 +112,37 @@ public class ChatServicesImpl {
             meciuri[i] = fromDBresult.get(i);
         }
         logger.trace("FULL SERVER: findAllMeci SENT RETURN TO SERVER PROXY @"+ LocalDate.now());
-        return getMeciDTOS(meciuri);
+        return meciuri;
     }
 
-    private List<MeciDTO> getMeciDTOS(Meci[] meciuri) {
-        List<MeciDTO> meciDTOS = new ArrayList<>();
-        long TICKS_AT_EPOCH = 621355968000000000L;
-        for (Meci meci : meciuri) {
-            TipMeciDTO tipDTO = TipMeciDTO.findByValue(meci.getTip().getNumVal());
-            long tick = meci.getDate().getTime()*10000 + TICKS_AT_EPOCH;
-            MeciDTO dto = new MeciDTO(meci.getId(), meci.getHome(), meci.getAway(), tick, tipDTO, meci.getNumarBileteDisponibile());
-            meciDTOS.add(dto);
-        }
-        return meciDTOS;
-    }
 
-    //no need to logout, as there is no dict of clients, as before...
-
-    public synchronized void ticketsSold(Meci meci, Client loggedInClient) {
-        logger.trace("FULL SERVER: ticketsSold RECEIVED COMMAND @" + LocalDate.now());
+    @Override
+    public synchronized void ticketsSold(Meci meci, Client loggedInClient) throws ServicesException {
+        logger.trace("FULL SERVER: ticketsSold RECEIVED COMMAND @"+ LocalDate.now());
         Meci ret = meciRepository.update(meci);
-
+        if (ret == null)
+            throw new ServicesException("MECI NOT FOUND IN DB TO BE UPDATED!");
         int delta = ret.getNumarBileteDisponibile() - meci.getNumarBileteDisponibile(); // number of tickets bought
-        List<Bilet> goodTickets = StreamSupport.stream(biletRepository.findAll().spliterator(), false).filter(x -> x.getIdClient() == null && x.getIdMeci().equals(meci.getId())).collect(Collectors.toList());
-        // !!! this function @requires enough not assigned tickets to be in the database when called. else @throws IndexOutOfBoundsException
+        List<Bilet> goodTickets = StreamSupport.stream(biletRepository.findAll().spliterator(), false).filter(x ->x.getIdClient() == null).collect(Collectors.toList());
         for (int i = 0; i < delta; i++) {
             Bilet bilet = goodTickets.get(i);
             bilet.setIdClient(loggedInClient.getId());
-            bilet.setNumeClient(loggedInClient.getNume());
-            biletRepository.update(bilet);
+            bilet.setNumeClient(loggedInClient.getId());
+            Bilet res = biletRepository.update(bilet);
+            if (res == null)
+                throw new ServicesException("BILET NOT FOUNT IN DB TO BE UPDATED!");
         }
+        Runnable runnable = () -> {// hopefully not a deadlock (has enough time to finish)
+            try {
+                Thread.sleep(1000);
+                notifyTicketsBought(meci);
+            } catch (ServicesException | InterruptedException e) {
+                e.printStackTrace();
+            }
+        };
+        Thread thread = new Thread(runnable);
+        thread.start();
+        logger.trace("FULL SERVER: ticketsSold SENT OBSERVER COMMAND TO notifyTicketsBought @"+ LocalDate.now());
     }
+
 }
