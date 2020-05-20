@@ -1,0 +1,55 @@
+30 Mar 2020 11:40:42,427 TRACE network.ChatServicesRpcProxy 192 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest @2020-03-30
+30 Mar 2020 11:40:42,427 TRACE network.ChatServicesRpcProxy 196 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest @2020-03-30
+30 Mar 2020 11:40:42,427 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
+30 Mar 2020 11:40:42,428 TRACE protocols.ChatClientRpcWorker 147 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.GET_TICKETS @2020-03-30
+30 Mar 2020 11:40:42,428 TRACE network.ChatServicesRpcProxy 108 findAllBilet - PROXY CLIENT: findAllBilet SENT REQUEST @2020-03-30
+30 Mar 2020 11:40:42,428 TRACE server.ChatServicesImpl 116 findAllBilet - FULL SERVER: findAllBilet RECEIVED COMMAND @2020-03-30
+30 Mar 2020 11:40:42,429 TRACE network.ChatServicesRpcProxy 206 readResponse - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING readResponse @2020-03-30
+30 Mar 2020 11:40:42,430 TRACE BiletDataBaseRepository 53 findAll - Enter entry findAll
+30 Mar 2020 11:40:42,430 TRACE BiletDataBaseRepository 56 findAll - Enter entry query
+30 Mar 2020 11:40:42,440 INFO  BiletDataBaseRepository 67 findAll - successful query
+30 Mar 2020 11:40:42,440 TRACE BiletDataBaseRepository 72 findAll - Exit: successful exit
+30 Mar 2020 11:40:42,441 TRACE server.ChatServicesImpl 124 findAllBilet - FULL SERVER: findAllBilet SENT RETURN TO SERVER PROXY @2020-03-30
+30 Mar 2020 11:40:42,443 TRACE protocols.ChatClientRpcWorker 152 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.findAllBilet @2020-03-30
+30 Mar 2020 11:40:42,452 TRACE protocols.ChatClientRpcWorker 226 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
+30 Mar 2020 11:40:42,453 TRACE protocols.ChatClientRpcWorker 53 run - PROXY SERVER: run SENT RESPONSE @2020-03-30
+30 Mar 2020 11:40:42,456 TRACE network.ChatServicesRpcProxy$ReaderThread 268 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
+30 Mar 2020 11:40:42,457 TRACE network.ChatServicesRpcProxy$ReaderThread 275 run - Enter PROXY CLIENT: TRACE qresponses.put((Response)response) @2020-03-30
+30 Mar 2020 11:40:42,457 TRACE network.ChatServicesRpcProxy 209 readResponse - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL readResponse @2020-03-30
+30 Mar 2020 11:40:42,459 TRACE network.ChatServicesRpcProxy 110 findAllBilet - PROXY CLIENT: findAllBilet RECEIVED RESPONSE @2020-03-30
+30 Mar 2020 11:40:42,459 TRACE network.ChatServicesRpcProxy 118 findAllBilet - Exit with(PROXY CLIENT: SUCCESSFUL findAllBilet @2020-03-30)
+30 Mar 2020 11:40:42,461 TRACE network.ChatServicesRpcProxy 192 sendRequest - Enter NETWORKING FROM CLIENT PROXY TO SERVER: INITIALIZING sendRequest @2020-03-30
+30 Mar 2020 11:40:42,464 TRACE network.ChatServicesRpcProxy 196 sendRequest - Exit: NETWORKING FROM CLIENT PROXY TO SERVER: SUCESSFUL sendRequest @2020-03-30
+30 Mar 2020 11:40:42,464 TRACE network.ChatServicesRpcProxy 128 ticketsSold - PROXY CLIENT: ticketsSold SENT REQUEST @2020-03-30 WARNING: THIS FUNCTION HAS NO RESPONSE!!!
+30 Mar 2020 11:40:42,464 TRACE network.ChatServicesRpcProxy 134 ticketsSold - Exit with(PROXY CLIENT: SUCCESSFUL ticketsSold @2020-03-30 WARNING: THIS FUNCTION HAS NO RESPONSE!!!)
+30 Mar 2020 11:40:42,705 TRACE protocols.ChatClientRpcWorker 49 run - PROXY SERVER: run RECEIVED REQUEST @2020-03-30
+30 Mar 2020 11:40:42,706 TRACE protocols.ChatClientRpcWorker 198 handleRequest - PROXY SERVER: handleRequest RECEIVED REQUEST type==RequestType.TICKETS_SOLD @2020-03-30
+30 Mar 2020 11:40:42,707 TRACE server.ChatServicesImpl 131 ticketsSold - FULL SERVER: ticketsSold RECEIVED COMMAND @2020-03-30
+30 Mar 2020 11:40:42,708 TRACE MeciDataBaseRepository 166 update - Enter entry update
+30 Mar 2020 11:40:42,708 INFO  MeciDataBaseRepository 172 update - validated data
+30 Mar 2020 11:40:42,708 TRACE MeciDataBaseRepository 27 findOne - Enter entry find
+30 Mar 2020 11:40:42,709 TRACE MeciDataBaseRepository 33 findOne - Enter entry query
+30 Mar 2020 11:40:42,713 INFO  MeciDataBaseRepository 56 findOne - successful query
+30 Mar 2020 11:40:42,713 TRACE MeciDataBaseRepository 58 findOne - Exit: successful exit
+30 Mar 2020 11:40:42,713 TRACE MeciDataBaseRepository 27 findOne - Enter entry find
+30 Mar 2020 11:40:42,714 TRACE MeciDataBaseRepository 33 findOne - Enter entry query
+30 Mar 2020 11:40:42,716 INFO  MeciDataBaseRepository 56 findOne - successful query
+30 Mar 2020 11:40:42,716 TRACE MeciDataBaseRepository 58 findOne - Exit: successful exit
+30 Mar 2020 11:40:42,717 INFO  MeciDataBaseRepository 175 update - found data
+30 Mar 2020 11:40:42,717 TRACE MeciDataBaseRepository 177 update - Enter entry query
+30 Mar 2020 11:40:42,724 TRACE MeciDataBaseRepository 185 update - Exit: successful query
+30 Mar 2020 11:40:42,725 TRACE MeciDataBaseRepository 190 update - Exit: successful query
+30 Mar 2020 11:40:42,725 TRACE ClientDataBaseRepository 73 findAll - Enter entry findAll
+30 Mar 2020 11:40:42,726 TRACE ClientDataBaseRepository 76 findAll - Enter entry query
+30 Mar 2020 11:40:42,727 INFO  ClientDataBaseRepository 84 findAll - successful query
+30 Mar 2020 11:40:42,728 TRACE ClientDataBaseRepository 89 findAll - Exit: successful exit
+30 Mar 2020 11:40:42,728 TRACE server.ChatServicesImpl 42 notifyTicketsBought - FULL SERVER: login RECEIVED !OBSERVER! COMMAND @2020-03-30
+30 Mar 2020 11:40:42,729 TRACE protocols.ChatClientRpcWorker 83 ticketsSold - PROXY SERVER: ticketsSold BUILT RESPONSE @2020-03-30
+30 Mar 2020 11:40:42,731 TRACE protocols.ChatClientRpcWorker 226 sendResponse - Exit: PROXY SERVER: SUCCESSFUL sendResponse @2020-03-30
+30 Mar 2020 11:40:42,731 TRACE protocols.ChatClientRpcWorker 87 ticketsSold - Exit: PROXY SERVER: ticketsSold SENT RESPONSE @2020-03-30
+30 Mar 2020 11:40:42,731 TRACE network.ChatServicesRpcProxy$ReaderThread 268 run - Enter PROXY CLIENT: READING DATA FROM THE SERVER @2020-03-30
+30 Mar 2020 11:40:42,732 TRACE server.ChatServicesImpl 52 notifyTicketsBought - FULL SERVER: login SENT COMMAND TO SERVER PROXY @2020-03-30
+30 Mar 2020 11:40:42,732 TRACE network.ChatServicesRpcProxy$ReaderThread 271 run - Enter PROXY CLIENT: TRACE isUpdate((Response)response) == true @2020-03-30
+30 Mar 2020 11:40:42,732 TRACE server.ChatServicesImpl 136 ticketsSold - FULL SERVER: ticketsSold SENT OBSERVER COMMAND TO notifyTicketsBought @2020-03-30
+30 Mar 2020 11:40:42,732 TRACE protocols.ChatClientRpcWorker 204 handleRequest - PROXY SERVER: handleRequest SENT COMMAND TO SERVER server.ticketsSold @2020-03-30
+30 Mar 2020 11:40:42,733 TRACE protocols.ChatClientRpcWorker 217 handleRequest - Exit: PROXY SERVER: RETURN RESPONSE handleRequest @2020-03-30WARNING: should never reach this point: request type not found !!!

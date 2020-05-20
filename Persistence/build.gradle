@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+group 'LAB1 MPP'
+version '1.0'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.springframework:spring-context:4.3.8.RELEASE'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.13.0'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.13.0'
+
+    compile project (':Model')
+}
