@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+    <util:properties id="jdbcProps" location="bd.config"/>
+
+    <bean id="jdbcInv" class="basket.repos.JDBCInvariant">
+        <constructor-arg ref="jdbcProps"/>
+    </bean>
+
+    <bean id="valClient" class="basket.model.validators.ClientValidator" factory-method="getInstance"/>
+    <bean id="valBilet" class="basket.model.validators.BiletValidator" factory-method="getInstance"/>
+    <bean id="valMeci" class="basket.model.validators.MeciValidator" factory-method="getInstance"/>
+
+    <bean id="repoClient" class="basket.repos.ClientDataBaseRepository">
+        <constructor-arg ref="valClient"/>
+    </bean>
+    <bean id="repoMeci" class="basket.repos.MeciDataBaseRepository">
+        <constructor-arg ref="valMeci"/>
+    </bean>
+    <bean id="repoBilet" class="basket.repos.BiletDataBaseRepository">
+        <constructor-arg ref="valBilet"/>
+    </bean>
+    <!--^ALL REPO BACKEND DONE^-->
+
+
+    <bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory"/>
+
+    <bean id="topic" class="org.apache.activemq.command.ActiveMQTopic">
+        <constructor-arg value="BasketTopic"/>
+    </bean>
+
+    <bean id="converter" class="org.springframework.jms.support.converter.MappingJackson2MessageConverter">
+        <property name="targetType" value="TEXT"/>
+        <property name="typeIdPropertyName" value="_notification"/>
+    </bean>
+
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <constructor-arg ref="connectionFactory"/>
+        <property name="defaultDestination" ref="topic"/>
+        <property name="messageConverter" ref="converter"/>
+    </bean>
+
+    <bean id="notificationService" class="server.NotificationServiceImpl">
+        <constructor-arg ref="jmsTemplate"/>
+    </bean>
+
+    <bean id="chatServer" class="server.ChatServerAMSImpl">
+        <constructor-arg index="0" ref="repoClient"/>
+        <constructor-arg index="1" ref="repoMeci"/>
+        <constructor-arg index="2" ref="repoBilet"/>
+        <constructor-arg ref="notificationService"/>
+    </bean>
+
+    <bean id="chatTCPServer" class="utils.ChatRpcAMSConcurrentServer">
+        <!--<constructor-arg value="#{jdbcProps.getProperty('chat.server.port')}"/>-->
+        <constructor-arg value="55556"/>
+            <constructor-arg ref="chatServer"/>
+    </bean>
+</beans>

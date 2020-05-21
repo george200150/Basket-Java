@@ -4,8 +4,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import mvc.LoginFormController;
-import network.ChatServicesRpcProxy;
-import services.IServices;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import protocols.ams.ChatServerAMSRpcProxy;
+import services.IChatServicesAMS;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -37,7 +38,10 @@ public class StartRpcClient extends Application {
         System.out.println("Using server IP " + serverIP);
         System.out.println("Using server port " + serverPort);
 
-        IServices server = new ChatServicesRpcProxy(serverIP, serverPort);
+        // proxy object retreived on startup from Spring
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-client.xml");
+        IChatServicesAMS server = context.getBean("chatServices", ChatServerAMSRpcProxy.class);
+
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/views/LoginForm.fxml"));
@@ -46,6 +50,7 @@ public class StartRpcClient extends Application {
         LoginFormController ctrl = loader.getController();
         ctrl.setService(server, primaryStage);
 
+        // !!! DO NOT, DELETE THIS SET LOCATION INSTRUCTION (else you will not be able to instantiate the ctrl in login)
         FXMLLoader cloader = new FXMLLoader();
         cloader.setLocation(getClass().getResource("/views/AccountView.fxml"));
 

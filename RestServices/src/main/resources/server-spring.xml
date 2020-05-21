@@ -5,7 +5,7 @@
 
     <util:properties id="jdbcProps" location="bd.config"/>
 
-    <bean id="jdbcInv" class="basket.services.rest.repos.JDBCInvariant">
+    <bean id="jdbcInv" class="basket.repos.JDBCInvariant">
         <constructor-arg ref="jdbcProps"/>
     </bean>
 

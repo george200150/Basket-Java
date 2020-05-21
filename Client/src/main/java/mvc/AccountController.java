@@ -3,6 +3,8 @@ package mvc;
 import basket.model.domain.Client;
 import basket.model.domain.Meci;
 import basket.model.domain.TipMeci;
+import basket.model.notification.Notification;
+import basket.model.notification.NotificationType;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,9 +18,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import services.IObserver;
-import services.IServices;
-import services.ServicesException;
+import protocols.ams.ChatServerAMSRpcProxy;
+import services.*;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -27,38 +28,38 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-public class AccountController implements IObserver {
 
-    @FXML
-    public TextField textFieldNume;
-    @FXML
-    public Spinner spinnerBilete;
+public class AccountController implements NotificationSubscriber {
+    @FXML public TextField textFieldNume;
+    @FXML public Spinner spinnerBilete;
 
-    @FXML
-    private Label labelStudent;
+    @FXML private Label labelStudent;
 
-    @FXML
-    TableColumn<Meci, String> meciViewColumnHome;
-    @FXML
-    TableColumn<Meci, String> meciViewColumnAway;
-    @FXML
-    TableColumn<Meci, String> meciViewColumnData;
-    @FXML
-    TableColumn<Meci, String> meciViewColumnTip;
-    @FXML
-    TableColumn<Meci, Integer> meciViewColumnBilete;
-    @FXML
-    TableView<Meci> tableViewMeciuri;
-
+    @FXML TableColumn<Meci, String> meciViewColumnHome;
+    @FXML TableColumn<Meci, String> meciViewColumnAway;
+    @FXML TableColumn<Meci, String> meciViewColumnData;
+    @FXML TableColumn<Meci, String> meciViewColumnTip;
+    @FXML TableColumn<Meci, Integer> meciViewColumnBilete;
+    @FXML TableView<Meci> tableViewMeciuri;
 
     private Client loggedInClient;
-    private IServices server;
+    private IChatServicesAMS server;
     private ObservableList<Meci> model = FXCollections.observableArrayList();
     private Stage dialogStage;
 
+    private NotificationReceiver receiver;
 
 
-    public void setService(IServices server, Stage stage) {
+    public AccountController() {
+    }
+    public AccountController(IChatServicesAMS server) {
+        this.server = server;
+    }
+    public void setReceiver(NotificationReceiver receiver) {
+        this.receiver = receiver;
+    }
+
+    public void setService(IChatServicesAMS server, Stage stage) {
         this.dialogStage = stage;
         this.server = server;
         initModel();
@@ -108,13 +109,11 @@ public class AccountController implements IObserver {
                 LoginFormController loginFormController = loader.getController();
                 loginFormController.setService(server, dialogStage);
 
-                this.server.logout(loggedInClient, this);
+                this.server.logout(loggedInClient);
                 this.dialogStage.close();
                 dialogStage.show();
 
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (ServicesException e) {
+            } catch (IOException | ServicesException e) {
                 e.printStackTrace();
             }
         };
@@ -175,7 +174,7 @@ public class AccountController implements IObserver {
                     Meci meci = new Meci(id, home, away, date, tip, numarActualizat);
                     try {
                         loggedInClient.setNume(name);
-                        server.ticketsSold(meci, loggedInClient); // TICKETS_SOLD !!!
+                        server.ticketsSold(meci, loggedInClient);
                     } catch (ServicesException e) {
                         e.printStackTrace();
                     }
@@ -220,21 +219,29 @@ public class AccountController implements IObserver {
         Platform.runLater(runnable);
     }
 
+
     @Override
-    public void notifyTicketsSold(Meci meci) throws ServicesException {
-        Runnable runnable = () -> {
-            System.out.println("ACCOUNT_CONTROLLER: REQUEST TO REFRESH TABLE");
-            for (Meci m : this.model) {
-                if (m.getId().equals(meci.getId())) {
-                    this.model.remove(m);
-                    this.model.add(meci);
-                    break;
+    public void notificationReceived(Notification notif) {
+        try {
+            System.out.println("Ctrl notificationReceived ... " + notif.getType());
+            Runnable runnable = () -> {
+                if (notif.getType() == NotificationType.NEW_MECI_UPDATE) {
+                    System.out.println("ACCOUNT_CONTROLLER: REQUEST TO REFRESH TABLE");
+                    for (Meci m : model) {
+                        if (m.getId().equals(notif.getMeci().getId())) {
+                            model.remove(m);
+                            model.add(notif.getMeci());
+                            break;
+                        }
+                    }
+                    tableViewMeciuri.setItems(model);
+                    System.out.println("ACCOUNT_CONTROLLER: FINISHED TO REFRESH TABLE");
                 }
-            }
-            tableViewMeciuri.setItems(model);
-            System.out.println("ACCOUNT_CONTROLLER: FINISHED TO REFRESH TABLE");
-        };
-        Platform.runLater(runnable);
+            };
+            Platform.runLater(runnable);
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
     }
 }
 

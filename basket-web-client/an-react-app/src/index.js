@@ -26,7 +26,6 @@ import UserApp from "./MeciApp";
 ReactDOM.render(
     <div>
         <UserApp/>
-        <p>ASL PLS</p>
     </div>,
     document.getElementById('root')
 );

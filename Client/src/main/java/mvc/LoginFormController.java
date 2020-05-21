@@ -15,7 +15,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import basket.model.domain.Client;
-import services.IServices;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import services.IChatServicesAMS;
+import services.NotificationReceiver;
 import services.ServicesException;
 
 import java.io.IOException;
@@ -30,14 +32,14 @@ public class LoginFormController {
     Button buttonLogIn;
 
     private Stage dialogStage;
-    private IServices server;
+    private IChatServicesAMS server;
 
 
     @FXML
     private void initialize() {
     }
 
-    public void setService(IServices server, Stage stage) {
+    public void setService(IChatServicesAMS server, Stage stage) {
         this.server = server;
         this.dialogStage = stage;
     }
@@ -47,7 +49,7 @@ public class LoginFormController {
             String userName = this.textFieldUserName.getText();
             String password = this.passwordFieldUserPassword.getText();
             Client user = new Client(userName, password);
-            try { //TODO: NO MESSAGES ARE SHOWN WHEN THE LOGIN FAILS... IT JUST RUNS... AND THERE ARE NPE-s ON THE SERVER NOW
+            try { // NO MESSAGES ARE SHOWN WHEN THE LOGIN FAILS... IT JUST RUNS... AND THERE ARE NPE-s ON THE SERVER NOW
                 // create a new stage for the popup dialog.
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource("/views/AccountView.fxml"));
@@ -66,15 +68,18 @@ public class LoginFormController {
 
                 accountController.setLoggedInClient(user);
 
+                ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-client.xml");
+                NotificationReceiver receiver = context.getBean("notificationReceiver", NotificationReceiver.class);
 
-                this.server.login(user, accountController); //LOGIN HERE, AFTER WE HAVE INITIALISED THE CONTROLLER.
+                accountController.setReceiver(receiver);
+                receiver.start(accountController);
+
+                this.server.login(user); //LOGIN HERE, AFTER WE HAVE INITIALISED THE CONTROLLER.
 
                 this.dialogStage.close();
                 dialogStage.show();
 
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (ServicesException e) {
+            } catch (ServicesException | IOException e) {
                 e.printStackTrace();
                 CustomAlert.showMessage(null, Alert.AlertType.ERROR, "Log In", "Nu ati introdus corect numele de utilizator sau parola!");
             }

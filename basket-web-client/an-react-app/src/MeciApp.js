@@ -7,7 +7,7 @@ import MeciForm from "./MeciForm";
 class MeciApp extends React.Component{
     constructor(props){
         super(props);
-        this.state={meciuri:[{"id":"-69","home":"-6920","away":"-6930","date":"2020-03-20","tip":"SFERT","numarBileteDisponibile":6912}],
+        this.state={meciuri:[{"id":"xxxxxxxx","home":"xxxxxxxx","away":"xxxxxxxx","date":"xxxx-xx-xx","tip":"XXXXXXXX","numarBileteDisponibile":"xxxxxxxx"}],
             deleteFunc:this.deleteFunc.bind(this),
             addFunc:this.addFunc.bind(this),
     };

@@ -1,7 +1,7 @@
 package basket.services.rest;
 
-import basket.services.rest.repos.RepositoryException;
-import basket.services.rest.repos.MeciDataBaseRepository;
+import basket.repos.RepositoryException;
+import basket.repos.MeciDataBaseRepository;
 import basket.model.domain.Meci;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
